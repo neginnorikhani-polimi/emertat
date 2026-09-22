@@ -85,36 +85,56 @@
 <div class="team-section">
   <h1>OUR EXPERIENCED TEAM</h1>
   <p>We ensure your cargo is in the best hands.</p>
-  <div class="team-cards">
-    {% if team %}
-      <!-- Display dynamic data from the database -->
-      {% for person in team %}
-        <div class="team-card">
-          {% if person.img %}
-            <img src="{{ person.img.url }}" alt="{{ person.first_name }}">
-          {% endif %}
-          <h3>{{ person.role }}</h3>
-          <p>{{ person.first_name }} {{ person.last_name }}</p>
-        </div>
-      {% endfor %}
-    {% else %}
-      <!-- Fallback: Display static data -->
-      <div class="team-card">
-        <img src="{% static 'info/images/temp.jpg' %}" alt="Rahim Norikhani">
-        <h3>Chairman</h3>
-        <p>Rahim Norikhani</p>
-      </div>
-      <div class="team-card">
-        <img src="{% static 'info/images/temp.jpg' %}" alt="Jane Smith">
-        <h3>Operations Head</h3>
-        <p>Jane Smith</p>
-      </div>
-      <div class="team-card">
-        <img src="{% static 'info/images/temp.jpg' %}" alt="Mike Johnson">
-        <h3>Customer Support</h3>
-        <p>Mike Johnson</p>
-      </div>
-    {% endif %}
+<div class="team-cards">
+
+  <div class="team-card">
+    <img src="{% static 'team/1.jpg' %}" alt="Rahim Norikhani">
+    <h3>Chairman</h3>
+    <p>Rahim Norikhani</p>
   </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/6.jpg' %}" alt="Omid Eslami">
+    <h3>CEO</h3>
+    <p>Omid Eslami</p>
+  </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/5.jpg' %}" alt="Ramin Eslami">
+    <h3>Account Expert</h3>
+    <p>Ramin Eslami</p>
+  </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/4.jpg' %}" alt="Makan Alavi">
+    <h3>Operation Manager</h3>
+    <p>Makan Alavi</p>
+  </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/2.jpg' %}" alt="Karim Bayati">
+    <h3>Facility Manager</h3>
+    <p>Karim Bayati</p>
+  </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/3.jpg' %}" alt="Javad Eslami">
+    <h3>Accountant Manager</h3>
+    <p>Javad Eslami</p>
+  </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/7.jpg' %}" alt="Negin Norikhani">
+    <h3>Communications Officer</h3>
+    <p>Negin Norikhani</p>
+  </div>
+
+  <div class="team-card">
+    <img src="{% static 'team/8.jpg' %}" alt="Niusha Norikhani">
+    <h3>Sales and Marketing Executive</h3>
+    <p>Niusha Norikhani</p>
+  </div>
+
+</div>
 </div>
 {% endblock content %}
