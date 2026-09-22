@@ -24,7 +24,7 @@ staticfiles/
 
 # Django migrations (optional, if you want to regenerate them)
 **/migrations/*.pyc
-**/migrations/*.py
+
 
 # Environment Variables
 .env
