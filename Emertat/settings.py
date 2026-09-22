@@ -9,7 +9,17 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+from pathlib import Path
+from decouple import config
+import os
+SECRET_KEY = config('SECRET_KEY')
 
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+ALLOWED_HOSTS = [
+    'emertatfarabar.com',
+    'www.emertatfarabar.com',
+]
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +35,6 @@ SECRET_KEY = "django-insecure-l96_!jp5vl0ih(esxj!nd(s$sm&2**5kyd(dy8$!wl2ffxmwf2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
