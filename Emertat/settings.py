@@ -12,9 +12,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
-SECRET_KEY = config('SECRET_KEY')
+import sys
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+if 'collectstatic' in sys.argv:
+    SECRET_KEY = config(
+        'SECRET_KEY',
+        default='temporary-build-key-not-for-production'
+    )
+else:
+    SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = [
     'emertatfarabar.com',
@@ -149,7 +155,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'social.emertatfarabar@gmail.com'
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_PASSWORD = config(
+    'EMAIL_HOST_PASSWORD',
+    default=''
+)
 
 # 3. The default "from" address for outgoing emails
 DEFAULT_FROM_EMAIL = 'Emertat Farabar <social.emertatfarabar@gmail.com>'
