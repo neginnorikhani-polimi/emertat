@@ -29,12 +29,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-l96_!jp5vl0ih(esxj!nd(s$sm&2**5kyd(dy8$!wl2ffxmwf2"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 
 
 # Application definition
@@ -155,7 +149,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'social.emertatfarabar@gmail.com'
-EMAIL_HOST_PASSWORD = 'lhkd jmpf hagk nsry'
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 # 3. The default "from" address for outgoing emails
 DEFAULT_FROM_EMAIL = 'Emertat Farabar <social.emertatfarabar@gmail.com>'
