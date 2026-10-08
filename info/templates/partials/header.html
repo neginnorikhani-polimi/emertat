@@ -1,174 +1,492 @@
-<!-- your_app/templates/partials/header.html -->
 {% load static %}
-<header>
-  <div class="logo">
-    <img src="{% static 'info/images/logo2.png' %}" alt="Logo">
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <a href="/" class="brand" aria-label="Emertat Farabar Home">
+      <img
+        src="{% static 'info/images/logo2.png' %}"
+        alt="Emertat Farabar International Freight Forwarding"
+      >
+    </a>
+
+    <!-- MOBILE BUTTON -->
+    <button
+      class="hamburger-menu"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul>
+
+        <li>
+          <a href="/">Home</a>
+        </li>
+
+        <!-- SERVICES DROPDOWN -->
+        <li class="nav-dropdown">
+          <button class="dropdown-toggle" type="button">
+            Services
+            <span class="dropdown-arrow">⌄</span>
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="/#services">Road Freight</a>
+            <a href="/#services">Sea Freight</a>
+            <a href="/#services">Rail Freight</a>
+            <a href="/#services">Multimodal Transport</a>
+            <a href="/#services">Customs Clearance</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="/#cargo-solutions">Cargo & Industries</a>
+        </li>
+
+        <li>
+          <a href="/#trade-lanes">Trade Lanes</a>
+        </li>
+
+        <li>
+          <a href="/about/">About</a>
+        </li>
+
+        <li>
+          <a href="/team/">Team</a>
+        </li>
+
+        <li>
+          <a href="/contact/">Contact</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <div class="header-cta">
+      <a href="/price-inquiry/" class="quote-button">
+        Get a Quote
+      </a>
+    </div>
+
   </div>
-
-  <!-- Hamburger Menu Button (Visible only on mobile) -->
-  <button class="hamburger-menu" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav id="main-nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/why">Why us</a></li>
-      <li><a href="/team">Team</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/price-inquiry">Price Inquiry</a></li>
-    </ul>
-  </nav>
-
-  <div class="logo hidden-logo">
-    <img src="{% static 'info/images/logo2.png' %}" alt="Logo">
-  </div>
-
-  <style>
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px; /* Reduced top padding */
-      flex-wrap: wrap;
-      position: relative;
-      background-color: #050A30; /* Added background color for consistency */
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0; /* Removed margin-bottom */
-    }
-
-    header .logo img {
-      height: 60px; /* Reduced logo size for mobile */
-      margin-right: 10px;
-      margin-left: 10px;
-      margin-top: 10px;
-    }
-
-    .hidden-logo {
-      visibility: hidden;
-      height: 60px; /* Reduced hidden logo size */
-      margin-right: 10px;
-    }
-
-    nav {
-      flex-grow: 1;
-      text-align: center;
-      margin-bottom: 0; /* Removed margin-bottom */
-    }
-
-    nav ul {
-      list-style: none;
-      display: inline-flex;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-      padding: 5px 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #FFFFFF;
-      font-size: 18px;
-    }
-
-    /* Hamburger Menu Styles */
-    .hamburger-menu {
-      display: none;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 24px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      position: absolute;
-      top: 15px; /* Adjusted for better visual alignment */
-      right: 15px; /* Adjusted for better visual alignment */
-      z-index: 1000;
-    }
-
-    .hamburger-menu span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: #FFFFFF;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-
-    /* MEDIA QUERY for smaller screens */
-    @media (max-width: 768px) {
-      header {
-        padding: 5px 1px; /* Further reduced padding for mobile */
-      }
-
-      .hamburger-menu {
-        display: flex;
-        top: 20px; /* Adjusted for better visual alignment */
-        right: 20px; /* Adjusted for better visual alignment */
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 250px;
-        background: rgba(8, 20, 52, 0.99);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 60px;
-        transition: right 0.3s ease-in-out;
-        z-index: 999;
-      }
-
-      nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 20px;
-      }
-
-      nav ul li {
-        margin: 10px 0; /* Adjusted margin for mobile */
-      }
-
-      nav.active {
-        right: 0;
-      }
-
-      header .logo img {
-        height: 50px; /* Further reduced logo size for mobile */
-      }
-    }
-  </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const nav = document.querySelector('#main-nav');
-
-      hamburgerMenu.addEventListener('click', function () {
-        nav.classList.toggle('active');
-      });
-
-      document.addEventListener('click', function (event) {
-        if (!nav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-          nav.classList.remove('active');
-        }
-      });
-    });
-  </script>
 </header>
+
+
+<style>
+
+  .site-header {
+    background: #050A30;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  /* LOGO */
+
+  .brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .brand img {
+    width: auto;
+    height: 58px;
+    display: block;
+  }
+
+
+  /* NAVIGATION */
+
+  .main-nav {
+    flex: 1;
+  }
+
+  .main-nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+  }
+
+  .main-nav li {
+    position: relative;
+  }
+
+  .main-nav a,
+  .dropdown-toggle {
+    display: block;
+    padding: 12px 13px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    transition: color .2s ease,
+                background .2s ease;
+  }
+
+  .main-nav a:hover,
+  .dropdown-toggle:hover {
+    color: #69baff;
+  }
+
+
+  /* DROPDOWN */
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dropdown-arrow {
+    font-size: 13px;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 230px;
+
+    background: #ffffff;
+
+    border-radius: 8px;
+
+    padding: 8px 0;
+
+    box-shadow:
+      0 15px 40px rgba(0,0,0,.22);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+
+    transition:
+      opacity .2s ease,
+      transform .2s ease,
+      visibility .2s ease;
+  }
+
+  .dropdown-menu a {
+    color: #071227;
+
+    padding: 12px 18px;
+
+    font-size: 14px;
+  }
+
+  .dropdown-menu a:hover {
+    background: #f3f7fb;
+    color: #1769aa;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+
+  /* QUOTE BUTTON */
+
+  .header-cta {
+    flex-shrink: 0;
+  }
+
+  .quote-button {
+    display: inline-block;
+
+    padding: 12px 19px;
+
+    background: #ffffff;
+    color: #071227;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: transform .2s ease,
+                background .2s ease;
+  }
+
+  .quote-button:hover {
+    background: #e8eef5;
+    transform: translateY(-1px);
+  }
+
+
+  /* MOBILE MENU BUTTON */
+
+  .hamburger-menu {
+    display: none;
+
+    width: 34px;
+    height: 28px;
+
+    background: none;
+    border: none;
+
+    padding: 0;
+
+    cursor: pointer;
+  }
+
+  .hamburger-menu span {
+    width: 100%;
+    height: 3px;
+
+    display: block;
+
+    background: #ffffff;
+
+    margin: 5px 0;
+
+    border-radius: 3px;
+  }
+
+
+  /* TABLET */
+
+  @media (max-width: 1100px) {
+
+    .main-nav a,
+    .dropdown-toggle {
+      padding: 10px 8px;
+      font-size: 14px;
+    }
+
+    .header-inner {
+      gap: 12px;
+    }
+
+  }
+
+
+  /* MOBILE */
+
+  @media (max-width: 900px) {
+
+    .site-header {
+      position: sticky;
+    }
+
+    .header-inner {
+      padding: 10px 20px;
+    }
+
+    .brand img {
+      height: 50px;
+    }
+
+    .hamburger-menu {
+      display: block;
+      margin-left: auto;
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    .main-nav {
+      position: fixed;
+
+      top: 70px;
+      right: -100%;
+
+      width: min(330px, 88vw);
+      height: calc(100vh - 70px);
+
+      background: #071227;
+
+      padding: 25px;
+
+      overflow-y: auto;
+
+      transition: right .3s ease;
+
+      box-shadow:
+        -15px 20px 40px rgba(0,0,0,.35);
+    }
+
+    .main-nav.active {
+      right: 0;
+    }
+
+    .main-nav > ul {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 5px;
+    }
+
+    .main-nav a,
+    .dropdown-toggle {
+      width: 100%;
+
+      box-sizing: border-box;
+
+      text-align: left;
+
+      padding: 14px 10px;
+
+      font-size: 16px;
+    }
+
+    .dropdown-toggle {
+      justify-content: space-between;
+    }
+
+    .dropdown-menu {
+      position: static;
+
+      width: 100%;
+
+      background: #0c1b39;
+
+      box-shadow: none;
+
+      border-radius: 5px;
+
+      display: none;
+
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+
+      margin-bottom: 5px;
+    }
+
+    .dropdown-menu.open {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      color: #d8e4f2;
+
+      padding-left: 25px;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      display: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu.open {
+      display: block;
+    }
+
+  }
+
+</style>
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const hamburger =
+      document.querySelector('.hamburger-menu');
+
+    const nav =
+      document.querySelector('#main-nav');
+
+    const dropdownToggle =
+      document.querySelector('.dropdown-toggle');
+
+    const dropdownMenu =
+      document.querySelector('.dropdown-menu');
+
+
+    /* MOBILE MENU */
+
+    hamburger.addEventListener('click', function () {
+
+      nav.classList.toggle('active');
+
+      const isOpen =
+        nav.classList.contains('active');
+
+      hamburger.setAttribute(
+        'aria-expanded',
+        isOpen
+      );
+
+    });
+
+
+    /* MOBILE SERVICES DROPDOWN */
+
+    dropdownToggle.addEventListener(
+      'click',
+      function () {
+
+        if (window.innerWidth <= 900) {
+          dropdownMenu.classList.toggle('open');
+        }
+
+      }
+    );
+
+
+    /* CLOSE MENU AFTER CLICK */
+
+    document
+      .querySelectorAll('.main-nav a')
+      .forEach(function(link) {
+
+        link.addEventListener(
+          'click',
+          function () {
+
+            nav.classList.remove('active');
+
+            hamburger.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+
+          }
+        );
+
+      });
+
+  });
+
+</script>
