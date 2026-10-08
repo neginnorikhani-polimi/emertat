@@ -329,6 +329,13 @@
   @media (max-width: 950px) {
     .trust-grid {
       grid-template-columns: repeat(2, 1fr);
+          .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cargo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
     }
 
     .trust-item {
@@ -345,6 +352,17 @@
     .hero {
       min-height: auto;
       padding: 70px 22px;
+          .why-grid,
+    .network-grid,
+    .cargo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-section,
+    .network-section,
+    .cargo-section {
+      padding: 65px 22px;
+    }
     }
 
     .hero h1 {
