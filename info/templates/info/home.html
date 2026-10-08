@@ -326,6 +326,235 @@
     line-height: 1.65;
     margin-bottom: 0;
   }
+    /* TRADE LANES */
+  .trade-lanes-section {
+    background: #071227;
+    padding: 90px 8%;
+    color: #ffffff;
+  }
+
+  .trade-lanes-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .trade-lane-group {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .trade-lane-label {
+    display: block;
+    color: #5bb6ff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+  }
+
+  .route-item {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+
+  .route-item:last-child {
+    border-bottom: none;
+  }
+
+  .route-item span {
+    text-align: center;
+    color: #5bb6ff;
+  }
+
+  .trade-note {
+    max-width: 850px;
+    margin: 30px auto 0;
+    text-align: center;
+    color: #bfc9d8;
+    line-height: 1.7;
+  }
+
+  .trade-cta {
+    text-align: center;
+    margin-top: 28px;
+  }
+
+
+  /* CLIENTS */
+  .clients-section {
+    padding: 90px 8%;
+    background: #ffffff;
+    color: #071227;
+  }
+
+  .clients-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+
+  .client-card {
+    padding: 24px;
+    background: #f7f9fc;
+    border-radius: 9px;
+    border-top: 3px solid #2374b8;
+  }
+
+  .client-card h3 {
+    margin-top: 0;
+    font-size: 19px;
+  }
+
+  .client-card p {
+    color: #667085;
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+
+  /* FREIGHT OPTIONS */
+  .freight-options-section {
+    padding: 90px 8%;
+    background: #eef3f8;
+    color: #071227;
+  }
+
+  .freight-options-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .freight-option-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 10px;
+    border: 1px solid #dbe3ed;
+  }
+
+  .freight-option-card span {
+    color: #2374b8;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .freight-option-card h3 {
+    font-size: 38px;
+    margin: 16px 0 4px;
+    color: #071227;
+  }
+
+  .freight-option-card h4 {
+    margin: 0 0 15px;
+    font-size: 17px;
+  }
+
+  .freight-option-card p {
+    color: #667085;
+    line-height: 1.65;
+  }
+
+  .freight-options-cta {
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  .freight-options-cta p {
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .btn-secondary-dark {
+    display: inline-block;
+    border: 1px solid #071227;
+    color: #071227;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+  }
+
+
+  /* ABOUT PREVIEW */
+  .about-preview {
+    padding: 95px 8%;
+    background: #ffffff;
+    color: #071227;
+  }
+
+  .about-preview-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .about-preview h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 10px 0 22px;
+  }
+
+  .about-preview p {
+    color: #5f6b7a;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .text-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #1769aa;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+
+  /* FINAL QUOTE CTA */
+  .quote-cta-section {
+    padding: 90px 8%;
+    background: #0b61a4;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .quote-cta-content {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .quote-cta-content .section-label {
+    color: #cde8ff;
+  }
+
+  .quote-cta-content h2 {
+    font-size: 44px;
+    margin: 10px 0 20px;
+  }
+
+  .quote-cta-content p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #e3eff9;
+    margin-bottom: 30px;
+  }
+
+  .quote-cta-content .hero-actions {
+    justify-content: center;
+  }
   @media (max-width: 950px) {
     .trust-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -385,6 +614,39 @@
     .services-section {
       padding: 65px 22px;
     }
+    @media (max-width: 950px) {
+  .trade-lanes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .freight-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .clients-grid,
+  .freight-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trade-lanes-section,
+  .clients-section,
+  .freight-options-section,
+  .about-preview,
+  .quote-cta-section {
+    padding: 65px 22px;
+  }
+
+  .about-preview h2,
+  .quote-cta-content h2 {
+    font-size: 32px;
+  }
+}
   }
 </style>
 
@@ -704,6 +966,288 @@
           Flexible transportation solutions for a wide range of commercial and
           general cargo.
         </p>
+      </div>
+
+    </div>
+
+  </section>
+    <!-- KEY TRADE LANES -->
+  <section class="trade-lanes-section">
+
+    <div class="section-header light-text">
+      <div class="section-label">Key Trade Lanes</div>
+
+      <h2>
+        Connecting Iran With Regional & International Markets
+      </h2>
+
+      <p>
+        Our team coordinates import, export and transit shipments across key
+        regional trade routes, using road, rail, sea and multimodal solutions
+        according to cargo requirements and destination.
+      </p>
+    </div>
+
+    <div class="trade-lanes-grid">
+
+      <div class="trade-lane-group">
+        <span class="trade-lane-label">Imports to Iran</span>
+
+        <div class="route-item">
+          <strong>UAE</strong>
+          <span>→</span>
+          <strong>Iran</strong>
+        </div>
+
+        <div class="route-item">
+          <strong>China</strong>
+          <span>→</span>
+          <strong>Iran</strong>
+        </div>
+
+        <div class="route-item">
+          <strong>Georgia</strong>
+          <span>→</span>
+          <strong>Iran</strong>
+        </div>
+
+        <div class="route-item">
+          <strong>Turkey</strong>
+          <span>→</span>
+          <strong>Iran</strong>
+        </div>
+      </div>
+
+      <div class="trade-lane-group">
+        <span class="trade-lane-label">Exports & Regional Transport</span>
+
+        <div class="route-item">
+          <strong>Iran</strong>
+          <span>→</span>
+          <strong>Iraq</strong>
+        </div>
+
+        <div class="route-item">
+          <strong>Iran</strong>
+          <span>→</span>
+          <strong>CIS Countries</strong>
+        </div>
+
+        <div class="route-item">
+          <strong>Iran</strong>
+          <span>→</span>
+          <strong>Middle East</strong>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="trade-note">
+      We also coordinate additional regional and international routes based on
+      cargo type, transportation mode, origin and destination.
+    </p>
+
+    <div class="trade-cta">
+      <a href="/contact/" class="btn btn-primary">
+        Discuss Your Trade Route
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- WHO WE WORK WITH -->
+  <section class="clients-section">
+
+    <div class="section-header">
+      <div class="section-label">Who We Work With</div>
+
+      <h2>
+        Logistics Solutions for International Trade
+      </h2>
+
+      <p>
+        We support businesses across different stages of international trade,
+        from importers and exporters to manufacturers, trading companies and
+        international logistics partners.
+      </p>
+    </div>
+
+    <div class="clients-grid">
+
+      <div class="client-card">
+        <h3>Importers</h3>
+        <p>
+          Freight and customs support for businesses bringing goods into Iran.
+        </p>
+      </div>
+
+      <div class="client-card">
+        <h3>Exporters</h3>
+        <p>
+          International transportation solutions for Iranian products moving
+          to regional and overseas markets.
+        </p>
+      </div>
+
+      <div class="client-card">
+        <h3>Manufacturers & Industrial Companies</h3>
+        <p>
+          Transportation planning for machinery, equipment, industrial cargo
+          and regular commercial shipments.
+        </p>
+      </div>
+
+      <div class="client-card">
+        <h3>Trading Companies</h3>
+        <p>
+          Flexible logistics support for businesses managing international
+          sourcing, imports and exports.
+        </p>
+      </div>
+
+      <div class="client-card">
+        <h3>Freight & Logistics Partners</h3>
+        <p>
+          Local operational support in Iran for international freight
+          forwarders and logistics partners.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FREIGHT OPTIONS -->
+  <section class="freight-options-section">
+
+    <div class="section-header">
+      <div class="section-label">Freight Options</div>
+
+      <h2>
+        Flexible Solutions for Different Shipment Sizes
+      </h2>
+
+      <p>
+        From full containers and dedicated trucks to smaller consolidated
+        shipments, we help clients choose an option suited to their cargo
+        volume and transportation requirements.
+      </p>
+    </div>
+
+    <div class="freight-options-grid">
+
+      <div class="freight-option-card">
+        <span>Sea Freight</span>
+        <h3>FCL</h3>
+        <h4>Full Container Load</h4>
+        <p>
+          Dedicated container capacity for larger sea freight shipments.
+        </p>
+      </div>
+
+      <div class="freight-option-card">
+        <span>Sea Freight</span>
+        <h3>LCL</h3>
+        <h4>Less than Container Load</h4>
+        <p>
+          A flexible option for smaller cargo volumes that do not require a
+          full container.
+        </p>
+      </div>
+
+      <div class="freight-option-card">
+        <span>Road Freight</span>
+        <h3>FTL</h3>
+        <h4>Full Truck Load</h4>
+        <p>
+          Dedicated road transportation for shipments requiring full truck
+          capacity.
+        </p>
+      </div>
+
+      <div class="freight-option-card">
+        <span>Road Freight</span>
+        <h3>LTL</h3>
+        <h4>Less than Truck Load</h4>
+        <p>
+          Cost-effective road transportation for smaller shipment volumes.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="freight-options-cta">
+      <p>Not sure which option fits your shipment?</p>
+
+      <a href="/contact/" class="btn btn-secondary-dark">
+        Talk to Our Logistics Team
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-preview">
+
+    <div class="about-preview-inner">
+
+      <div>
+        <div class="section-label">About Emertat Farabar</div>
+
+        <h2>
+          Built on Experience. Focused on Reliable Logistics.
+        </h2>
+
+        <p>
+          Emertat Farabar is an international freight forwarding and
+          transportation company established in Iran in 2009 by logistics
+          professionals with extensive previous industry experience.
+        </p>
+
+        <p>
+          Today, we provide road, rail, sea, multimodal transportation and
+          customs clearance solutions for businesses trading across Iran,
+          the Middle East, Asia and international markets.
+        </p>
+
+        <a href="/about/" class="text-link">
+          Learn More About Emertat Farabar →
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="quote-cta-section">
+
+    <div class="quote-cta-content">
+
+      <div class="section-label">Start a Shipment</div>
+
+      <h2>
+        Planning Your Next International Shipment?
+      </h2>
+
+      <p>
+        Tell us your cargo type, origin, destination and transportation
+        requirements. Our logistics team will review your shipment and help
+        identify an appropriate route and freight solution.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/price-inquiry/" class="btn btn-primary">
+          Request a Freight Quote
+        </a>
+
+        <a href="/contact/" class="btn btn-secondary">
+          Contact Our Logistics Team
+        </a>
       </div>
 
     </div>
