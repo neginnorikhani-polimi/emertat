@@ -18,4 +18,9 @@ urlpatterns = [
     views.sea_freight,
     name='sea_freight'
 ),
+    path(
+    'services/rail-freight/',
+    views.rail_freight,
+    name='rail_freight'
+),
 ]
