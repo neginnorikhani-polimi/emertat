@@ -23,4 +23,9 @@ urlpatterns = [
     views.rail_freight,
     name='rail_freight'
 ),
+    path(
+    'services/multimodal-transport/',
+    views.multimodal_transport,
+    name='multimodal_transport'
+),
 ]
