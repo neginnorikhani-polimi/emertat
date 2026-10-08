@@ -5,7 +5,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emertat Farabar Transportation Company</title>
+ <title>
+  {% block title %}
+  Emertat Farabar | International Freight Forwarding in Iran
+  {% endblock %}
+</title>
+
+<meta name="description"
+      content="{% block meta_description %}Emertat Farabar provides international road, rail, sea and multimodal freight forwarding and customs clearance services in Iran.{% endblock %}">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical"
+      href="https://www.emertatfarabar.com{{ request.path }}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Emertat Farabar">
+
+<meta property="og:title"
+      content="{% block og_title %}Emertat Farabar | International Freight Forwarding in Iran{% endblock %}">
+
+<meta property="og:description"
+      content="{% block og_description %}International road, rail, sea and multimodal freight forwarding solutions connecting Iran with regional and international markets.{% endblock %}">
+
+<meta property="og:url"
+      content="https://www.emertatfarabar.com{{ request.path }}">
+
+<meta property="og:image"
+      content="https://www.emertatfarabar.com{% static 'info/images/logo2.png' %}">
+
+<!-- Twitter / Social Preview -->
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title"
+      content="{% block twitter_title %}Emertat Farabar | International Freight Forwarding in Iran{% endblock %}">
+
+<meta name="twitter:description"
+      content="{% block twitter_description %}International freight forwarding and logistics solutions in Iran.{% endblock %}">
+
+<!-- Favicon -->
+<link rel="icon"
+      type="image/png"
+      href="{% static 'info/images/logo2.png' %}">
   
   <style>
     body {
