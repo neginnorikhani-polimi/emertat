@@ -7,6 +7,12 @@ def home(request):
 def road_freight(request):
     return render(request, 'info/road_freight.html')
 
+def sea_freight(request):
+    return render(request, 'info/sea_freight.html')
+
+def rail_freight(request):
+    return render(request, 'info/rail_freight.html')
+
 def about(request):
     return render(request, 'info/about.html')
 
