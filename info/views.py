@@ -4,6 +4,9 @@ from .models import Person, Contact
 def home(request):
     return render(request, 'info/home.html')
 
+def road_freight(request):
+    return render(request, 'info/road_freight.html')
+
 def about(request):
     return render(request, 'info/about.html')
 
