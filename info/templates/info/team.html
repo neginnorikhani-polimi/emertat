@@ -1,140 +1,478 @@
-<!-- your_app/templates/team.html -->
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+Our Team | Emertat Farabar International Logistics
+{% endblock %}
+
+{% block meta_description %}
+Meet the team behind Emertat Farabar, supporting international road, rail, sea and multimodal freight operations across Iran and regional markets.
+{% endblock %}
+
+{% block og_title %}
+Our Team | Emertat Farabar
+{% endblock %}
+
+{% block og_description %}
+Meet the logistics professionals behind Emertat Farabar's international freight and transportation operations.
+{% endblock %}
+
 {% block content %}
+
 <style>
+
   body {
-    background: url('{% static "info/images/background.jpg" %}') no-repeat center center fixed;
-    background-size: cover;
+    background: #071227;
   }
+
+  .team-page {
+    background: #ffffff;
+    color: #071227;
+  }
+
+  .team-hero {
+    padding: 100px 8%;
+    background:
+      linear-gradient(rgba(5,10,48,.86), rgba(5,10,48,.93)),
+      url('{% static "info/images/background.jpg" %}') center/cover no-repeat;
+    color: #ffffff;
+  }
+
+  .team-hero-inner {
+    max-width: 900px;
+  }
+
+  .team-label {
+    color: #63b9ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .team-hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
+    margin: 0 0 24px;
+  }
+
+  .team-hero p {
+    max-width: 820px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #d8e2ee;
+  }
+
   .team-section {
-    text-align: center;
-    padding: 50px 20px;
+    padding: 85px 8%;
   }
-  .team-section h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  .team-section p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #CCCCCC;
-  }
-  .team-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 0;
-    max-width: 1320px; /* Accommodate 4 cards of 300px width plus gaps */
+
+  .team-container {
+    max-width: 1200px;
     margin: 0 auto;
   }
-  .team-card {
-    background-color: #0D1A37;
-    color: #FFFFFF;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    border-radius: 8px;
-    flex: 0 0 calc(25% - 20px); /* Set to 25% width minus gap for 4 per row */
-    min-width: 250px; /* Minimum width to maintain readability */
-    box-sizing: border-box;
+
+  .team-section h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 0 0 20px;
   }
-  .team-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    display: block; /* Ensure the image is treated as a block element */
-    margin-left: auto; /* Center the image horizontally */
-    margin-right: auto;
-  }
-  .team-card h3 {
+
+  .team-intro {
+    max-width: 850px;
+    color: #667085;
     font-size: 18px;
-    font-weight: bold;
+    line-height: 1.75;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+  }
+
+  .team-card {
+    background: #ffffff;
+    border: 1px solid #dfe6ef;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(16,24,40,.05);
+  }
+
+  .team-image-wrap {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #eef3f8;
+  }
+
+  .team-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .team-info {
+    padding: 22px;
+  }
+
+  .team-info h3 {
+    margin: 0 0 7px;
+    font-size: 21px;
+  }
+
+  .team-role {
+    color: #2374b8;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .leadership-section {
+    background: #f5f8fb;
+  }
+
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .leadership-card {
+    background: #ffffff;
+    border: 1px solid #dfe6ef;
+    border-radius: 12px;
+    padding: 30px;
+  }
+
+  .leadership-card h3 {
     margin-top: 0;
+    font-size: 23px;
   }
-  .team-card p {
-    font-size: 16px;
-    margin: 5px 0;
+
+  .leadership-card p {
+    color: #667085;
+    line-height: 1.75;
   }
-  
-  @media (max-width: 1200px) {
-    .team-card {
-      flex: 0 0 calc(33.33% - 20px); /* 3 cards per row on medium screens */
-    }
+
+  .team-cta {
+    background: #0b61a4;
+    color: #ffffff;
+    text-align: center;
   }
-  
-  @media (max-width: 900px) {
-    .team-card {
-      flex: 0 0 calc(50% - 20px); /* 2 cards per row on smaller screens */
+
+  .team-cta-inner {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .team-cta h2 {
+    font-size: 44px;
+  }
+
+  .team-cta p {
+    color: #e2eef8;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .team-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .team-btn {
+    display: inline-block;
+    padding: 14px 23px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .team-btn-primary {
+    background: #ffffff;
+    color: #071227;
+  }
+
+  .team-btn-outline {
+    border: 1px solid rgba(255,255,255,.5);
+    color: #ffffff;
+  }
+
+  @media (max-width: 1000px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 768px) {
-    .team-section h1 {
-      font-size: 28px;
+  @media (max-width: 650px) {
+    .team-hero,
+    .team-section {
+      padding: 65px 22px;
     }
-    .team-card {
-      flex: 0 0 100%; /* Full width on mobile */
-      max-width: 300px; /* Limit the maximum width */
+
+    .team-hero h1 {
+      font-size: 40px;
+    }
+
+    .team-section h2,
+    .team-cta h2 {
+      font-size: 32px;
+    }
+
+    .team-grid,
+    .leadership-grid {
+      grid-template-columns: 1fr;
     }
   }
+
 </style>
 
-<div class="team-section">
-  <h1>OUR EXPERIENCED TEAM</h1>
-  <p>We ensure your cargo is in the best hands.</p>
-<div class="team-cards">
+<main class="team-page">
 
-  <div class="team-card">
-    <img src="{% static 'team/1.jpg' %}" alt="Rahim Norikhani">
-    <h3>Chairman</h3>
-    <p>Rahim Norikhani</p>
-  </div>
+  <!-- HERO -->
 
-  <div class="team-card">
-    <img src="{% static 'team/6.jpg' %}" alt="Omid Eslami">
-    <h3>CEO</h3>
-    <p>Omid Eslami</p>
-  </div>
+  <section class="team-hero">
+    <div class="team-hero-inner">
 
-  <div class="team-card">
-    <img src="{% static 'team/5.jpg' %}" alt="Ramin Eslami">
-    <h3>Account Expert</h3>
-    <p>Ramin Eslami</p>
-  </div>
+      <div class="team-label">Our Team</div>
 
-  <div class="team-card">
-    <img src="{% static 'team/4.jpg' %}" alt="Makan Alavi">
-    <h3>Operation Manager</h3>
-    <p>Makan Alavi</p>
-  </div>
+      <h1>
+        Meet the Team Behind Your Logistics
+      </h1>
 
-  <div class="team-card">
-    <img src="{% static 'team/2.jpg' %}" alt="Karim Bayati">
-    <h3>Facility Manager</h3>
-    <p>Karim Bayati</p>
-  </div>
+      <p>
+        Our team brings together operational experience, regional knowledge and
+        practical logistics expertise to support international freight
+        movements across road, rail, sea and multimodal transportation.
+      </p>
 
-  <div class="team-card">
-    <img src="{% static 'team/3.jpg' %}" alt="Javad Eslami">
-    <h3>Accountant Manager</h3>
-    <p>Javad Eslami</p>
-  </div>
+    </div>
+  </section>
 
-  <div class="team-card">
-    <img src="{% static 'team/7.jpg' %}" alt="Negin Norikhani">
-    <h3>Communications Officer</h3>
-    <p>Negin Norikhani</p>
-  </div>
 
-  <div class="team-card">
-    <img src="{% static 'team/8.jpg' %}" alt="Niusha Norikhani">
-    <h3>Sales and Marketing Executive</h3>
-    <p>Niusha Norikhani</p>
-  </div>
+  <!-- TEAM -->
 
-</div>
-</div>
+  <section class="team-section">
+    <div class="team-container">
+
+      <div class="team-label">People Behind Emertat Farabar</div>
+
+      <h2>
+        Experience Across Operations, Management & Coordination
+      </h2>
+
+      <p class="team-intro">
+        From strategic management and operations to finance, customer
+        communication and sales, our team works together to coordinate
+        shipments and support clients throughout the transportation process.
+      </p>
+
+      <div class="team-grid">
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/1.jpg' %}"
+              alt="Rahim Norikhani - Chairman at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Rahim Norikhani</h3>
+            <p class="team-role">Chairman</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/6.jpg' %}"
+              alt="Omid Eslami - CEO at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Omid Eslami</h3>
+            <p class="team-role">CEO</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/5.jpg' %}"
+              alt="Ramin Eslami - Account Expert at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Ramin Eslami</h3>
+            <p class="team-role">Account Expert</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/4.jpg' %}"
+              alt="Makan Alavi - Operations Manager at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Makan Alavi</h3>
+            <p class="team-role">Operations Manager</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/2.jpg' %}"
+              alt="Karim Bayati - Facility Manager at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Karim Bayati</h3>
+            <p class="team-role">Facility Manager</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/3.jpg' %}"
+              alt="Javad Eslami - Accounting Manager at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Javad Eslami</h3>
+            <p class="team-role">Accounting Manager</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/7.jpg' %}"
+              alt="Negin Norikhani - Communications Officer at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Negin Norikhani</h3>
+            <p class="team-role">Communications Officer</p>
+          </div>
+        </article>
+
+
+        <article class="team-card">
+          <div class="team-image-wrap">
+            <img
+              src="{% static 'team/8.jpg' %}"
+              alt="Niusha Norikhani - Sales and Marketing Executive at Emertat Farabar"
+            >
+          </div>
+
+          <div class="team-info">
+            <h3>Niusha Norikhani</h3>
+            <p class="team-role">Sales & Marketing Executive</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- LEADERSHIP -->
+
+  <section class="team-section leadership-section">
+    <div class="team-container">
+
+      <div class="team-label">Leadership & Experience</div>
+
+      <h2>
+        Logistics Knowledge Built Over Decades
+      </h2>
+
+      <div class="leadership-grid">
+
+        <div class="leadership-card">
+          <h3>Experienced Management</h3>
+
+          <p>
+            Emertat Farabar was established in 2009 by professionals with
+            extensive previous experience in international transportation and
+            freight forwarding. Our management team brings more than two
+            decades of hands-on industry knowledge to company operations.
+          </p>
+        </div>
+
+        <div class="leadership-card">
+          <h3>Professional Development</h3>
+
+          <p>
+            Our leadership team has pursued professional training and
+            qualifications related to freight forwarding and international
+            logistics, supporting the company's operational knowledge and
+            industry expertise.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="team-section team-cta">
+    <div class="team-cta-inner">
+
+      <div class="team-label">Work With Our Team</div>
+
+      <h2>
+        Planning an International Shipment?
+      </h2>
+
+      <p>
+        Tell us about your cargo, route and transportation requirements and our
+        team will help evaluate an appropriate logistics solution.
+      </p>
+
+      <div class="team-actions">
+
+        <a href="/price-inquiry/" class="team-btn team-btn-primary">
+          Request a Freight Quote
+        </a>
+
+        <a href="/contact/" class="team-btn team-btn-outline">
+          Contact Our Team
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
 {% endblock content %}
