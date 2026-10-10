@@ -13,7 +13,9 @@ def sea_freight(request):
 def rail_freight(request):
     return render(request, 'info/rail_freight.html')
 def multimodal_transport(request):
-    return render(request, 'info/multimodal_transport.html')    
+    return render(request, 'info/multimodal_transport.html') 
+def customs_clearance(request):
+    return render(request, 'info/customs_clearance.html')    
 
 def about(request):
     return render(request, 'info/about.html')
