@@ -2,34 +2,35 @@
 {% load static %}
 
 {% block title %}
-Contact Emertat Farabar | Freight Forwarding Company in Iran
+About Emertat Farabar | International Freight Forwarder in Iran
 {% endblock %}
 
 {% block meta_description %}
-Contact Emertat Farabar for international road, rail, sea and multimodal freight forwarding, customs clearance and logistics support in Iran.
+Learn about Emertat Farabar, an international freight forwarding company established in Iran in 2009, providing road, rail, sea, multimodal transport and customs clearance services.
 {% endblock %}
 
 {% block og_title %}
-Contact Emertat Farabar | International Freight & Logistics
+About Emertat Farabar | International Logistics Company in Iran
 {% endblock %}
 
 {% block og_description %}
-Contact our logistics team for freight forwarding, customs clearance and shipment coordination in Iran.
+Established in 2009, Emertat Farabar provides international freight forwarding and logistics solutions across Iran, the Middle East and Asia.
 {% endblock %}
 
 {% block content %}
 
 <style>
+
   body {
     background: #071227;
   }
 
-  .contact-page {
+  .about-page {
     background: #ffffff;
     color: #071227;
   }
 
-  .contact-hero {
+  .about-hero {
     padding: 100px 8%;
     background:
       linear-gradient(rgba(5,10,48,.86), rgba(5,10,48,.93)),
@@ -37,11 +38,11 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
     color: #ffffff;
   }
 
-  .contact-hero-inner {
-    max-width: 900px;
+  .about-hero-inner {
+    max-width: 950px;
   }
 
-  .contact-label {
+  .about-label {
     color: #63b9ff;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -50,83 +51,94 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
     margin-bottom: 15px;
   }
 
-  .contact-hero h1 {
+  .about-hero h1 {
     font-size: clamp(42px, 6vw, 68px);
     line-height: 1.08;
     margin: 0 0 24px;
   }
 
-  .contact-hero p {
-    max-width: 800px;
+  .about-hero p {
+    max-width: 820px;
     font-size: 20px;
     line-height: 1.7;
     color: #d8e2ee;
   }
 
-  .contact-section {
+  .about-section {
     padding: 85px 8%;
   }
 
-  .contact-container {
+  .about-container {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .contact-section h2 {
+  .about-section h2 {
     font-size: 40px;
     line-height: 1.2;
     margin: 0 0 20px;
   }
 
-  .contact-intro {
-    max-width: 850px;
-    font-size: 18px;
-    line-height: 1.75;
+  .about-text {
+    max-width: 900px;
     color: #5f6b7a;
+    font-size: 18px;
+    line-height: 1.8;
   }
 
-  .contact-grid {
+  .about-text p {
+    margin-bottom: 20px;
+  }
+
+  /* STORY */
+
+  .story-section {
+    background: #ffffff;
+  }
+
+
+  /* EXPERIENCE */
+
+  .experience-section {
+    background: #f5f8fb;
+  }
+
+  .experience-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
     margin-top: 40px;
   }
 
-  .contact-card {
-    background: #f7f9fc;
-    border: 1px solid #dfe6ef;
-    border-radius: 10px;
+  .experience-card {
+    background: #ffffff;
     padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #dfe6ef;
   }
 
-  .contact-card h3 {
-    margin-top: 0;
-    font-size: 22px;
+  .experience-card strong {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #071227;
   }
 
-  .contact-card p {
+  .experience-card p {
     color: #667085;
     line-height: 1.7;
+    margin: 0;
   }
 
-  .contact-card a {
-    display: inline-block;
-    color: #1769aa;
-    text-decoration: none;
-    font-weight: 700;
-    margin-top: 4px;
-  }
 
-  .contact-card a:hover {
-    text-decoration: underline;
-  }
+  /* OPERATIONS */
 
   .operations-section {
     background: #071227;
     color: #ffffff;
   }
 
-  .operations-section .contact-intro {
+  .operations-section .about-text {
     color: #c7d2df;
   }
 
@@ -139,13 +151,14 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
 
   .operation-card {
     padding: 28px;
-    background: rgba(255,255,255,.05);
     border: 1px solid rgba(255,255,255,.12);
     border-radius: 9px;
+    background: rgba(255,255,255,.05);
   }
 
   .operation-card h3 {
     margin-top: 0;
+    font-size: 22px;
   }
 
   .operation-card p {
@@ -154,64 +167,100 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
     margin-bottom: 0;
   }
 
-  .social-section {
-    background: #f5f8fb;
+
+  /* WHAT WE DO */
+
+  .services-section-about {
+    background: #ffffff;
   }
 
-  .social-grid {
+  .services-about-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .service-about-card {
+    padding: 24px;
+    background: #f7f9fc;
+    border-top: 3px solid #2374b8;
+    border-radius: 8px;
+  }
+
+  .service-about-card h3 {
+    margin-top: 0;
+    font-size: 19px;
+  }
+
+  .service-about-card p {
+    color: #667085;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+
+  /* APPROACH */
+
+  .approach-section {
+    background: #eef3f8;
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
     margin-top: 38px;
   }
 
-  .social-card {
+  .approach-card {
     background: #ffffff;
-    padding: 28px;
+    padding: 30px;
     border-radius: 10px;
-    border: 1px solid #dfe6ef;
   }
 
-  .social-card h3 {
+  .approach-card h3 {
     margin-top: 0;
   }
 
-  .social-card a {
-    color: #1769aa;
-    text-decoration: none;
-    font-weight: 700;
+  .approach-card p {
+    color: #667085;
+    line-height: 1.7;
   }
 
-  .contact-cta {
+
+  /* CTA */
+
+  .about-cta {
     background: #0b61a4;
     color: #ffffff;
     text-align: center;
   }
 
-  .contact-cta-inner {
+  .about-cta-inner {
     max-width: 850px;
     margin: 0 auto;
   }
 
-  .contact-cta h2 {
+  .about-cta h2 {
     font-size: 44px;
   }
 
-  .contact-cta p {
+  .about-cta p {
     color: #e2eef8;
     font-size: 18px;
     line-height: 1.7;
     margin-bottom: 30px;
   }
 
-  .contact-actions {
+  .about-actions {
     display: flex;
-    justify-content: center;
     gap: 14px;
+    justify-content: center;
     flex-wrap: wrap;
   }
 
-  .contact-btn {
+  .about-btn {
     display: inline-block;
     padding: 14px 23px;
     border-radius: 6px;
@@ -219,129 +268,159 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
     font-weight: 700;
   }
 
-  .contact-btn-primary {
+  .about-btn-primary {
     background: #ffffff;
     color: #071227;
   }
 
-  .contact-btn-outline {
-    color: #ffffff;
+  .about-btn-outline {
     border: 1px solid rgba(255,255,255,.5);
+    color: #ffffff;
   }
 
-  @media (max-width: 950px) {
-    .operations-grid {
+
+  @media (max-width: 1000px) {
+
+    .experience-grid,
+    .approach-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .operations-grid,
+    .services-about-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
   }
 
+
   @media (max-width: 650px) {
-    .contact-hero,
-    .contact-section {
+
+    .about-hero,
+    .about-section {
       padding: 65px 22px;
     }
 
-    .contact-hero h1 {
+    .about-hero h1 {
       font-size: 40px;
     }
 
-    .contact-section h2,
-    .contact-cta h2 {
+    .about-section h2,
+    .about-cta h2 {
       font-size: 32px;
     }
 
-    .contact-grid,
+    .experience-grid,
     .operations-grid,
-    .social-grid {
+    .services-about-grid,
+    .approach-grid {
       grid-template-columns: 1fr;
     }
+
   }
+
 </style>
 
-<main class="contact-page">
 
-  <section class="contact-hero">
-    <div class="contact-hero-inner">
+<main class="about-page">
 
-      <div class="contact-label">Contact Emertat Farabar</div>
+  <!-- HERO -->
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+
+      <div class="about-label">
+        About Emertat Farabar
+      </div>
 
       <h1>
-        Let’s Plan Your Next Shipment
+        International Logistics Built on Experience
       </h1>
 
       <p>
-        Need support with an upcoming import, export or transit shipment?
-        Contact our logistics team and send us your origin, destination, cargo
-        details and preferred transportation method.
+        Emertat Farabar is an international freight forwarding and
+        transportation company providing road, rail, sea, multimodal
+        transportation and customs clearance solutions from Iran to regional
+        and international markets.
       </p>
 
     </div>
   </section>
 
 
-  <section class="contact-section">
-    <div class="contact-container">
+  <!-- COMPANY STORY -->
 
-      <div class="contact-label">Get in Touch</div>
+  <section class="about-section story-section">
+    <div class="about-container">
+
+      <div class="about-label">
+        Our Company
+      </div>
 
       <h2>
-        Talk to Our Logistics Team
+        Established in 2009. Backed by Decades of Logistics Experience.
       </h2>
 
-      <p class="contact-intro">
-        Whether you need a freight quote, route planning, customs support or
-        shipment coordination, our team is ready to review your requirements
-        and help identify an appropriate logistics solution.
-      </p>
+      <div class="about-text">
 
-      <div class="contact-grid">
+        <p>
+          Emertat Farabar was established in Iran in 2009 by logistics
+          professionals with extensive previous experience in international
+          transportation and freight forwarding.
+        </p>
 
-        <div class="contact-card">
-          <h3>Sales & Freight Enquiries</h3>
+        <p>
+          Our management team brings more than 22 years of hands-on industry
+          experience, combining practical knowledge of cross-border
+          transportation, freight coordination and regional logistics.
+        </p>
+
+        <p>
+          Today, we support importers, exporters, manufacturers, trading
+          companies and international logistics partners with transportation
+          solutions designed around each shipment’s cargo, route, timing and
+          operational requirements.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section class="about-section experience-section">
+    <div class="about-container">
+
+      <div class="about-label">
+        At a Glance
+      </div>
+
+      <h2>
+        Practical Experience in International Freight
+      </h2>
+
+      <div class="experience-grid">
+
+        <div class="experience-card">
+          <strong>2009</strong>
           <p>
-            For freight rates, shipment planning and commercial enquiries.
+            The year Emertat Farabar was established in Iran.
           </p>
-
-          <a href="mailto:sales@emertatfarabar.com">
-            sales@emertatfarabar.com
-          </a>
         </div>
 
-        <div class="contact-card">
-          <h3>General Enquiries</h3>
+        <div class="experience-card">
+          <strong>22+ Years</strong>
           <p>
-            For general company information and non-commercial enquiries.
+            Industry experience within our management team.
           </p>
-
-          <a href="mailto:contact@emertatfarabar.com">
-            contact@emertatfarabar.com
-          </a>
         </div>
 
-        <div class="contact-card">
-  <h3>Phone</h3>
-
-  <p>
-    Speak directly with our team.
-  </p>
-
-  <a href="tel:+989173619345">
-    +98 917 361 9345
-  </a>
-
-  <br>
-
-  <a href="tel:+393447669336">
-    +39 344 766 9336
-  </a>
-</div>
-        <div class="contact-card">
-          <h3>Head Office</h3>
-
+        <div class="experience-card">
+          <strong>5 Core Services</strong>
           <p>
-            Emertat Farabar International Transport Company<br>
-            No. 213, Mahdi St., Eta'ati Ave., Marzdaran Blvd.<br>
-            Tehran, Iran
+            Road, rail, sea, multimodal transportation and customs clearance.
           </p>
         </div>
 
@@ -351,18 +430,22 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
   </section>
 
 
-  <section class="contact-section operations-section">
-    <div class="contact-container">
+  <!-- OPERATIONAL PRESENCE -->
 
-      <div class="contact-label">Operational Presence</div>
+  <section class="about-section operations-section">
+    <div class="about-container">
+
+      <div class="about-label">
+        Our Network
+      </div>
 
       <h2>
-        Supporting Shipments Across Key Locations in Iran
+        Strategic Operational Presence Across Iran
       </h2>
 
-      <p class="contact-intro">
-        Our operational network supports freight coordination through important
-        commercial, maritime and border locations.
+      <p class="about-text">
+        Our operational network helps us coordinate cargo movements through
+        important commercial, port and border locations across Iran.
       </p>
 
       <div class="operations-grid">
@@ -377,14 +460,15 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
         <div class="operation-card">
           <h3>Bandar Abbas</h3>
           <p>
-            Sea freight, port operations and inland logistics coordination.
+            Sea freight, port operations and inland transportation
+            coordination.
           </p>
         </div>
 
         <div class="operation-card">
           <h3>Bandar Lengeh</h3>
           <p>
-            Regional maritime and cargo operations in southern Iran.
+            Regional maritime and logistics operations in southern Iran.
           </p>
         </div>
 
@@ -392,7 +476,7 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
           <h3>Border Regions</h3>
           <p>
             Representatives in key Iranian border cities supporting
-            cross-border and transit transportation.
+            cross-border transportation and transit cargo.
           </p>
         </div>
 
@@ -402,39 +486,54 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
   </section>
 
 
-  <section class="contact-section social-section">
-    <div class="contact-container">
+  <!-- SERVICES -->
 
-      <div class="contact-label">Online</div>
+  <section class="about-section services-section-about">
+    <div class="about-container">
+
+      <div class="about-label">
+        What We Do
+      </div>
 
       <h2>
-        Follow & Connect With Emertat Farabar
+        Integrated Freight & Logistics Services
       </h2>
 
-      <div class="social-grid">
+      <div class="services-about-grid">
 
-        <div class="social-card">
-          <h3>Instagram</h3>
-
-          <a
-            href="https://www.instagram.com/emertatfarabar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @emertatfarabar
-          </a>
+        <div class="service-about-card">
+          <h3>Road Freight</h3>
+          <p>
+            FTL and LTL cross-border transportation.
+          </p>
         </div>
 
-        <div class="social-card">
-          <h3>LinkedIn</h3>
+        <div class="service-about-card">
+          <h3>Sea Freight</h3>
+          <p>
+            FCL and LCL international maritime transportation.
+          </p>
+        </div>
 
-          <a
-            href="https://www.linkedin.com/company/emertat-farabar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Emertat Farabar on LinkedIn
-          </a>
+        <div class="service-about-card">
+          <h3>Rail Freight</h3>
+          <p>
+            Rail transportation for suitable regional routes.
+          </p>
+        </div>
+
+        <div class="service-about-card">
+          <h3>Multimodal</h3>
+          <p>
+            Integrated road, rail and sea logistics solutions.
+          </p>
+        </div>
+
+        <div class="service-about-card">
+          <h3>Customs Clearance</h3>
+          <p>
+            Customs and transportation documentation support.
+          </p>
         </div>
 
       </div>
@@ -443,30 +542,79 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
   </section>
 
 
-  <section class="contact-section contact-cta">
-    <div class="contact-cta-inner">
+  <!-- APPROACH -->
 
-      <div class="contact-label">Freight Enquiry</div>
+  <section class="about-section approach-section">
+    <div class="about-container">
+
+      <div class="about-label">
+        Our Approach
+      </div>
 
       <h2>
-        Have a Shipment Ready to Move?
+        Logistics Solutions Designed Around the Shipment
+      </h2>
+
+      <div class="approach-grid">
+
+        <div class="approach-card">
+          <h3>Practical Route Planning</h3>
+          <p>
+            We evaluate cargo characteristics, origin, destination, available
+            routes, transit time and cost before recommending a transportation
+            solution.
+          </p>
+        </div>
+
+        <div class="approach-card">
+          <h3>Clear Communication</h3>
+          <p>
+            Our team prioritizes operational communication so clients remain
+            informed throughout the transportation process.
+          </p>
+        </div>
+
+        <div class="approach-card">
+          <h3>Long-Term Partnerships</h3>
+          <p>
+            Our goal is not simply to move one shipment, but to build reliable
+            logistics relationships with the businesses we support.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="about-section about-cta">
+    <div class="about-cta-inner">
+
+      <div class="about-label">
+        Work With Emertat Farabar
+      </div>
+
+      <h2>
+        Looking for a Logistics Partner in Iran?
       </h2>
 
       <p>
-        Send us your cargo details, origin and destination and our team can
-        review the shipment requirements and help identify an appropriate
+        Tell us about your cargo, origin and destination. Our team can review
+        your transportation requirements and help identify an appropriate
         freight solution.
       </p>
 
-      <div class="contact-actions">
+      <div class="about-actions">
 
-        <a href="/price-inquiry/" class="contact-btn contact-btn-primary">
+        <a href="/price-inquiry/" class="about-btn about-btn-primary">
           Request a Freight Quote
         </a>
 
-        <a href="mailto:sales@emertatfarabar.com"
-           class="contact-btn contact-btn-outline">
-          Email Our Sales Team
+        <a href="/contact/" class="about-btn about-btn-outline">
+          Contact Our Team
         </a>
 
       </div>
