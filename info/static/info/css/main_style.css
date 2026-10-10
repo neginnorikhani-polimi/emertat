@@ -119,15 +119,4 @@ footer {
     right: 80px;
     bottom: 100px; /* Move the right arrow down */
 }
-.route-link {
-  display: grid;
-  grid-template-columns: 1fr 40px 1fr;
-  align-items: center;
-  width: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-
-.route-link:hover {
-  color: #63b9ff;
 }
