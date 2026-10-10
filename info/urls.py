@@ -28,4 +28,9 @@ urlpatterns = [
     views.multimodal_transport,
     name='multimodal_transport'
 ),
+    path(
+    'services/customs-clearance/',
+    views.customs_clearance,
+    name='customs_clearance'
+),
 ]
