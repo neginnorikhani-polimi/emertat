@@ -102,7 +102,7 @@ def price_inquiry(request):
         messages.success(request, "Your request has been sent successfully!")
         
         # Redirect using the named URL pattern or direct path
-        return redirect('/price-inquiry')  # or: return redirect('/price-inquiry')
+        return redirect('/price-inquiry/')  # or: return redirect('/price-inquiry')
     
     # If GET, show the form
     return render(request, 'info/price_inquiry.html')
