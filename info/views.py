@@ -15,9 +15,7 @@ def rail_freight(request):
 def multimodal_transport(request):
     return render(request, 'info/multimodal_transport.html') 
 def customs_clearance(request):
-    return render(request, 'info/customs_clearance.html')  
-def china_to_iran(request):
-    return render(request, 'info/china_to_iran.html')    
+    return render(request, 'info/customs_clearance.html')    
 
 def about(request):
     return render(request, 'info/about.html')
