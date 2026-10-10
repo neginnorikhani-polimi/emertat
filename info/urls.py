@@ -28,14 +28,4 @@ urlpatterns = [
     views.multimodal_transport,
     name='multimodal_transport'
 ),
-    path(
-    'services/customs-clearance/',
-    views.customs_clearance,
-    name='customs_clearance'
-),
-    path(
-    'trade-lanes/china-to-iran/',
-    views.china_to_iran,
-    name='china_to_iran'
-),
 ]
