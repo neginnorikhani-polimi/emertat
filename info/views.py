@@ -1,6 +1,16 @@
 from django.shortcuts import render
 from .models import Person, Contact
+from django.http import HttpResponse
 
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "Disallow: /admin/",
+        "",
+        "Sitemap: https://www.emertatfarabar.com/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
 def home(request):
     return render(request, 'info/home.html')
 
