@@ -6,6 +6,7 @@ from info import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("info.urls"))
+    path('robots.txt', views.robots_txt, name='robots_txt'),
 ] 
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
