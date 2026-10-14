@@ -11,6 +11,36 @@ def robots_txt(request):
         "Sitemap: https://www.emertatfarabar.com/sitemap.xml",
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain")
+def sitemap_xml(request):
+    urls = [
+        "/",
+        "/about/",
+        "/team/",
+        "/contact/",
+        "/price-inquiry/",
+        "/services/road-freight/",
+        "/services/sea-freight/",
+        "/services/rail-freight/",
+        "/services/multimodal-transport/",
+        "/services/customs-clearance/",
+    ]
+
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append(
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    )
+
+    for url in urls:
+        xml.append(
+            f"<url><loc>https://www.emertatfarabar.com{url}</loc></url>"
+        )
+
+    xml.append("</urlset>")
+
+    return HttpResponse(
+        "\n".join(xml),
+        content_type="application/xml"
+    )    
 def home(request):
     return render(request, 'info/home.html')
 
