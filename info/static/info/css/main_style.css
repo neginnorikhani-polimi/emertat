@@ -191,8 +191,8 @@ html[dir="rtl"] .footer-bottom {
     html[dir="rtl"] .dropdown-toggle {
         text-align: right;
     }
-    body {
-  outline: 5px solid red !important;
+  html body {
+  background: lime !important;
 }
 
 }
