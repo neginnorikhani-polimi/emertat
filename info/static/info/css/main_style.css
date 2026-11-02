@@ -119,4 +119,78 @@ footer {
     right: 80px;
     bottom: 100px; /* Move the right arrow down */
 }
+/* =========================================
+   PERSIAN / RTL SUPPORT
+========================================= */
+
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* Main text areas */
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-header,
+html[dir="rtl"] .service-hero-inner,
+html[dir="rtl"] .about-hero-inner,
+html[dir="rtl"] .team-hero-inner,
+html[dir="rtl"] .contact-hero-inner,
+html[dir="rtl"] .quote-hero-inner {
+    text-align: right;
+}
+
+
+/* Navigation */
+html[dir="rtl"] .main-nav > ul {
+    direction: rtl;
+}
+
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+
+/* Cards with left border */
+html[dir="rtl"] .network-card,
+html[dir="rtl"] .capability-card {
+    border-left: none;
+    border-right: 4px solid #2374b8;
+}
+
+
+/* Forms */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* Buttons and links containing arrows */
+html[dir="rtl"] .text-link,
+html[dir="rtl"] .service-card a {
+    direction: rtl;
+}
+
+
+/* Footer */
+html[dir="rtl"] .footer-main,
+html[dir="rtl"] .footer-bottom {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* Mobile navigation */
+@media (max-width: 900px) {
+
+    html[dir="rtl"] .main-nav a,
+    html[dir="rtl"] .dropdown-toggle {
+        text-align: right;
+    }
+
+}
 }
