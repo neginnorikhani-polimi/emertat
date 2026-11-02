@@ -13,7 +13,14 @@ from pathlib import Path
 from decouple import config
 import os
 import sys
+LANGUAGE_CODE = 'en'
 
+LANGUAGES = [
+    ('en', 'English'),
+    ('fa', 'فارسی'),
+]
+
+USE_I18N = True
 if 'collectstatic' in sys.argv:
     SECRET_KEY = config(
         'SECRET_KEY',
