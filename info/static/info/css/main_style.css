@@ -191,6 +191,15 @@ html[dir="rtl"] .footer-bottom {
     html[dir="rtl"] .dropdown-toggle {
         text-align: right;
     }
+    html[lang="fa"] body {
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="fa"] .main-nav a,
+html[lang="fa"] .dropdown-toggle,
+html[lang="fa"] .quote-button {
+  font-family: Tahoma, Arial, sans-serif;
+}
 
 }
 }
