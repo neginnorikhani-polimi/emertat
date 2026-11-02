@@ -191,8 +191,12 @@ html[dir="rtl"] .footer-bottom {
     html[dir="rtl"] .dropdown-toggle {
         text-align: right;
     }
-  html body {
-  background: lime !important;
+ .site-header {
+    background: red !important;
+}
+
+.hero h1 {
+    color: lime !important;
 }
 
 }
