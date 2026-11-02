@@ -167,6 +167,9 @@ EMAIL_HOST_PASSWORD = config(
     'EMAIL_HOST_PASSWORD',
     default=''
 )
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 # 3. The default "from" address for outgoing emails
 DEFAULT_FROM_EMAIL = 'Emertat Farabar <social.emertatfarabar@gmail.com>'
