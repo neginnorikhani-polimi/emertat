@@ -13,83 +13,133 @@
 
 
     <!-- NAVIGATION -->
-    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-      <ul>
+<nav id="main-nav" class="main-nav" aria-label="Main navigation">
+  <ul>
 
-        <li>
-          <a href="{% url 'home' %}">
-            {% trans "Home" %}
-          </a>
-        </li>
-
-        <!-- SERVICES DROPDOWN -->
-        <li class="nav-dropdown">
-
-          <button class="dropdown-toggle" type="button">
-            {% trans "Services" %}
-            <span class="dropdown-arrow">⌄</span>
-          </button>
-
-          <div class="dropdown-menu">
-
-            <a href="{% url 'road_freight' %}">
-              {% trans "Road Freight" %}
-            </a>
-
-            <a href="{% url 'sea_freight' %}">
-              {% trans "Sea Freight" %}
-            </a>
-
-            <a href="{% url 'rail_freight' %}">
-              {% trans "Rail Freight" %}
-            </a>
-
-            <a href="{% url 'multimodal_transport' %}">
-              {% trans "Multimodal Transport" %}
-            </a>
-
-            <a href="{% url 'customs_clearance' %}">
-              {% trans "Customs Clearance" %}
-            </a>
-
-          </div>
-        </li>
-
-
-        <li>
-          <a href="{% url 'home' %}#cargo-solutions">
-            {% trans "Cargo & Industries" %}
-          </a>
-        </li>
-
-        <li>
-          <a href="{% url 'about' %}">
-            {% trans "About" %}
-          </a>
-        </li>
-
-        <li>
-          <a href="{% url 'team' %}">
-            {% trans "Team" %}
-          </a>
-        </li>
-
-        <li>
-          <a href="{% url 'contact' %}">
-            {% trans "Contact" %}
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-
-
-    <!-- CTA -->
-    <div class="header-cta">
-      <a href="{% url 'price_inquiry' %}" class="quote-button">
-        {% trans "Get a Quote" %}
+    <li>
+      <a href="{% url 'home' %}">
+        {% if LANGUAGE_CODE == 'fa' %}
+          صفحه اصلی
+        {% else %}
+          Home
+        {% endif %}
       </a>
-    </div>
+    </li>
+
+    <!-- SERVICES DROPDOWN -->
+    <li class="nav-dropdown">
+
+      <button class="dropdown-toggle" type="button">
+        {% if LANGUAGE_CODE == 'fa' %}
+          خدمات
+        {% else %}
+          Services
+        {% endif %}
+
+        <span class="dropdown-arrow">⌄</span>
+      </button>
+
+      <div class="dropdown-menu">
+
+        <a href="{% url 'road_freight' %}">
+          {% if LANGUAGE_CODE == 'fa' %}
+            حمل‌ونقل جاده‌ای
+          {% else %}
+            Road Freight
+          {% endif %}
+        </a>
+
+        <a href="{% url 'sea_freight' %}">
+          {% if LANGUAGE_CODE == 'fa' %}
+            حمل‌ونقل دریایی
+          {% else %}
+            Sea Freight
+          {% endif %}
+        </a>
+
+        <a href="{% url 'rail_freight' %}">
+          {% if LANGUAGE_CODE == 'fa' %}
+            حمل‌ونقل ریلی
+          {% else %}
+            Rail Freight
+          {% endif %}
+        </a>
+
+        <a href="{% url 'multimodal_transport' %}">
+          {% if LANGUAGE_CODE == 'fa' %}
+            حمل‌ونقل چندوجهی
+          {% else %}
+            Multimodal Transport
+          {% endif %}
+        </a>
+
+        <a href="{% url 'customs_clearance' %}">
+          {% if LANGUAGE_CODE == 'fa' %}
+            ترخیص گمرکی
+          {% else %}
+            Customs Clearance
+          {% endif %}
+        </a>
+
+      </div>
+    </li>
+
+
+    <li>
+      <a href="{% url 'home' %}#cargo-solutions">
+        {% if LANGUAGE_CODE == 'fa' %}
+          کالا و صنایع
+        {% else %}
+          Cargo & Industries
+        {% endif %}
+      </a>
+    </li>
+
+    <li>
+      <a href="{% url 'about' %}">
+        {% if LANGUAGE_CODE == 'fa' %}
+          درباره ما
+        {% else %}
+          About
+        {% endif %}
+      </a>
+    </li>
+
+    <li>
+      <a href="{% url 'team' %}">
+        {% if LANGUAGE_CODE == 'fa' %}
+          تیم ما
+        {% else %}
+          Team
+        {% endif %}
+      </a>
+    </li>
+
+    <li>
+      <a href="{% url 'contact' %}">
+        {% if LANGUAGE_CODE == 'fa' %}
+          تماس با ما
+        {% else %}
+          Contact
+        {% endif %}
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
+
+    <div class="header-cta">
+  <a href="{% url 'price_inquiry' %}" class="quote-button">
+
+    {% if LANGUAGE_CODE == 'fa' %}
+      درخواست نرخ حمل
+    {% else %}
+      Get a Quote
+    {% endif %}
+
+  </a>
+</div>
 
 
     <!-- LANGUAGE SWITCHER -->
