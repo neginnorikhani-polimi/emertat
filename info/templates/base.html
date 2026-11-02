@@ -1,7 +1,17 @@
 <!-- your_app/templates/base.html -->
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
+{% load static i18n %}
+
+<!DOCTYPE html>
+
+<html
+  lang="{{ LANGUAGE_CODE }}"
+  {% if LANGUAGE_CODE == 'fa' %}
+    dir="rtl"
+  {% else %}
+    dir="ltr"
+  {% endif %}
+>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
