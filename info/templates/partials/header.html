@@ -1,15 +1,149 @@
-{% load static %}
+{% load static i18n %}
 
 <header class="site-header">
   <div class="header-inner">
 
     <!-- LOGO -->
-    <a href="/" class="brand" aria-label="Emertat Farabar Home">
+    <a href="{% url 'home' %}" class="brand" aria-label="Emertat Farabar Home">
       <img
         src="{% static 'info/images/logo2.png' %}"
         alt="Emertat Farabar International Freight Forwarding"
       >
     </a>
+
+
+    <!-- NAVIGATION -->
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul>
+
+        <li>
+          <a href="{% url 'home' %}">
+            {% trans "Home" %}
+          </a>
+        </li>
+
+        <!-- SERVICES DROPDOWN -->
+        <li class="nav-dropdown">
+
+          <button class="dropdown-toggle" type="button">
+            {% trans "Services" %}
+            <span class="dropdown-arrow">⌄</span>
+          </button>
+
+          <div class="dropdown-menu">
+
+            <a href="{% url 'road_freight' %}">
+              {% trans "Road Freight" %}
+            </a>
+
+            <a href="{% url 'sea_freight' %}">
+              {% trans "Sea Freight" %}
+            </a>
+
+            <a href="{% url 'rail_freight' %}">
+              {% trans "Rail Freight" %}
+            </a>
+
+            <a href="{% url 'multimodal_transport' %}">
+              {% trans "Multimodal Transport" %}
+            </a>
+
+            <a href="{% url 'customs_clearance' %}">
+              {% trans "Customs Clearance" %}
+            </a>
+
+          </div>
+        </li>
+
+
+        <li>
+          <a href="{% url 'home' %}#cargo-solutions">
+            {% trans "Cargo & Industries" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'about' %}">
+            {% trans "About" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'team' %}">
+            {% trans "Team" %}
+          </a>
+        </li>
+
+        <li>
+          <a href="{% url 'contact' %}">
+            {% trans "Contact" %}
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+
+    <!-- CTA -->
+    <div class="header-cta">
+      <a href="{% url 'price_inquiry' %}" class="quote-button">
+        {% trans "Get a Quote" %}
+      </a>
+    </div>
+
+
+    <!-- LANGUAGE SWITCHER -->
+    <div class="language-switcher">
+
+      {% get_current_language as CURRENT_LANGUAGE %}
+
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+
+        <input
+          type="hidden"
+          name="next"
+          value="{{ request.path }}"
+        >
+
+        {% if CURRENT_LANGUAGE == 'fa' %}
+
+          <input
+            type="hidden"
+            name="language"
+            value="en"
+          >
+
+          <button
+            type="submit"
+            class="language-button"
+            aria-label="Switch to English"
+          >
+            EN
+          </button>
+
+        {% else %}
+
+          <input
+            type="hidden"
+            name="language"
+            value="fa"
+          >
+
+          <button
+            type="submit"
+            class="language-button"
+            aria-label="Switch to Persian"
+          >
+            FA
+          </button>
+
+        {% endif %}
+
+      </form>
+
+    </div>
+
 
     <!-- MOBILE BUTTON -->
     <button
@@ -22,56 +156,6 @@
       <span></span>
       <span></span>
     </button>
-
-    <!-- NAVIGATION -->
-    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-      <ul>
-
-        <li>
-          <a href="/">Home</a>
-        </li>
-
-        <!-- SERVICES DROPDOWN -->
-        <li class="nav-dropdown">
-          <button class="dropdown-toggle" type="button">
-            Services
-            <span class="dropdown-arrow">⌄</span>
-          </button>
-
-          <div class="dropdown-menu">
-            <a href="/services/road-freight/">Road Freight</a>
-            <a href="/services/sea-freight/">Sea Freight</a>
-            <a href="/services/rail-freight/">Rail Freight</a>
-            <a href="/services/multimodal-transport/">Multimodal Transport</a>
-            <a href="/services/customs-clearance/">Customs Clearance</a>
-          </div>
-        </li>
-
-        <li>
-          <a href="/#cargo-solutions">Cargo & Industries</a>
-        </li>
-
-        <li>
-          <a href="/about/">About</a>
-        </li>
-
-        <li>
-          <a href="/team/">Team</a>
-        </li>
-
-        <li>
-          <a href="/contact/">Contact</a>
-        </li>
-
-      </ul>
-    </nav>
-
-    <!-- CTA -->
-    <div class="header-cta">
-      <a href="/price-inquiry/" class="quote-button">
-        Get a Quote
-      </a>
-    </div>
 
   </div>
 </header>
@@ -248,6 +332,40 @@
     background: #e8eef5;
     transform: translateY(-1px);
   }
+    /* LANGUAGE SWITCHER */
+
+  .language-switcher {
+    flex-shrink: 0;
+  }
+
+  .language-switcher form {
+    margin: 0;
+  }
+
+  .language-button {
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 6px;
+
+    padding: 9px 11px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+      background .2s ease,
+      border-color .2s ease;
+  }
+
+  .language-button:hover {
+    background: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.7);
+  }
 
 
   /* MOBILE MENU BUTTON */
@@ -313,10 +431,14 @@
       height: 50px;
     }
 
-    .hamburger-menu {
-      display: block;
-      margin-left: auto;
-    }
+    .language-switcher {
+  margin-left: auto;
+}
+
+.hamburger-menu {
+  display: block;
+  margin-left: 10px;
+}
 
     .header-cta {
       display: none;
@@ -407,6 +529,25 @@
     .nav-dropdown:hover .dropdown-menu.open {
       display: block;
     }
+    html[dir="rtl"] .language-switcher {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .hamburger-menu {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+html[dir="rtl"] .main-nav a,
+html[dir="rtl"] .dropdown-toggle {
+  text-align: right;
+}
+
+html[dir="rtl"] .dropdown-menu a {
+  padding-left: 10px;
+  padding-right: 25px;
+}
 
   }
 
