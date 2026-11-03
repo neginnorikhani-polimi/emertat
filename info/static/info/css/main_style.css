@@ -176,14 +176,14 @@ html[dir="rtl"] .footer-bottom {
 
 /* Persian font */
 html[lang="fa"] body {
-    font-family: Vazirmatn, Tahoma, Arial, sans-serif;
+    font-family: 'Noto Naskh Arabic', Tahoma, serif;
 }
 
 html[lang="fa"] .main-nav a,
 html[lang="fa"] .dropdown-toggle,
 html[lang="fa"] .quote-button,
 html[lang="fa"] .language-button {
-    font-family: Vazirmatn, Tahoma, Arial, sans-serif;
+    font-family: 'Noto Naskh Arabic', Tahoma, serif;
 }
 
 
