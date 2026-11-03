@@ -4,7 +4,7 @@
   <div class="header-inner">
 
     <!-- LOGO -->
-    {% if request.path|slice:":4" == "/fa/" %}
+    {% if is_fa %}
       <a href="/fa/" class="brand" aria-label="صفحه اصلی امرتات فرابر">
     {% else %}
       <a href="/" class="brand" aria-label="Emertat Farabar Home">
@@ -19,7 +19,7 @@
     <nav id="main-nav" class="main-nav" aria-label="Main navigation">
       <ul>
         <li>
-          {% if request.path|slice:":4" == "/fa/" %}
+          {% if is_fa %}
             <a href="/fa/">صفحه اصلی</a>
           {% else %}
             <a href="/">Home</a>
@@ -28,12 +28,12 @@
 
         <li class="nav-dropdown">
           <button class="dropdown-toggle" type="button" aria-expanded="false">
-            {% if request.path|slice:":4" == "/fa/" %}خدمات{% else %}Services{% endif %}
+            {% if is_fa %}خدمات{% else %}Services{% endif %}
             <span class="dropdown-arrow">⌄</span>
           </button>
 
           <div class="dropdown-menu">
-            {% if request.path|slice:":4" == "/fa/" %}
+            {% if is_fa %}
               <a href="/fa/services/road-freight/">حمل‌ونقل جاده‌ای</a>
               <a href="/fa/services/sea-freight/">حمل‌ونقل دریایی</a>
               <a href="/fa/services/rail-freight/">حمل‌ونقل ریلی</a>
@@ -50,7 +50,7 @@
         </li>
 
         <li>
-          {% if request.path|slice:":4" == "/fa/" %}
+          {% if is_fa %}
             <a href="/fa/#cargo-solutions">کالا و صنایع</a>
           {% else %}
             <a href="/#cargo-solutions">Cargo & Industries</a>
@@ -58,7 +58,7 @@
         </li>
 
         <li>
-          {% if request.path|slice:":4" == "/fa/" %}
+          {% if is_fa %}
             <a href="/fa/about/">درباره ما</a>
           {% else %}
             <a href="/about/">About</a>
@@ -66,7 +66,7 @@
         </li>
 
         <li>
-          {% if request.path|slice:":4" == "/fa/" %}
+          {% if is_fa %}
             <a href="/fa/team/">تیم ما</a>
           {% else %}
             <a href="/team/">Team</a>
@@ -74,7 +74,7 @@
         </li>
 
         <li>
-          {% if request.path|slice:":4" == "/fa/" %}
+          {% if is_fa %}
             <a href="/fa/contact/">تماس با ما</a>
           {% else %}
             <a href="/contact/">Contact</a>
@@ -85,7 +85,7 @@
 
     <!-- CTA -->
     <div class="header-cta">
-      {% if request.path|slice:":4" == "/fa/" %}
+      {% if is_fa %}
         <a href="/fa/price-inquiry/" class="quote-button">درخواست نرخ حمل</a>
       {% else %}
         <a href="/price-inquiry/" class="quote-button">Get a Quote</a>
@@ -94,10 +94,10 @@
 
     <!-- LANGUAGE SWITCHER -->
     <div class="language-switcher">
-      {% if request.path|slice:":4" == "/fa/" %}
-        <a href="{{ request.path|slice:'3:' }}" class="language-button" lang="en" hreflang="en">EN</a>
+      {% if is_fa %}
+        <a href="{{ language_switch_url }}" class="language-button" lang="en" hreflang="en">EN</a>
       {% else %}
-        <a href="/fa{{ request.path }}" class="language-button" lang="fa" hreflang="fa">FA</a>
+        <a href="{{ language_switch_url }}" class="language-button" lang="fa" hreflang="fa">FA</a>
       {% endif %}
     </div>
 
