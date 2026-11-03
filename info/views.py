@@ -12,7 +12,7 @@ def robots_txt(request):
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain")
 def sitemap_xml(request):
-    urls = [
+    english_urls = [
         "/",
         "/about/",
         "/team/",
@@ -24,6 +24,21 @@ def sitemap_xml(request):
         "/services/multimodal-transport/",
         "/services/customs-clearance/",
     ]
+
+    persian_urls = [
+        "/fa/",
+        "/fa/about/",
+        "/fa/team/",
+        "/fa/contact/",
+        "/fa/price-inquiry/",
+        "/fa/services/road-freight/",
+        "/fa/services/sea-freight/",
+        "/fa/services/rail-freight/",
+        "/fa/services/multimodal-transport/",
+        "/fa/services/customs-clearance/",
+    ]
+
+    urls = english_urls + persian_urls
 
     xml = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml.append(
@@ -100,8 +115,15 @@ def price_inquiry(request):
         comments = request.POST.get('comments')
         
         # Optional server-side validation for required fields:
+        is_fa = request.path.startswith('/fa/')
+
         if not (fullname and company and email and phone and contact_method):
-            return HttpResponse("Error: Please fill out all required contact fields.", status=400)
+            error_message = (
+                "خطا: لطفاً همه فیلدهای الزامی اطلاعات تماس را تکمیل کنید."
+                if is_fa
+                else "Error: Please fill out all required contact fields."
+            )
+            return HttpResponse(error_message, status=400)
         
         # Build the email message
         message_body = f"""
@@ -139,10 +161,14 @@ def price_inquiry(request):
         )
         
         # Use Django messages to show success once
-        messages.success(request, "Your request has been sent successfully!")
-        
-        # Redirect using the named URL pattern or direct path
-        return redirect('/price-inquiry/')  # or: return redirect('/price-inquiry')
+        success_message = (
+            "درخواست شما با موفقیت ارسال شد."
+            if is_fa
+            else "Your request has been sent successfully!"
+        )
+        messages.success(request, success_message)
+
+        return redirect('/fa/price-inquiry/' if is_fa else '/price-inquiry/')
     
     # If GET, show the form
     return render(request, 'info/price_inquiry.html')
