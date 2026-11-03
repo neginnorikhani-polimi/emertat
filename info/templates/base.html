@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'info/css/main_style.css' %}?v=4">
+  <link rel="stylesheet" href="{% static 'info/css/main_style.css' %}?v=5">
  <title>
   {% block title %}
   Emertat Farabar | International Freight Forwarding in Iran
@@ -56,6 +56,36 @@
 
 <meta name="twitter:description"
       content="{% block twitter_description %}International freight forwarding and logistics solutions in Iran.{% endblock %}">
+
+<meta property="og:locale" content="{% if is_fa %}fa_IR{% else %}en_US{% endif %}">
+{% if is_fa %}
+<meta property="og:locale:alternate" content="en_US">
+{% else %}
+<meta property="og:locale:alternate" content="fa_IR">
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emertat Farabar",
+  "url": "https://www.emertatfarabar.com/",
+  "logo": "https://www.emertatfarabar.com{% static 'info/images/logo2.png' %}",
+  "foundingDate": "2009-12-19",
+  "email": "contact@emertatfarabar.com",
+  "telephone": "+98 917 361 9345",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 213, Mahdi St., Eta'ati Ave., Marzdaran Blvd.",
+    "addressLocality": "Tehran",
+    "addressCountry": "IR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/emertatfarabar/",
+    "https://www.linkedin.com/company/emertat-farabar/"
+  ]
+}
+</script>
 
 <!-- Favicon -->
 <link rel="icon"
@@ -520,5 +550,7 @@
   <div class="content">
     {% block content %}{% endblock content %}
   </div>
+
+  {% include "partials/footer.html" %}
 </body>
 </html>
