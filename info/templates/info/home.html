@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-International Freight Forwarder in Iran | Emertat Farabar
+{% if is_fa %}امرتات فرابر | حمل‌ونقل بین‌المللی و لجستیک در ایران{% else %}International Freight Forwarder in Iran | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-Emertat Farabar provides international road, rail, sea and multimodal freight forwarding, FCL/LCL, FTL/LTL and customs clearance services across Iran, the Middle East and Asia.
+{% if is_fa %}امرتات فرابر ارائه‌دهنده خدمات حمل‌ونقل بین‌المللی جاده‌ای، ریلی، دریایی، چندوجهی و ترخیص گمرکی در ایران، خاورمیانه و آسیا است.{% else %}Emertat Farabar provides international road, rail, sea and multimodal freight forwarding, FCL/LCL, FTL/LTL and customs clearance services across Iran, the Middle East and Asia.{% endif %}
 {% endblock %}
 
 {% block og_title %}
-International Freight Forwarding & Logistics Solutions in Iran | Emertat Farabar
+{% if is_fa %}راهکارهای حمل‌ونقل بین‌المللی و لجستیک در ایران | امرتات فرابر{% else %}International Freight Forwarding & Logistics Solutions in Iran | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block og_description %}
-Road, rail, sea, multimodal freight and customs clearance solutions connecting Iran with the Middle East, Asia and international markets.
+{% if is_fa %}خدمات حمل جاده‌ای، ریلی، دریایی، چندوجهی و ترخیص گمرکی برای ارتباط ایران با خاورمیانه، آسیا و بازارهای بین‌المللی.{% else %}Road, rail, sea, multimodal freight and customs clearance solutions connecting Iran with the Middle East, Asia and international markets.{% endif %}
 {% endblock %}
 
 {% block twitter_title %}
-International Freight Forwarder in Iran | Emertat Farabar
+{% if is_fa %}امرتات فرابر | حمل‌ونقل بین‌المللی در ایران{% else %}International Freight Forwarder in Iran | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block twitter_description %}
-Road, rail, sea and multimodal logistics solutions connecting Iran with regional and international markets.
+{% if is_fa %}راهکارهای حمل جاده‌ای، ریلی، دریایی و چندوجهی برای بازارهای منطقه‌ای و بین‌المللی.{% else %}Road, rail, sea and multimodal logistics solutions connecting Iran with regional and international markets.{% endif %}
 {% endblock %}
 {% block content %}
 
@@ -673,6 +673,365 @@ Road, rail, sea and multimodal logistics solutions connecting Iran with regional
   }
 </style>
 
+{% if is_fa %}
+<main class="home-page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">حمل‌ونقل بین‌المللی</div>
+
+      <h1>راهکارهای حمل‌ونقل بین‌المللی و لجستیک در ایران</h1>
+
+      <p class="hero-lead">
+        خدمات حمل‌ونقل جاده‌ای، ریلی، دریایی و چندوجهی برای ارتباط ایران
+        با خاورمیانه، آسیا و بازارهای بین‌المللی.
+      </p>
+
+      <p class="hero-description">
+        امرتات فرابر از سال ۱۳۸۸ با تکیه بر تجربه حرفه‌ای مدیران خود،
+        خدمات حمل‌ونقل بین‌المللی، ترخیص گمرکی و راهکارهای لجستیکی
+        متناسب با نیاز واردکنندگان، صادرکنندگان و شرکت‌های بین‌المللی ارائه می‌دهد.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/fa/price-inquiry/" class="btn btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="btn btn-secondary">مشاوره با تیم لجستیک</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <strong>تأسیس در سال ۱۳۸۸</strong>
+        <span>حمل‌ونقل و فورواردینگ بین‌المللی</span>
+      </div>
+      <div class="trust-item">
+        <strong>مدیریت باتجربه</strong>
+        <span>بیش از دو دهه تجربه در صنعت لجستیک</span>
+      </div>
+      <div class="trust-item">
+        <strong>جاده‌ای • ریلی • دریایی</strong>
+        <span>قابلیت ارائه راهکارهای حمل چندوجهی</span>
+      </div>
+      <div class="trust-item">
+        <strong>ایران • خاورمیانه • آسیا</strong>
+        <span>عملیات منطقه‌ای و بین‌المللی</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <div class="section-label">خدمات ما</div>
+      <h2>راهکارهای حمل‌ونقل بین‌المللی متناسب با محموله شما</h2>
+      <p>
+        هر محموله شرایط متفاوتی دارد. تیم ما نوع کالا، مبدأ، مقصد، زمان حمل،
+        مسیرهای موجود و بودجه را بررسی می‌کند تا راهکار مناسب و عملیاتی پیشنهاد دهد.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <h3>حمل‌ونقل جاده‌ای بین‌المللی</h3>
+        <p>
+          حمل مرزی مطمئن برای محموله‌های کامل و خرده‌بار کامیونی
+          (FTL و LTL) در مسیرهای وارداتی، صادراتی و ترانزیتی.
+        </p>
+        <a href="/fa/services/road-freight/">مشاهده خدمات حمل جاده‌ای ←</a>
+      </article>
+
+      <article class="service-card">
+        <h3>حمل‌ونقل دریایی بین‌المللی</h3>
+        <p>
+          راهکارهای FCL و LCL با پشتیبانی عملیاتی در بندرعباس و بندرلنگه
+          برای محموله‌های وارداتی و صادراتی.
+        </p>
+        <a href="/fa/services/sea-freight/">مشاهده خدمات حمل دریایی ←</a>
+      </article>
+
+      <article class="service-card">
+        <h3>حمل‌ونقل ریلی بین‌المللی</h3>
+        <p>
+          راهکارهای حمل ریلی در کریدورهای منتخب منطقه‌ای و بین‌المللی،
+          به‌صورت مستقل یا بخشی از یک مسیر چندوجهی.
+        </p>
+        <a href="/fa/services/rail-freight/">مشاهده خدمات حمل ریلی ←</a>
+      </article>
+
+      <article class="service-card">
+        <h3>حمل‌ونقل چندوجهی</h3>
+        <p>
+          ترکیب حمل جاده‌ای، ریلی و دریایی بر اساس نوع کالا، زمان ترانزیت،
+          دسترسی مسیر و هزینه حمل.
+        </p>
+        <a href="/fa/services/multimodal-transport/">مشاهده حمل چندوجهی ←</a>
+      </article>
+
+      <article class="service-card">
+        <h3>ترخیص گمرکی</h3>
+        <p>
+          پشتیبانی در امور ترخیص و اسناد حمل برای محموله‌های وارداتی،
+          صادراتی و ترانزیتی با هدف کاهش تأخیرهای غیرضروری.
+        </p>
+        <a href="/fa/services/customs-clearance/">مشاهده خدمات ترخیص گمرکی ←</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- WHY EMERTAT -->
+  <section class="why-section">
+    <div class="section-header light-text">
+      <div class="section-label">چرا امرتات فرابر</div>
+      <h2>چرا کسب‌وکارها امرتات فرابر را انتخاب می‌کنند</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>مدیریت باتجربه و دانش تخصصی لجستیک</h3>
+        <p>
+          امرتات فرابر در سال ۱۳۸۸ توسط متخصصان باتجربه حمل‌ونقل بین‌المللی
+          تأسیس شد و تیم مدیریتی شرکت بیش از دو دهه تجربه عملی در این صنعت دارد.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>حضور عملیاتی در نقاط کلیدی ایران</h3>
+        <p>
+          حضور در تهران، بندرعباس و بندرلنگه به همراه نمایندگان در شهرهای مرزی مهم،
+          امکان هماهنگی بهتر محموله‌ها در مسیرهای داخلی و بین‌المللی را فراهم می‌کند.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>گزینه‌های متنوع حمل</h3>
+        <p>
+          دسترسی به حمل جاده‌ای، ریلی، دریایی و چندوجهی به ما اجازه می‌دهد
+          برای هر محموله بر اساس مسیر، هزینه و زمان ترانزیت تصمیم‌گیری کنیم.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>تجربه لجستیک منطقه‌ای</h3>
+        <p>
+          عملیات ما ایران را به بازارهای مهم خاورمیانه و آسیا متصل می‌کند
+          و بر تجربه عملی در حمل مرزی و ترانزیت بین‌المللی تکیه دارد.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>ارتباط شفاف</h3>
+        <p>
+          مشتری باید دید روشنی از وضعیت محموله خود داشته باشد.
+          تیم ما در طول فرآیند حمل، اطلاعات و به‌روزرسانی‌های عملیاتی ارائه می‌دهد.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>پشتیبانی اسناد و امور گمرکی</h3>
+        <p>
+          در هماهنگی اسناد حمل و فرآیندهای گمرکی همراه مشتری هستیم
+          تا روند حمل ساده‌تر و تأخیرهای غیرضروری کمتر شود.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATIONAL NETWORK -->
+  <section class="network-section">
+    <div class="section-header">
+      <div class="section-label">شبکه عملیاتی</div>
+      <h2>حضور لجستیکی در نقاط استراتژیک ایران</h2>
+      <p>
+        شبکه عملیاتی ما امکان هماهنگی جابه‌جایی کالا از مهم‌ترین مراکز تجاری،
+        بندری و مرزی ایران را فراهم می‌کند.
+      </p>
+    </div>
+
+    <div class="network-grid">
+      <div class="network-card">
+        <span class="location-tag">تهران</span>
+        <h3>دفتر مرکزی و هماهنگی لجستیک</h3>
+        <p>هماهنگی تجاری، عملیاتی و پیگیری محموله‌های داخلی و بین‌المللی.</p>
+      </div>
+
+      <div class="network-card">
+        <span class="location-tag">بندرعباس</span>
+        <h3>حمل دریایی و عملیات بندری</h3>
+        <p>پشتیبانی عملیات بندری، حمل دریایی، هماهنگی جابه‌جایی و حمل ادامه مسیر.</p>
+      </div>
+
+      <div class="network-card">
+        <span class="location-tag">بندرلنگه</span>
+        <h3>عملیات لجستیکی منطقه‌ای</h3>
+        <p>هماهنگی لجستیکی برای محموله‌ها و عملیات دریایی در جنوب ایران.</p>
+      </div>
+
+      <div class="network-card">
+        <span class="location-tag">مناطق مرزی ایران</span>
+        <h3>حمل مرزی و ترانزیت</h3>
+        <p>پشتیبانی نمایندگان در شهرهای مرزی برای حمل جاده‌ای بین‌المللی و ترانزیت.</p>
+      </div>
+    </div>
+
+    <div class="network-cta">
+      <a href="/fa/contact/" class="btn btn-primary">مسیر خود را با تیم ما بررسی کنید</a>
+    </div>
+  </section>
+
+  <!-- CARGO -->
+  <section class="cargo-section" id="cargo-solutions">
+    <div class="section-header">
+      <div class="section-label">راهکارهای کالا و صنایع</div>
+      <h2>راهکارهای لجستیکی برای انواع مختلف محموله</h2>
+      <p>
+        هر نوع کالا نیازمند برنامه‌ریزی متفاوتی است. امرتات فرابر
+        راهکار حمل را متناسب با نیازهای عملیاتی هر محموله تنظیم می‌کند.
+      </p>
+    </div>
+
+    <div class="cargo-grid">
+      <div class="cargo-card">
+        <h3>خودرو و قطعات</h3>
+        <p>راهکارهای حمل برای خودرو، قطعات و تجهیزات مرتبط.</p>
+      </div>
+      <div class="cargo-card">
+        <h3>ماشین‌آلات و تجهیزات صنعتی</h3>
+        <p>برنامه‌ریزی حمل برای ماشین‌آلات، تجهیزات و محموله‌های صنعتی.</p>
+      </div>
+      <div class="cargo-card">
+        <h3>محموله‌های کانتینری</h3>
+        <p>راهکارهای FCL و LCL برای واردات و صادرات کانتینری.</p>
+      </div>
+      <div class="cargo-card">
+        <h3>کالای عمومی</h3>
+        <p>راهکارهای منعطف برای طیف گسترده‌ای از کالاهای تجاری و عمومی.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRADE LANES -->
+  <section class="trade-lanes-section" id="trade-lanes">
+    <div class="section-header light-text">
+      <div class="section-label">مسیرهای تجاری کلیدی</div>
+      <h2>اتصال ایران به بازارهای منطقه‌ای و بین‌المللی</h2>
+      <p>
+        محموله‌های وارداتی، صادراتی و ترانزیتی را در مسیرهای مهم منطقه‌ای
+        با استفاده از حمل جاده‌ای، ریلی، دریایی و چندوجهی هماهنگ می‌کنیم.
+      </p>
+    </div>
+
+    <div class="trade-lanes-grid">
+      <div class="trade-lane-group">
+        <span class="trade-lane-label">واردات به ایران</span>
+        <div class="route-item"><strong>امارات</strong><span>←</span><strong>ایران</strong></div>
+        <div class="route-item"><strong>چین</strong><span>←</span><strong>ایران</strong></div>
+        <div class="route-item"><strong>گرجستان</strong><span>←</span><strong>ایران</strong></div>
+        <div class="route-item"><strong>ترکیه</strong><span>←</span><strong>ایران</strong></div>
+      </div>
+
+      <div class="trade-lane-group">
+        <span class="trade-lane-label">صادرات و حمل منطقه‌ای</span>
+        <div class="route-item"><strong>ایران</strong><span>←</span><strong>عراق</strong></div>
+        <div class="route-item"><strong>ایران</strong><span>←</span><strong>کشورهای CIS</strong></div>
+        <div class="route-item"><strong>ایران</strong><span>←</span><strong>خاورمیانه</strong></div>
+      </div>
+    </div>
+
+    <p class="trade-note">
+      مسیرهای منطقه‌ای و بین‌المللی دیگری نیز بر اساس نوع کالا،
+      شیوه حمل، مبدأ و مقصد قابل هماهنگی هستند.
+    </p>
+
+    <div class="trade-cta">
+      <a href="/fa/contact/" class="btn btn-primary">بررسی مسیر تجاری شما</a>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients-section">
+    <div class="section-header">
+      <div class="section-label">مشتریان ما</div>
+      <h2>راهکارهای لجستیکی برای تجارت بین‌المللی</h2>
+      <p>
+        از واردکنندگان و صادرکنندگان تا تولیدکنندگان، شرکت‌های بازرگانی
+        و همکاران بین‌المللی لجستیک را پشتیبانی می‌کنیم.
+      </p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-card"><h3>واردکنندگان</h3><p>حمل و پشتیبانی گمرکی برای ورود کالا به ایران.</p></div>
+      <div class="client-card"><h3>صادرکنندگان</h3><p>حمل بین‌المللی محصولات ایرانی به بازارهای منطقه‌ای و خارجی.</p></div>
+      <div class="client-card"><h3>تولیدکنندگان و صنایع</h3><p>برنامه‌ریزی حمل ماشین‌آلات، تجهیزات و محموله‌های صنعتی.</p></div>
+      <div class="client-card"><h3>شرکت‌های بازرگانی</h3><p>پشتیبانی منعطف برای تأمین بین‌المللی، واردات و صادرات.</p></div>
+      <div class="client-card"><h3>همکاران حمل‌ونقل و لجستیک</h3><p>پشتیبانی عملیاتی محلی در ایران برای فورواردرها و شرکای بین‌المللی.</p></div>
+    </div>
+  </section>
+
+  <!-- FREIGHT OPTIONS -->
+  <section class="freight-options-section">
+    <div class="section-header">
+      <div class="section-label">گزینه‌های حمل</div>
+      <h2>راهکارهای منعطف برای حجم‌های مختلف محموله</h2>
+      <p>
+        از کانتینر و کامیون کامل تا محموله‌های کوچک‌تر و تجمیعی،
+        گزینه مناسب را بر اساس حجم و نیاز حمل انتخاب می‌کنیم.
+      </p>
+    </div>
+
+    <div class="freight-options-grid">
+      <div class="freight-option-card"><span>حمل دریایی</span><h3>FCL</h3><h4>کانتینر کامل</h4><p>ظرفیت اختصاصی کانتینر برای محموله‌های بزرگ‌تر.</p></div>
+      <div class="freight-option-card"><span>حمل دریایی</span><h3>LCL</h3><h4>خرده‌بار کانتینری</h4><p>گزینه‌ای منعطف برای حجم‌هایی که به کانتینر کامل نیاز ندارند.</p></div>
+      <div class="freight-option-card"><span>حمل جاده‌ای</span><h3>FTL</h3><h4>کامیون کامل</h4><p>حمل اختصاصی برای محموله‌هایی که ظرفیت کامل کامیون را نیاز دارند.</p></div>
+      <div class="freight-option-card"><span>حمل جاده‌ای</span><h3>LTL</h3><h4>خرده‌بار کامیونی</h4><p>راهکار مقرون‌به‌صرفه برای محموله‌های کوچک‌تر جاده‌ای.</p></div>
+    </div>
+
+    <div class="freight-options-cta">
+      <p>نمی‌دانید کدام گزینه برای محموله شما مناسب‌تر است؟</p>
+      <a href="/fa/contact/" class="btn btn-secondary-dark">با تیم لجستیک ما صحبت کنید</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-preview">
+    <div class="about-preview-inner">
+      <div>
+        <div class="section-label">درباره امرتات فرابر</div>
+        <h2>بر پایه تجربه؛ متمرکز بر لجستیک قابل اعتماد.</h2>
+        <p>
+          امرتات فرابر یک شرکت حمل‌ونقل و فورواردینگ بین‌المللی است
+          که در سال ۱۳۸۸ در ایران توسط متخصصان باتجربه این صنعت تأسیس شد.
+        </p>
+        <p>
+          امروز خدمات حمل جاده‌ای، ریلی، دریایی، چندوجهی و ترخیص گمرکی
+          را برای تجارت میان ایران، خاورمیانه، آسیا و بازارهای بین‌المللی ارائه می‌کنیم.
+        </p>
+        <a href="/fa/about/" class="text-link">بیشتر درباره امرتات فرابر ←</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="quote-cta-section">
+    <div class="quote-cta-content">
+      <div class="section-label">شروع یک حمل جدید</div>
+      <h2>برای محموله بین‌المللی بعدی خود برنامه‌ریزی می‌کنید؟</h2>
+      <p>
+        نوع کالا، مبدأ، مقصد و نیازهای حمل خود را برای ما ارسال کنید.
+        تیم لجستیک ما محموله را بررسی می‌کند و راهکار و مسیر مناسب را پیشنهاد می‌دهد.
+      </p>
+      <div class="hero-actions">
+        <a href="/fa/price-inquiry/" class="btn btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="btn btn-secondary">تماس با تیم لجستیک</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% else %}
 <main class="home-page">
 
   <!-- HERO -->
@@ -1281,5 +1640,6 @@ Road, rail, sea and multimodal logistics solutions connecting Iran with regional
 
   </section>
 </main>
+{% endif %}
 
 {% endblock content %}
