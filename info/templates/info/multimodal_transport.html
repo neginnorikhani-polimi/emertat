@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-Multimodal Transport in Iran | Road, Rail & Sea Logistics | Emertat Farabar
+{% if is_fa %}حمل‌ونقل چندوجهی در ایران | امرتات فرابر{% else %}Multimodal Transport in Iran | Road, Rail & Sea Logistics | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-Multimodal transport solutions in Iran combining road, rail and sea freight. Emertat Farabar coordinates integrated logistics routes across Iran, the Middle East and Asia.
+{% if is_fa %}راهکارهای حمل چندوجهی با ترکیب جاده، ریل و دریا بر اساس مسیر، زمان ترانزیت و نیازهای محموله.{% else %}Multimodal transport solutions in Iran combining road, rail and sea freight. Emertat Farabar coordinates integrated logistics routes across Iran, the Middle East and Asia.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -270,6 +270,65 @@ Integrated road, rail and sea transportation solutions designed around cargo req
 </style>
 
 
+{% if is_fa %}
+<main class="service-page">
+  <section class="service-hero">
+    <div class="service-hero-inner">
+      <div class="service-label">حمل‌ونقل چندوجهی</div>
+      <h1>راهکارهای حمل چندوجهی و لجستیک در ایران</h1>
+      <p>ترکیب جاده، ریل و دریا برای طراحی مسیرهای عملی بر اساس نوع کالا، زمان ترانزیت، دسترسی مسیر و هزینه.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل چندوجهی</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با تیم لجستیک</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="service-container">
+      <div class="service-label">لجستیک یکپارچه</div>
+      <h2>وقتی یک روش حمل کافی نیست</h2>
+      <p class="service-intro">برای بعضی محموله‌ها، ترکیب چند روش حمل بهترین گزینه است. تیم ما جاده، ریل و دریا را بر اساس مسیر، نوع کالا، زمان و الزامات تجاری هماهنگ می‌کند.</p>
+    </div>
+  </section>
+
+  <section class="service-section modes-section">
+    <div class="service-container">
+      <div class="service-label">روش‌های حمل</div>
+      <h2>اتصال جاده، ریل و دریا</h2>
+      <div class="modes-grid">
+        <div class="mode-card"><h3>حمل جاده‌ای</h3><p>برای حمل مرزی، اولین یا آخرین بخش مسیر و اتصال به سایر روش‌ها.</p></div>
+        <div class="mode-card"><h3>حمل ریلی</h3><p>برای کریدورهای مناسب و اتصال مسیرهای طولانی به جاده یا دریا.</p></div>
+        <div class="mode-card"><h3>حمل دریایی</h3><p>FCL و LCL از طریق بنادر ایران با امکان اتصال به حمل زمینی یا ریلی.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section integration-section">
+    <div class="service-container">
+      <div class="service-label">ترکیب‌های رایج</div>
+      <h2>مسیرهای یکپارچه حمل</h2>
+      <div class="integration-grid">
+        <div class="integration-card"><h3>دریا + جاده</h3><p>حمل دریایی از بندر و ادامه مسیر با حمل جاده‌ای.</p></div>
+        <div class="integration-card"><h3>ریل + جاده</h3><p>ترکیب ریل با حمل جاده‌ای برای اتصال ابتدا یا انتهای مسیر.</p></div>
+        <div class="integration-card"><h3>دریا + ریل + جاده</h3><p>هماهنگی چند روش در یک مسیر منطقه‌ای یا بین‌المللی گسترده‌تر.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section multimodal-cta">
+    <div class="service-container">
+      <div class="service-label">برنامه‌ریزی مسیر</div>
+      <h2>به راهکار حمل چندوجهی نیاز دارید؟</h2>
+      <p>جزئیات کالا، مبدأ و مقصد را ارسال کنید تا تیم ما گزینه‌های جاده‌ای، ریلی و دریایی را بررسی کند.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با ما</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="service-page">
 
   <section class="service-hero">
@@ -557,5 +616,6 @@ Integrated road, rail and sea transportation solutions designed around cargo req
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
