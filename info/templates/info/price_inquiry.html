@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-Request a Freight Quote | Emertat Farabar
+{% if is_fa %}درخواست نرخ حمل | امرتات فرابر{% else %}Request a Freight Quote | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-Request a freight quote from Emertat Farabar for road, rail, sea, multimodal transportation and customs clearance services in Iran.
+{% if is_fa %}برای حمل جاده‌ای، ریلی، دریایی، چندوجهی و خدمات گمرکی از امرتات فرابر درخواست نرخ ارسال کنید.{% else %}Request a freight quote from Emertat Farabar for road, rail, sea, multimodal transportation and customs clearance services in Iran.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -240,6 +240,154 @@ Tell us about your shipment and our logistics team will review your requirements
   }
 </style>
 
+{% if is_fa %}
+<main class="quote-page">
+  <section class="quote-hero">
+    <div class="quote-hero-inner">
+      <div class="quote-label">استعلام حمل</div>
+      <h1>درخواست نرخ حمل</h1>
+      <p>اطلاعات محموله را برای ما ارسال کنید تا تیم لجستیک بر اساس نوع کالا، مسیر و نیازهای حمل، گزینه مناسب را بررسی کند.</p>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-container">
+      <div class="quote-intro">
+        <div class="quote-label">اطلاعات محموله</div>
+        <h2>درباره بار خود به ما بگویید</h2>
+        <p>هرچه اطلاعات دقیق‌تری وارد کنید، بررسی محموله و پیشنهاد گزینه حمل مناسب برای تیم ما آسان‌تر خواهد بود.</p>
+      </div>
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="success-message">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <form method="post" class="quote-form">
+        {% csrf_token %}
+
+        <div class="form-section">
+          <h3>اطلاعات تماس</h3>
+          <p class="form-section-description">مشخص کنید درباره این محموله با چه کسی در ارتباط باشیم.</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullname">نام و نام خانوادگی <span class="required">*</span></label>
+              <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+              <label for="company">شرکت <span class="required">*</span></label>
+              <input type="text" id="company" name="company" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">ایمیل <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">تلفن / واتساپ <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group full-width">
+              <label>روش تماس ترجیحی <span class="required">*</span></label>
+              <div class="contact-methods">
+                <label><input type="radio" name="contactMethod" value="Email" required> ایمیل</label>
+                <label><input type="radio" name="contactMethod" value="Phone"> تلفن</label>
+                <label><input type="radio" name="contactMethod" value="WhatsApp"> واتساپ</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>اطلاعات محموله</h3>
+          <p class="form-section-description">اطلاعات اصلی کالایی را که باید حمل شود وارد کنید.</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="type_of_goods">نوع کالا</label>
+              <input type="text" id="type_of_goods" name="type_of_goods" placeholder="مثلاً ماشین‌آلات، قطعات خودرو، کالای عمومی">
+            </div>
+
+            <div class="form-group">
+              <label for="total_weight">وزن کل (کیلوگرم)</label>
+              <input type="number" id="total_weight" name="total_weight" min="0">
+            </div>
+
+            <div class="form-group">
+              <label for="dimensions">ابعاد</label>
+              <input type="text" id="dimensions" name="dimensions" placeholder="طول × عرض × ارتفاع">
+            </div>
+
+            <div class="form-group">
+              <label for="num_packages">تعداد بسته‌ها</label>
+              <input type="number" id="num_packages" name="num_packages" min="1">
+            </div>
+
+            <div class="form-group">
+              <label for="cargo_value">ارزش کالا</label>
+              <input type="text" id="cargo_value" name="cargo_value" placeholder="اختیاری">
+            </div>
+
+            <div class="form-group full-width">
+              <label for="goods_description">توضیحات کالا</label>
+              <textarea id="goods_description" name="goods_description" placeholder="اطلاعات بیشتر درباره محموله..."></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="special_handling">شرایط ویژه حمل</label>
+              <textarea id="special_handling" name="special_handling" placeholder="شکننده، حجیم، حساس به دما، کالای خطرناک یا سایر شرایط"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>اطلاعات حمل</h3>
+          <p class="form-section-description">مبدأ و مقصد محموله را مشخص کنید.</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="pickup_location">مبدأ / محل بارگیری</label>
+              <input type="text" id="pickup_location" name="pickup_location" placeholder="شهر، کشور">
+            </div>
+
+            <div class="form-group">
+              <label for="delivery_location">مقصد</label>
+              <input type="text" id="delivery_location" name="delivery_location" placeholder="شهر، کشور">
+            </div>
+
+            <div class="form-group">
+              <label for="shipping_method">روش حمل ترجیحی</label>
+              <select id="shipping_method" name="shipping_method">
+                <option value="">انتخاب کنید</option>
+                <option value="Road Freight">حمل جاده‌ای</option>
+                <option value="Sea Freight">حمل دریایی</option>
+                <option value="Rail Freight">حمل ریلی</option>
+                <option value="Multimodal Transport">حمل چندوجهی</option>
+                <option value="Not Sure">مطمئن نیستم / پیشنهاد دهید</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="comments">توضیحات تکمیلی</label>
+              <textarea id="comments" name="comments" placeholder="نکته دیگری که تیم لجستیک باید بداند؟"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="submit-btn">ارسال درخواست نرخ</button>
+          <p class="form-note">تیم ما اطلاعات را بررسی کرده و برای مراحل بعدی با شما تماس خواهد گرفت.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="quote-page">
 
   <section class="quote-hero">
@@ -591,5 +739,6 @@ Tell us about your shipment and our logistics team will review your requirements
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
