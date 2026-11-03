@@ -1,340 +1,105 @@
-{% load static i18n %}
-{% get_current_language as CURRENT_LANGUAGE %}
+{% load static %}
 
 <header class="site-header">
   <div class="header-inner">
 
     <!-- LOGO -->
-    {% if CURRENT_LANGUAGE == 'fa' %}
-      <a href="/fa/" class="brand" aria-label="Emertat Farabar Home">
+    {% if request.path|slice:":4" == "/fa/" %}
+      <a href="/fa/" class="brand" aria-label="صفحه اصلی امرتات فرابر">
     {% else %}
       <a href="/" class="brand" aria-label="Emertat Farabar Home">
     {% endif %}
-
       <img
         src="{% static 'info/images/logo2.png' %}"
         alt="Emertat Farabar International Freight Forwarding"
       >
     </a>
 
-
     <!-- NAVIGATION -->
     <nav id="main-nav" class="main-nav" aria-label="Main navigation">
       <ul>
-
-        <!-- HOME -->
         <li>
-          {% if CURRENT_LANGUAGE == 'fa' %}
+          {% if request.path|slice:":4" == "/fa/" %}
             <a href="/fa/">صفحه اصلی</a>
           {% else %}
             <a href="/">Home</a>
           {% endif %}
         </li>
 
-
-        <!-- SERVICES -->
         <li class="nav-dropdown">
-
-          <button
-            class="dropdown-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            {% if CURRENT_LANGUAGE == 'fa' %}
-              خدمات
-            {% else %}
-              Services
-            {% endif %}
-
+          <button class="dropdown-toggle" type="button" aria-expanded="false">
+            {% if request.path|slice:":4" == "/fa/" %}خدمات{% else %}Services{% endif %}
             <span class="dropdown-arrow">⌄</span>
           </button>
 
-
           <div class="dropdown-menu">
-
-            {% if CURRENT_LANGUAGE == 'fa' %}
-
-              <a href="/fa/services/road-freight/">
-                حمل‌ونقل جاده‌ای
-              </a>
-
-              <a href="/fa/services/sea-freight/">
-                حمل‌ونقل دریایی
-              </a>
-
-              <a href="/fa/services/rail-freight/">
-                حمل‌ونقل ریلی
-              </a>
-
-              <a href="/fa/services/multimodal-transport/">
-                حمل‌ونقل چندوجهی
-              </a>
-
-              <a href="/fa/services/customs-clearance/">
-                ترخیص گمرکی
-              </a>
-
+            {% if request.path|slice:":4" == "/fa/" %}
+              <a href="/fa/services/road-freight/">حمل‌ونقل جاده‌ای</a>
+              <a href="/fa/services/sea-freight/">حمل‌ونقل دریایی</a>
+              <a href="/fa/services/rail-freight/">حمل‌ونقل ریلی</a>
+              <a href="/fa/services/multimodal-transport/">حمل‌ونقل چندوجهی</a>
+              <a href="/fa/services/customs-clearance/">ترخیص گمرکی</a>
             {% else %}
-
-              <a href="/services/road-freight/">
-                Road Freight
-              </a>
-
-              <a href="/services/sea-freight/">
-                Sea Freight
-              </a>
-
-              <a href="/services/rail-freight/">
-                Rail Freight
-              </a>
-
-              <a href="/services/multimodal-transport/">
-                Multimodal Transport
-              </a>
-
-              <a href="/services/customs-clearance/">
-                Customs Clearance
-              </a>
-
+              <a href="/services/road-freight/">Road Freight</a>
+              <a href="/services/sea-freight/">Sea Freight</a>
+              <a href="/services/rail-freight/">Rail Freight</a>
+              <a href="/services/multimodal-transport/">Multimodal Transport</a>
+              <a href="/services/customs-clearance/">Customs Clearance</a>
             {% endif %}
-
           </div>
         </li>
 
-
-        <!-- CARGO -->
         <li>
-          {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/#cargo-solutions">
-              کالا و صنایع
-            </a>
+          {% if request.path|slice:":4" == "/fa/" %}
+            <a href="/fa/#cargo-solutions">کالا و صنایع</a>
           {% else %}
-            <a href="/#cargo-solutions">
-              Cargo & Industries
-            </a>
+            <a href="/#cargo-solutions">Cargo & Industries</a>
           {% endif %}
         </li>
 
-
-        <!-- ABOUT -->
         <li>
-          {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/about/">
-              درباره ما
-            </a>
+          {% if request.path|slice:":4" == "/fa/" %}
+            <a href="/fa/about/">درباره ما</a>
           {% else %}
-            <a href="/about/">
-              About
-            </a>
+            <a href="/about/">About</a>
           {% endif %}
         </li>
 
-
-        <!-- TEAM -->
         <li>
-          {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/team/">
-              تیم ما
-            </a>
+          {% if request.path|slice:":4" == "/fa/" %}
+            <a href="/fa/team/">تیم ما</a>
           {% else %}
-            <a href="/team/">
-              Team
-            </a>
+            <a href="/team/">Team</a>
           {% endif %}
         </li>
 
-
-        <!-- CONTACT -->
         <li>
-          {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/contact/">
-              تماس با ما
-            </a>
+          {% if request.path|slice:":4" == "/fa/" %}
+            <a href="/fa/contact/">تماس با ما</a>
           {% else %}
-            <a href="/contact/">
-              Contact
-            </a>
+            <a href="/contact/">Contact</a>
           {% endif %}
         </li>
-
       </ul>
     </nav>
 
-
-    <!-- QUOTE BUTTON -->
+    <!-- CTA -->
     <div class="header-cta">
-
-      {% if CURRENT_LANGUAGE == 'fa' %}
-
-        <a
-          href="/fa/price-inquiry/"
-          class="quote-button"
-        >
-          درخواست نرخ حمل
-        </a>
-
+      {% if request.path|slice:":4" == "/fa/" %}
+        <a href="/fa/price-inquiry/" class="quote-button">درخواست نرخ حمل</a>
       {% else %}
-
-        <a
-          href="/price-inquiry/"
-          class="quote-button"
-        >
-          Get a Quote
-        </a>
-
+        <a href="/price-inquiry/" class="quote-button">Get a Quote</a>
       {% endif %}
-
     </div>
-
 
     <!-- LANGUAGE SWITCHER -->
     <div class="language-switcher">
-
-      {% if CURRENT_LANGUAGE == 'fa' %}
-
-        {% if request.path == '/fa/' %}
-
-          <a href="/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/about/' %}
-
-          <a href="/about/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/team/' %}
-
-          <a href="/team/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/contact/' %}
-
-          <a href="/contact/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/price-inquiry/' %}
-
-          <a href="/price-inquiry/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/services/road-freight/' %}
-
-          <a href="/services/road-freight/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/services/sea-freight/' %}
-
-          <a href="/services/sea-freight/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/services/rail-freight/' %}
-
-          <a href="/services/rail-freight/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/services/multimodal-transport/' %}
-
-          <a href="/services/multimodal-transport/" class="language-button">
-            EN
-          </a>
-
-        {% elif request.path == '/fa/services/customs-clearance/' %}
-
-          <a href="/services/customs-clearance/" class="language-button">
-            EN
-          </a>
-
-        {% else %}
-
-          <a href="/" class="language-button">
-            EN
-          </a>
-
-        {% endif %}
-
-
+      {% if request.path|slice:":4" == "/fa/" %}
+        <a href="{{ request.path|slice:'3:' }}" class="language-button" lang="en" hreflang="en">EN</a>
       {% else %}
-
-        {% if request.path == '/' %}
-
-          <a href="/fa/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/about/' %}
-
-          <a href="/fa/about/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/team/' %}
-
-          <a href="/fa/team/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/contact/' %}
-
-          <a href="/fa/contact/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/price-inquiry/' %}
-
-          <a href="/fa/price-inquiry/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/services/road-freight/' %}
-
-          <a href="/fa/services/road-freight/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/services/sea-freight/' %}
-
-          <a href="/fa/services/sea-freight/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/services/rail-freight/' %}
-
-          <a href="/fa/services/rail-freight/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/services/multimodal-transport/' %}
-
-          <a href="/fa/services/multimodal-transport/" class="language-button">
-            FA
-          </a>
-
-        {% elif request.path == '/services/customs-clearance/' %}
-
-          <a href="/fa/services/customs-clearance/" class="language-button">
-            FA
-          </a>
-
-        {% else %}
-
-          <a href="/fa/" class="language-button">
-            FA
-          </a>
-
-        {% endif %}
-
+        <a href="/fa{{ request.path }}" class="language-button" lang="fa" hreflang="fa">FA</a>
       {% endif %}
-
     </div>
-
 
     <!-- MOBILE BUTTON -->
     <button
@@ -351,33 +116,24 @@
   </div>
 </header>
 
-
 <style>
-
   .site-header {
     background: #050A30;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
   }
-
 
   .header-inner {
     max-width: 1400px;
     margin: 0 auto;
-
     padding: 12px 5%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 24px;
   }
-
-
-  /* LOGO */
 
   .brand {
     display: flex;
@@ -385,73 +141,53 @@
     flex-shrink: 0;
   }
 
-
   .brand img {
     width: auto;
     height: 58px;
     display: block;
   }
 
-
-  /* NAVIGATION */
-
   .main-nav {
     flex: 1;
+    background: transparent;
+    padding: 0;
   }
-
 
   .main-nav > ul {
     margin: 0;
     padding: 0;
-
     list-style: none;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 4px;
   }
-
 
   .main-nav li {
     position: relative;
   }
 
-
   .main-nav a,
   .dropdown-toggle {
-
     display: block;
-
     padding: 12px 13px;
-
     color: #ffffff;
-
     text-decoration: none;
-
     font-family: Arial, sans-serif;
     font-size: 15px;
     font-weight: 500;
-
     background: none;
     border: none;
-
     cursor: pointer;
-
-    transition:
-      color .2s ease,
-      background .2s ease;
+    margin: 0;
+    transition: color .2s ease, background .2s ease;
   }
-
 
   .main-nav a:hover,
   .dropdown-toggle:hover {
     color: #69baff;
+    text-decoration: none;
   }
-
-
-  /* DROPDOWN */
 
   .dropdown-toggle {
     display: flex;
@@ -459,575 +195,290 @@
     gap: 6px;
   }
 
-
   .dropdown-arrow {
     font-size: 13px;
   }
 
-
   .dropdown-menu {
-
     position: absolute;
-
     top: calc(100% + 8px);
     left: 0;
-
     width: 230px;
-
     background: #ffffff;
-
     border-radius: 8px;
-
     padding: 8px 0;
-
-    box-shadow:
-      0 15px 40px rgba(0, 0, 0, .22);
-
+    box-shadow: 0 15px 40px rgba(0,0,0,.22);
     opacity: 0;
     visibility: hidden;
-
     transform: translateY(8px);
-
-    transition:
-      opacity .2s ease,
-      transform .2s ease,
-      visibility .2s ease;
-
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
     z-index: 2000;
+    text-align: left;
   }
-
 
   .dropdown-menu a {
-
     color: #071227;
-
     padding: 12px 18px;
-
     font-size: 14px;
+    margin: 0;
   }
-
 
   .dropdown-menu a:hover {
-
     background: #f3f7fb;
-
     color: #1769aa;
-
-    text-decoration: none;
   }
-
 
   .nav-dropdown:hover .dropdown-menu {
-
     opacity: 1;
     visibility: visible;
-
     transform: translateY(0);
   }
-
-
-  /* RTL DROPDOWN */
 
   html[dir="rtl"] .dropdown-menu {
     left: auto;
     right: 0;
+    text-align: right;
   }
-
 
   html[dir="rtl"] .main-nav > ul {
     direction: rtl;
   }
 
-
-  /* QUOTE BUTTON */
-
-  .header-cta {
-    flex-shrink: 0;
-  }
-
-
-  .quote-button {
-
-    display: inline-block;
-
-    padding: 12px 19px;
-
-    background: #ffffff;
-    color: #071227;
-
-    text-decoration: none;
-
-    border-radius: 6px;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    white-space: nowrap;
-
-    transition:
-      transform .2s ease,
-      background .2s ease;
-  }
-
-
-  .quote-button:hover {
-
-    background: #e8eef5;
-
-    transform: translateY(-1px);
-
-    text-decoration: none;
-  }
-
-
-  /* LANGUAGE SWITCHER */
-
+  .header-cta,
   .language-switcher {
     flex-shrink: 0;
   }
 
+  .quote-button {
+    display: inline-block;
+    padding: 12px 19px;
+    background: #ffffff;
+    color: #071227;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: transform .2s ease, background .2s ease;
+  }
+
+  .quote-button:hover {
+    background: #e8eef5;
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
 
   .language-button {
-
     display: inline-block;
-
     padding: 10px 12px;
-
     background: transparent;
-
     color: #ffffff;
-
-    border:
-      1px solid rgba(255, 255, 255, .35);
-
+    border: 1px solid rgba(255,255,255,.35);
     border-radius: 6px;
-
     text-decoration: none;
-
     font-family: Arial, sans-serif;
-
     font-size: 13px;
     font-weight: 700;
-
     letter-spacing: 1px;
-
     line-height: 1;
-
-    cursor: pointer;
-
-    transition:
-      background .2s ease,
-      border-color .2s ease;
+    transition: background .2s ease, border-color .2s ease;
   }
-
 
   .language-button:hover {
-
-    background:
-      rgba(255, 255, 255, .1);
-
-    border-color:
-      rgba(255, 255, 255, .7);
-
+    background: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.7);
     color: #ffffff;
-
     text-decoration: none;
   }
-
-
-  /* PERSIAN FONT */
 
   html[lang="fa"] .main-nav a,
   html[lang="fa"] .dropdown-toggle,
   html[lang="fa"] .quote-button {
-
-    font-family:
-      Tahoma,
-      Arial,
-      sans-serif;
+    font-family: Tahoma, Arial, sans-serif;
   }
 
-
-  /* MOBILE BUTTON */
-
   .hamburger-menu {
-
     display: none;
-
     width: 34px;
     height: 28px;
-
     background: none;
-
     border: none;
-
     padding: 0;
-
     cursor: pointer;
-
     flex-shrink: 0;
   }
 
-
   .hamburger-menu span {
-
     width: 100%;
     height: 3px;
-
     display: block;
-
     background: #ffffff;
-
     margin: 5px 0;
-
     border-radius: 3px;
   }
 
-
-  /* TABLET */
-
   @media (max-width: 1100px) {
-
     .main-nav a,
     .dropdown-toggle {
-
       padding: 10px 8px;
-
       font-size: 14px;
     }
-
 
     .header-inner {
       gap: 12px;
     }
-
   }
 
-
-  /* MOBILE */
-
   @media (max-width: 900px) {
-
     .header-inner {
-
       padding: 10px 20px;
-
       gap: 10px;
     }
-
 
     .brand img {
       height: 50px;
     }
 
-
     .header-cta {
       display: none;
     }
-
 
     .language-switcher {
       margin-left: auto;
     }
 
-
     .hamburger-menu {
-
       display: block;
-
       margin-left: 8px;
     }
 
-
     .main-nav {
-
       position: fixed;
-
       top: 70px;
       right: -100%;
-
       width: min(330px, 88vw);
-
-      height:
-        calc(100vh - 70px);
-
+      height: calc(100vh - 70px);
       background: #071227;
-
       padding: 25px;
-
       overflow-y: auto;
-
-      transition:
-        right .3s ease;
-
-      box-shadow:
-        -15px 20px 40px
-        rgba(0, 0, 0, .35);
+      transition: right .3s ease;
+      box-shadow: -15px 20px 40px rgba(0,0,0,.35);
     }
-
 
     .main-nav.active {
       right: 0;
     }
 
-
     .main-nav > ul {
-
       flex-direction: column;
-
       align-items: stretch;
-
       gap: 5px;
     }
 
-
     .main-nav a,
     .dropdown-toggle {
-
       width: 100%;
-
       box-sizing: border-box;
-
       text-align: left;
-
       padding: 14px 10px;
-
       font-size: 16px;
     }
 
-
     .dropdown-toggle {
-
-      justify-content:
-        space-between;
+      justify-content: space-between;
     }
-
 
     .dropdown-menu {
-
       position: static;
-
       width: 100%;
-
       background: #0c1b39;
-
       box-shadow: none;
-
       border-radius: 5px;
-
       display: none;
-
       opacity: 1;
       visibility: visible;
-
       transform: none;
-
       margin-bottom: 5px;
     }
-
 
     .dropdown-menu.open {
       display: block;
     }
 
-
     .dropdown-menu a {
-
       color: #d8e4f2;
-
       padding-left: 25px;
     }
-
 
     .nav-dropdown:hover .dropdown-menu {
       display: none;
     }
 
-
     .nav-dropdown:hover .dropdown-menu.open {
       display: block;
     }
 
-
-    /* MOBILE RTL */
-
     html[dir="rtl"] .language-switcher {
-
       margin-left: 0;
       margin-right: auto;
     }
 
-
     html[dir="rtl"] .hamburger-menu {
-
       margin-left: 0;
       margin-right: 8px;
     }
 
-
     html[dir="rtl"] .main-nav {
-
       right: auto;
       left: -100%;
-
-      transition:
-        left .3s ease;
-
-      box-shadow:
-        15px 20px 40px
-        rgba(0, 0, 0, .35);
+      transition: left .3s ease;
+      box-shadow: 15px 20px 40px rgba(0,0,0,.35);
     }
-
 
     html[dir="rtl"] .main-nav.active {
       left: 0;
     }
 
-
     html[dir="rtl"] .main-nav a,
     html[dir="rtl"] .dropdown-toggle {
-
       text-align: right;
     }
 
-
     html[dir="rtl"] .dropdown-menu a {
-
       padding-left: 10px;
       padding-right: 25px;
     }
-
   }
-
 </style>
 
-
 <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('#main-nav');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
 
-  document.addEventListener(
-    'DOMContentLoaded',
-    function () {
-
-      const hamburger =
-        document.querySelector(
-          '.hamburger-menu'
-        );
-
-      const nav =
-        document.querySelector(
-          '#main-nav'
-        );
-
-      const dropdownToggle =
-        document.querySelector(
-          '.dropdown-toggle'
-        );
-
-      const dropdownMenu =
-        document.querySelector(
-          '.dropdown-menu'
-        );
-
-
-      /* MOBILE MENU */
-
-      if (hamburger && nav) {
-
-        hamburger.addEventListener(
-          'click',
-          function () {
-
-            nav.classList.toggle(
-              'active'
-            );
-
-            const isOpen =
-              nav.classList.contains(
-                'active'
-              );
-
-            hamburger.setAttribute(
-              'aria-expanded',
-              isOpen
-            );
-
-          }
-        );
-
-      }
-
-
-      /* MOBILE SERVICES */
-
-      if (
-        dropdownToggle &&
-        dropdownMenu
-      ) {
-
-        dropdownToggle.addEventListener(
-          'click',
-          function () {
-
-            if (
-              window.innerWidth <= 900
-            ) {
-
-              dropdownMenu.classList.toggle(
-                'open'
-              );
-
-              dropdownToggle.setAttribute(
-                'aria-expanded',
-                dropdownMenu.classList.contains(
-                  'open'
-                )
-              );
-
-            }
-
-          }
-        );
-
-      }
-
-
-      /* CLOSE MOBILE MENU */
-
-      document
-        .querySelectorAll(
-          '.main-nav a'
-        )
-        .forEach(
-          function (link) {
-
-            link.addEventListener(
-              'click',
-              function () {
-
-                if (nav) {
-
-                  nav.classList.remove(
-                    'active'
-                  );
-
-                }
-
-                if (hamburger) {
-
-                  hamburger.setAttribute(
-                    'aria-expanded',
-                    'false'
-                  );
-
-                }
-
-              }
-            );
-
-          }
-        );
-
+    if (hamburger && nav) {
+      hamburger.addEventListener('click', function () {
+        nav.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', nav.classList.contains('active'));
+      });
     }
-  );
 
+    if (dropdownToggle && dropdownMenu) {
+      dropdownToggle.addEventListener('click', function () {
+        if (window.innerWidth <= 900) {
+          dropdownMenu.classList.toggle('open');
+          dropdownToggle.setAttribute('aria-expanded', dropdownMenu.classList.contains('open'));
+        }
+      });
+    }
+
+    document.querySelectorAll('.main-nav a').forEach(function(link) {
+      link.addEventListener('click', function () {
+        if (nav) nav.classList.remove('active');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
 </script>
