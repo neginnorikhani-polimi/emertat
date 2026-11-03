@@ -184,22 +184,88 @@ html[dir="rtl"] .footer-bottom {
 }
 
 
-/* Mobile navigation */
+/* Persian font */
+html[lang="fa"] body {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html[lang="fa"] .main-nav a,
+html[lang="fa"] .dropdown-toggle,
+html[lang="fa"] .quote-button,
+html[lang="fa"] .language-button {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+
+/* =========================================
+   LANGUAGE SWITCHER
+========================================= */
+
+.language-switcher {
+    flex-shrink: 0;
+}
+
+.language-switcher form {
+    margin: 0;
+}
+
+.language-button {
+    display: inline-block;
+    text-decoration: none;
+
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+
+    padding: 9px 11px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.language-button:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.70);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   MOBILE RTL
+========================================= */
+
 @media (max-width: 900px) {
 
     html[dir="rtl"] .main-nav a,
     html[dir="rtl"] .dropdown-toggle {
         text-align: right;
     }
-    html[lang="fa"] body {
-  font-family: Tahoma, Arial, sans-serif;
-}
 
-html[lang="fa"] .main-nav a,
-html[lang="fa"] .dropdown-toggle,
-html[lang="fa"] .quote-button {
-  font-family: Tahoma, Arial, sans-serif;
-}
+    html[dir="rtl"] .language-switcher {
+        margin-left: 0;
+        margin-right: auto;
+    }
 
-}
+    html[dir="rtl"] .hamburger-menu {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    html[dir="rtl"] .dropdown-menu a {
+        padding-left: 10px;
+        padding-right: 25px;
+    }
+
 }
