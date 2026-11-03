@@ -1,104 +1,232 @@
-<!-- your_app/templates/why.html -->
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+{% if is_fa %}چرا امرتات فرابر | مزایای همکاری{% else %}Why Emertat Farabar | International Logistics Partner{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+{% if is_fa %}دلایل همکاری با امرتات فرابر؛ تجربه مدیریتی، حضور عملیاتی در ایران، راهکارهای چندوجهی و ارتباط شفاف در حمل‌ونقل بین‌المللی.{% else %}Why businesses work with Emertat Farabar: experienced management, operational presence in Iran, multimodal capabilities and clear communication.{% endif %}
+{% endblock %}
+
 {% block content %}
 <style>
   body {
-    background: url('{% static "info/images/background_solid.jpg" %}') no-repeat center center fixed;
-    background-size: cover;
-  }
-  .why-us-section {
-    text-align: left;
-    background-color: #050A30;
-    position: relative;
-  }
-  .why-us-section .content {
-    padding: 5px 50px;
-  }
-  .why-us-section ul {
-    list-style-type: disc;
-    margin-left: 40px;
-    line-height: 1.8;
-    margin-bottom: 0px;
-  }
-  .why-us-section ul li {
-    margin-bottom: 10px;
-  }
-  .why-us-section ul li strong {
-    color: #1E90FF;
-  }
-  .image-container {
-    position: relative;
-    width: 100%;
-  }
-  .car-image {
-    width: 100%;
-    display: block;
-    height: auto;
-  }
-  .price-inquiry {
-    position: absolute;
-    bottom: 100px;
-    right: 40px;
-    z-index: 10;
-  }
-  .price-inquiry button {
-    background-color: #FFFFFF;
-    color: #0D1A37;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .price-inquiry button:hover {
-    background-color: #CCCCCC;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background: #071227;
   }
 
-  @media (max-width: 768px) {
-    .why-us-section .content {
-      padding: 20px;
+  .why-page {
+    background: #ffffff;
+    color: #071227;
+  }
+
+  .why-hero {
+    padding: 95px 8%;
+    background:
+      linear-gradient(rgba(5,10,48,.86), rgba(5,10,48,.93)),
+      url('{% static "info/images/background.jpg" %}') center/cover no-repeat;
+    color: #ffffff;
+  }
+
+  .why-hero-inner {
+    max-width: 900px;
+  }
+
+  .why-label {
+    color: #63b9ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .why-hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+  }
+
+  .why-hero p {
+    max-width: 800px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #d8e2ee;
+  }
+
+  .why-section {
+    padding: 80px 8%;
+  }
+
+  .why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .why-card {
+    background: #f7f9fc;
+    border: 1px solid #dfe6ef;
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  .why-card h2 {
+    font-size: 22px;
+    margin: 0 0 12px;
+  }
+
+  .why-card p {
+    margin: 0;
+    color: #667085;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  .why-cta {
+    background: #0b61a4;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .why-cta-inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .why-cta h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+
+  .why-cta p {
+    color: #e2eef8;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+
+  .why-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .why-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .why-btn-primary {
+    background: #ffffff;
+    color: #071227;
+  }
+
+  .why-btn-outline {
+    border: 1px solid rgba(255,255,255,.5);
+    color: #ffffff;
+  }
+
+  @media (max-width: 700px) {
+    .why-hero,
+    .why-section {
+      padding: 58px 24px;
     }
-    .price-inquiry {
-      position: static; /* So it doesn't overflow on small screens */
-      margin-top: 20px;
-      text-align: center;
+
+    .why-grid {
+      grid-template-columns: 1fr;
     }
-    .price-inquiry button {
-      border-radius: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
+
+    .why-hero h1 {
+      font-size: 38px;
+    }
+
+    .why-cta h2 {
+      font-size: 30px;
     }
   }
 </style>
 
-{% comment %} <div style="padding: 20px;">
-  <h1>WHY US</h1>
-</div> {% endcomment %}
+<main class="why-page">
+  {% if is_fa %}
+    <section class="why-hero">
+      <div class="why-hero-inner">
+        <div class="why-label">چرا امرتات فرابر</div>
+        <h1>یک شریک لجستیکی با تجربه و حضور عملیاتی در ایران</h1>
+        <p>
+          ترکیب تجربه مدیریتی، شبکه عملیاتی، گزینه‌های متنوع حمل و ارتباط شفاف
+          به ما کمک می‌کند برای هر محموله راهکاری عملی و متناسب طراحی کنیم.
+        </p>
+      </div>
+    </section>
 
-<div class="why-us-section">
-  <ul class="content">
-    <h1>Why Us</h1>
-    <li>Our commitment to <strong>reliability, transparency</strong>, and customer <strong>satisfaction</strong> sets us apart. With a proven track record
-      in international logistics and a team that goes the extra mile, we’re your ideal choice for global shipping solutions.</li>
-    <li>Consulting and planning tailored, efficient solutions for transporting your goods, backed by 39 years of proven
-      expertise.</li>
-    <li>Providing step-by-step reporting with precision and transparency throughout the entire transportation process,
-      from start to final delivery.</li>
-    <li>Preparing and delivering all necessary documents (e.g., D/O, Warehouse Receipt, B/L, etc.) directly to your location
-      promptly and efficiently.</li>
-  </ul>
-  <div class="image-container">
-    <img src="{% static 'info/images/team.jpg' %}" alt="Car" class="car-image">
-    <div class="price-inquiry">
-      <button onclick="window.location.href='/price-inquiry'">Price inquiry</button>
-    </div>
-  </div>
-</div>
+    <section class="why-section">
+      <div class="why-container">
+        <div class="why-grid">
+          <div class="why-card"><h2>بیش از دو دهه تجربه</h2><p>تیم مدیریتی امرتات فرابر بیش از ۲۲ سال تجربه عملی در حمل‌ونقل و فورواردینگ بین‌المللی دارد.</p></div>
+          <div class="why-card"><h2>حضور در نقاط کلیدی ایران</h2><p>حضور عملیاتی در تهران، بندرعباس و بندرلنگه و همکاری با نمایندگان در مناطق مرزی، هماهنگی محموله‌ها را تسهیل می‌کند.</p></div>
+          <div class="why-card"><h2>چند روش حمل در یک مجموعه</h2><p>حمل جاده‌ای، ریلی، دریایی و چندوجهی به ما اجازه می‌دهد گزینه‌ها را بر اساس مسیر، هزینه و زمان مقایسه کنیم.</p></div>
+          <div class="why-card"><h2>ارتباط شفاف</h2><p>در طول فرآیند حمل، اطلاعات و به‌روزرسانی‌های عملیاتی را به‌صورت روشن در اختیار مشتری قرار می‌دهیم.</p></div>
+          <div class="why-card"><h2>پشتیبانی اسناد و گمرک</h2><p>هماهنگی اسناد حمل و امور گمرکی در کنار عملیات لجستیکی، فرآیند را یکپارچه‌تر می‌کند.</p></div>
+          <div class="why-card"><h2>تمرکز بر راهکار عملی</h2><p>هر محموله بر اساس نوع کالا، مبدأ، مقصد، زمان ترانزیت و شرایط مسیر به‌صورت جداگانه بررسی می‌شود.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section why-cta">
+      <div class="why-cta-inner">
+        <h2>برای مسیر بعدی خود با ما صحبت کنید</h2>
+        <p>جزئیات محموله را ارسال کنید تا تیم ما گزینه‌های حمل مناسب را بررسی کند.</p>
+        <div class="why-actions">
+          <a href="/fa/price-inquiry/" class="why-btn why-btn-primary">درخواست نرخ حمل</a>
+          <a href="/fa/contact/" class="why-btn why-btn-outline">تماس با ما</a>
+        </div>
+      </div>
+    </section>
+  {% else %}
+    <section class="why-hero">
+      <div class="why-hero-inner">
+        <div class="why-label">Why Emertat Farabar</div>
+        <h1>An Experienced Logistics Partner With Operational Presence in Iran</h1>
+        <p>
+          Experienced management, local operational coverage, multiple freight modes
+          and clear communication help us build practical solutions around each shipment.
+        </p>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="why-container">
+        <div class="why-grid">
+          <div class="why-card"><h2>More Than Two Decades of Experience</h2><p>Our management team brings more than 22 years of hands-on experience in international transportation and freight forwarding.</p></div>
+          <div class="why-card"><h2>Presence Across Key Iranian Locations</h2><p>Operations in Tehran, Bandar Abbas and Bandar Lengeh, together with border-region representatives, support shipment coordination.</p></div>
+          <div class="why-card"><h2>Multiple Freight Modes</h2><p>Road, rail, sea and multimodal capabilities allow us to compare options based on route, cost and transit time.</p></div>
+          <div class="why-card"><h2>Clear Communication</h2><p>Clients receive operational updates and practical visibility throughout the transportation process.</p></div>
+          <div class="why-card"><h2>Documentation & Customs Support</h2><p>Transport documentation and customs coordination can be integrated into the wider freight process.</p></div>
+          <div class="why-card"><h2>Practical Shipment Planning</h2><p>Each shipment is evaluated individually according to cargo, origin, destination, timing and route conditions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section why-cta">
+      <div class="why-cta-inner">
+        <h2>Discuss Your Next Shipment With Our Team</h2>
+        <p>Send us your cargo details and our logistics team can review suitable freight options.</p>
+        <div class="why-actions">
+          <a href="/price-inquiry/" class="why-btn why-btn-primary">Request a Freight Quote</a>
+          <a href="/contact/" class="why-btn why-btn-outline">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</main>
 {% endblock content %}
