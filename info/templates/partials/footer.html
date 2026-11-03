@@ -1,0 +1,83 @@
+{% load static %}
+
+<footer class="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <img src="{% static 'info/images/logo2.png' %}" alt="Emertat Farabar">
+      {% if is_fa %}
+        <p>
+          اتصال ایران به بازارهای منطقه‌ای و بین‌المللی از طریق
+          راهکارهای قابل اعتماد حمل جاده‌ای، ریلی، دریایی و چندوجهی.
+        </p>
+      {% else %}
+        <p>
+          Connecting Iran to regional and international markets through
+          reliable road, rail, sea and multimodal logistics solutions.
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="footer-column">
+      {% if is_fa %}
+        <h3>خدمات</h3>
+        <a href="/fa/services/road-freight/">حمل‌ونقل جاده‌ای</a>
+        <a href="/fa/services/sea-freight/">حمل‌ونقل دریایی</a>
+        <a href="/fa/services/rail-freight/">حمل‌ونقل ریلی</a>
+        <a href="/fa/services/multimodal-transport/">حمل‌ونقل چندوجهی</a>
+        <a href="/fa/services/customs-clearance/">ترخیص گمرکی</a>
+      {% else %}
+        <h3>Services</h3>
+        <a href="/services/road-freight/">Road Freight</a>
+        <a href="/services/sea-freight/">Sea Freight</a>
+        <a href="/services/rail-freight/">Rail Freight</a>
+        <a href="/services/multimodal-transport/">Multimodal Transport</a>
+        <a href="/services/customs-clearance/">Customs Clearance</a>
+      {% endif %}
+    </div>
+
+    <div class="footer-column">
+      {% if is_fa %}
+        <h3>شرکت</h3>
+        <a href="/fa/about/">درباره ما</a>
+        <a href="/fa/team/">تیم ما</a>
+        <a href="/fa/contact/">تماس با ما</a>
+        <a href="/fa/price-inquiry/">درخواست نرخ حمل</a>
+      {% else %}
+        <h3>Company</h3>
+        <a href="/about/">About</a>
+        <a href="/team/">Team</a>
+        <a href="/contact/">Contact</a>
+        <a href="/price-inquiry/">Get a Quote</a>
+      {% endif %}
+    </div>
+
+    <div class="footer-column footer-contact">
+      {% if is_fa %}
+        <h3>ارتباط با ما</h3>
+      {% else %}
+        <h3>Contact</h3>
+      {% endif %}
+
+      <a href="mailto:contact@emertatfarabar.com">contact@emertatfarabar.com</a>
+      <a href="tel:+989173619345">+98 917 361 9345</a>
+      <a href="tel:+393447669336">+39 344 766 9336</a>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/emertatfarabar/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/emertat-farabar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    {% if is_fa %}
+      <span>© 2026 امرتات فرابر. تمامی حقوق محفوظ است.</span>
+      <a href="{{ language_switch_url }}" hreflang="en">English</a>
+    {% else %}
+      <span>© 2026 Emertat Farabar. All rights reserved.</span>
+      <a href="{{ language_switch_url }}" hreflang="fa">فارسی</a>
+    {% endif %}
+  </div>
+</footer>
