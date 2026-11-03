@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-Contact Emertat Farabar | Freight Forwarding Company in Iran
+{% if is_fa %}تماس با امرتات فرابر | حمل‌ونقل بین‌المللی در ایران{% else %}Contact Emertat Farabar | Freight Forwarding Company in Iran{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-Contact Emertat Farabar for international road, rail, sea and multimodal freight forwarding, customs clearance and logistics support in Iran.
+{% if is_fa %}برای استعلام نرخ حمل، هماهنگی محموله و پشتیبانی لجستیکی با تیم امرتات فرابر تماس بگیرید.{% else %}Contact Emertat Farabar for international road, rail, sea and multimodal freight forwarding, customs clearance and logistics support in Iran.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -258,6 +258,86 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
   }
 </style>
 
+{% if is_fa %}
+<main class="contact-page">
+  <section class="contact-hero">
+    <div class="contact-hero-inner">
+      <div class="contact-label">تماس با امرتات فرابر</div>
+      <h1>برای محموله بعدی خود برنامه‌ریزی کنیم</h1>
+      <p>برای واردات، صادرات یا ترانزیت، اطلاعات مبدأ، مقصد، نوع کالا و روش حمل موردنظر را برای تیم لجستیک ما ارسال کنید.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-label">ارتباط با ما</div>
+      <h2>با تیم لجستیک ما صحبت کنید</h2>
+      <p class="contact-intro">برای دریافت نرخ، برنامه‌ریزی مسیر، پشتیبانی گمرکی یا هماهنگی محموله، تیم ما آماده بررسی نیازهای شماست.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>استعلام نرخ و امور تجاری</h3>
+          <p>برای نرخ حمل، برنامه‌ریزی محموله و درخواست‌های تجاری.</p>
+          <a href="mailto:contact@emertatfarabar.com">contact@emertatfarabar.com</a>
+        </div>
+
+        <div class="contact-card">
+          <h3>تلفن</h3>
+          <p>ارتباط مستقیم با تیم ما.</p>
+          <a href="tel:+989173619345">+98 917 361 9345</a><br>
+          <a href="tel:+393447669336">+39 344 766 9336</a>
+        </div>
+
+        <div class="contact-card">
+          <h3>دفتر مرکزی</h3>
+          <p>
+            شرکت حمل‌ونقل بین‌المللی امرتات فرابر<br>
+            تهران، بلوار مرزداران، خیابان اطاعتی، خیابان مهدی، پلاک ۲۱۳
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section operations-section">
+    <div class="contact-container">
+      <div class="contact-label">حضور عملیاتی</div>
+      <h2>پشتیبانی محموله‌ها در نقاط کلیدی ایران</h2>
+      <p class="contact-intro">شبکه عملیاتی ما از هماهنگی حمل در مراکز تجاری، دریایی و مرزی مهم پشتیبانی می‌کند.</p>
+
+      <div class="operations-grid">
+        <div class="operation-card"><h3>تهران</h3><p>دفتر مرکزی، هماهنگی تجاری و مدیریت محموله.</p></div>
+        <div class="operation-card"><h3>بندرعباس</h3><p>حمل دریایی، عملیات بندری و هماهنگی لجستیک زمینی.</p></div>
+        <div class="operation-card"><h3>بندرلنگه</h3><p>عملیات دریایی و لجستیکی منطقه‌ای در جنوب ایران.</p></div>
+        <div class="operation-card"><h3>مناطق مرزی</h3><p>نمایندگان در شهرهای مرزی برای حمل بین‌المللی و ترانزیت.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section social-section">
+    <div class="contact-container">
+      <div class="contact-label">آنلاین</div>
+      <h2>امرتات فرابر را دنبال کنید</h2>
+      <div class="social-grid">
+        <div class="social-card"><h3>Instagram</h3><a href="https://www.instagram.com/emertatfarabar/" target="_blank" rel="noopener noreferrer">@emertatfarabar</a></div>
+        <div class="social-card"><h3>LinkedIn</h3><a href="https://www.linkedin.com/company/emertat-farabar/" target="_blank" rel="noopener noreferrer">Emertat Farabar on LinkedIn</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section contact-cta">
+    <div class="contact-cta-inner">
+      <div class="contact-label">استعلام حمل</div>
+      <h2>محموله آماده حمل دارید؟</h2>
+      <p>جزئیات کالا، مبدأ و مقصد را برای ما ارسال کنید تا تیم ما نیازهای حمل را بررسی و راهکار مناسب را پیشنهاد کند.</p>
+      <div class="contact-actions">
+        <a href="/fa/price-inquiry/" class="contact-btn contact-btn-primary">درخواست نرخ حمل</a>
+        <a href="mailto:contact@emertatfarabar.com" class="contact-btn contact-btn-outline">ارسال ایمیل</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="contact-page">
 
   <section class="contact-hero">
@@ -465,5 +545,6 @@ Contact our logistics team for freight forwarding, customs clearance and shipmen
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
