@@ -158,54 +158,128 @@
 
 
     <!-- LANGUAGE SWITCHER -->
-    <div class="language-switcher">
+<div class="language-switcher">
 
-      <form action="/i18n/setlang/" method="post">
-        {% csrf_token %}
+  {% if CURRENT_LANGUAGE == 'fa' %}
 
-        <input
-          type="hidden"
-          name="next"
-          value="{{ request.path }}"
-        >
+    {% if request.path == '/fa/' %}
+      <a href="/" class="language-button">
+        EN
+      </a>
 
-        {% if CURRENT_LANGUAGE == 'fa' %}
+    {% elif '/fa/about/' in request.path %}
+      <a href="/about/" class="language-button">
+        EN
+      </a>
 
-          <input
-            type="hidden"
-            name="language"
-            value="en"
-          >
+    {% elif '/fa/team/' in request.path %}
+      <a href="/team/" class="language-button">
+        EN
+      </a>
 
-          <button
-            type="submit"
-            class="language-button"
-            aria-label="Switch to English"
-          >
-            EN
-          </button>
+    {% elif '/fa/contact/' in request.path %}
+      <a href="/contact/" class="language-button">
+        EN
+      </a>
 
-        {% else %}
+    {% elif '/fa/price-inquiry/' in request.path %}
+      <a href="/price-inquiry/" class="language-button">
+        EN
+      </a>
 
-          <input
-            type="hidden"
-            name="language"
-            value="fa"
-          >
+    {% elif '/fa/services/road-freight/' in request.path %}
+      <a href="/services/road-freight/" class="language-button">
+        EN
+      </a>
 
-          <button
-            type="submit"
-            class="language-button"
-            aria-label="Switch to Persian"
-          >
-            FA
-          </button>
+    {% elif '/fa/services/sea-freight/' in request.path %}
+      <a href="/services/sea-freight/" class="language-button">
+        EN
+      </a>
 
-        {% endif %}
+    {% elif '/fa/services/rail-freight/' in request.path %}
+      <a href="/services/rail-freight/" class="language-button">
+        EN
+      </a>
 
-      </form>
+    {% elif '/fa/services/multimodal-transport/' in request.path %}
+      <a href="/services/multimodal-transport/" class="language-button">
+        EN
+      </a>
 
-    </div>
+    {% elif '/fa/services/customs-clearance/' in request.path %}
+      <a href="/services/customs-clearance/" class="language-button">
+        EN
+      </a>
+
+    {% else %}
+      <a href="/" class="language-button">
+        EN
+      </a>
+    {% endif %}
+
+
+  {% else %}
+
+    {% if request.path == '/' %}
+      <a href="/fa/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/about/' %}
+      <a href="/fa/about/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/team/' %}
+      <a href="/fa/team/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/contact/' %}
+      <a href="/fa/contact/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/price-inquiry/' %}
+      <a href="/fa/price-inquiry/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/services/road-freight/' %}
+      <a href="/fa/services/road-freight/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/services/sea-freight/' %}
+      <a href="/fa/services/sea-freight/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/services/rail-freight/' %}
+      <a href="/fa/services/rail-freight/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/services/multimodal-transport/' %}
+      <a href="/fa/services/multimodal-transport/" class="language-button">
+        FA
+      </a>
+
+    {% elif request.path == '/services/customs-clearance/' %}
+      <a href="/fa/services/customs-clearance/" class="language-button">
+        FA
+      </a>
+
+    {% else %}
+      <a href="/fa/" class="language-button">
+        FA
+      </a>
+    {% endif %}
+
+  {% endif %}
+
+</div>
 
 
     <!-- MOBILE BUTTON -->
