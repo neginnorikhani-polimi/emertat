@@ -1,10 +1,16 @@
 {% load static i18n %}
 {% get_current_language as CURRENT_LANGUAGE %}
+
 <header class="site-header">
   <div class="header-inner">
 
     <!-- LOGO -->
-    <a href="{% url 'home' %}" class="brand" aria-label="Emertat Farabar Home">
+    {% if CURRENT_LANGUAGE == 'fa' %}
+      <a href="/fa/" class="brand" aria-label="Emertat Farabar Home">
+    {% else %}
+      <a href="/" class="brand" aria-label="Emertat Farabar Home">
+    {% endif %}
+
       <img
         src="{% static 'info/images/logo2.png' %}"
         alt="Emertat Farabar International Freight Forwarding"
@@ -13,141 +19,148 @@
 
 
     <!-- NAVIGATION -->
-<nav id="main-nav" class="main-nav" aria-label="Main navigation">
-  <ul>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul>
 
-    <li>
-      <a href="{% url 'home' %}">
-        {% if LANGUAGE_CODE == 'fa' %}
-          صفحه اصلی
-        {% else %}
-          Home
-        {% endif %}
-      </a>
-    </li>
-
-    <!-- SERVICES DROPDOWN -->
-    <li class="nav-dropdown">
-
-      <button class="dropdown-toggle" type="button">
-        {% if LANGUAGE_CODE == 'fa' %}
-          خدمات
-        {% else %}
-          Services
-        {% endif %}
-
-        <span class="dropdown-arrow">⌄</span>
-      </button>
-
-      <div class="dropdown-menu">
-
-        <a href="{% url 'road_freight' %}">
-          {% if LANGUAGE_CODE == 'fa' %}
-            حمل‌ونقل جاده‌ای
+        <li>
+          {% if CURRENT_LANGUAGE == 'fa' %}
+            <a href="/fa/">صفحه اصلی</a>
           {% else %}
-            Road Freight
+            <a href="/">Home</a>
           {% endif %}
-        </a>
+        </li>
 
-        <a href="{% url 'sea_freight' %}">
-          {% if LANGUAGE_CODE == 'fa' %}
-            حمل‌ونقل دریایی
+
+        <!-- SERVICES DROPDOWN -->
+        <li class="nav-dropdown">
+
+          <button class="dropdown-toggle" type="button">
+
+            {% if CURRENT_LANGUAGE == 'fa' %}
+              خدمات
+            {% else %}
+              Services
+            {% endif %}
+
+            <span class="dropdown-arrow">⌄</span>
+          </button>
+
+
+          <div class="dropdown-menu">
+
+            {% if CURRENT_LANGUAGE == 'fa' %}
+
+              <a href="/fa/services/road-freight/">
+                حمل‌ونقل جاده‌ای
+              </a>
+
+              <a href="/fa/services/sea-freight/">
+                حمل‌ونقل دریایی
+              </a>
+
+              <a href="/fa/services/rail-freight/">
+                حمل‌ونقل ریلی
+              </a>
+
+              <a href="/fa/services/multimodal-transport/">
+                حمل‌ونقل چندوجهی
+              </a>
+
+              <a href="/fa/services/customs-clearance/">
+                ترخیص گمرکی
+              </a>
+
+            {% else %}
+
+              <a href="/services/road-freight/">
+                Road Freight
+              </a>
+
+              <a href="/services/sea-freight/">
+                Sea Freight
+              </a>
+
+              <a href="/services/rail-freight/">
+                Rail Freight
+              </a>
+
+              <a href="/services/multimodal-transport/">
+                Multimodal Transport
+              </a>
+
+              <a href="/services/customs-clearance/">
+                Customs Clearance
+              </a>
+
+            {% endif %}
+
+          </div>
+        </li>
+
+
+        <li>
+          {% if CURRENT_LANGUAGE == 'fa' %}
+            <a href="/fa/#cargo-solutions">کالا و صنایع</a>
           {% else %}
-            Sea Freight
+            <a href="/#cargo-solutions">Cargo & Industries</a>
           {% endif %}
-        </a>
+        </li>
 
-        <a href="{% url 'rail_freight' %}">
-          {% if LANGUAGE_CODE == 'fa' %}
-            حمل‌ونقل ریلی
+
+        <li>
+          {% if CURRENT_LANGUAGE == 'fa' %}
+            <a href="/fa/about/">درباره ما</a>
           {% else %}
-            Rail Freight
+            <a href="/about/">About</a>
           {% endif %}
-        </a>
+        </li>
 
-        <a href="{% url 'multimodal_transport' %}">
-          {% if LANGUAGE_CODE == 'fa' %}
-            حمل‌ونقل چندوجهی
+
+        <li>
+          {% if CURRENT_LANGUAGE == 'fa' %}
+            <a href="/fa/team/">تیم ما</a>
           {% else %}
-            Multimodal Transport
+            <a href="/team/">Team</a>
           {% endif %}
-        </a>
+        </li>
 
-        <a href="{% url 'customs_clearance' %}">
-          {% if LANGUAGE_CODE == 'fa' %}
-            ترخیص گمرکی
+
+        <li>
+          {% if CURRENT_LANGUAGE == 'fa' %}
+            <a href="/fa/contact/">تماس با ما</a>
           {% else %}
-            Customs Clearance
+            <a href="/contact/">Contact</a>
           {% endif %}
-        </a>
+        </li>
 
-      </div>
-    </li>
-
-
-    <li>
-      <a href="{% url 'home' %}#cargo-solutions">
-        {% if LANGUAGE_CODE == 'fa' %}
-          کالا و صنایع
-        {% else %}
-          Cargo & Industries
-        {% endif %}
-      </a>
-    </li>
-
-    <li>
-      <a href="{% url 'about' %}">
-        {% if LANGUAGE_CODE == 'fa' %}
-          درباره ما
-        {% else %}
-          About
-        {% endif %}
-      </a>
-    </li>
-
-    <li>
-      <a href="{% url 'team' %}">
-        {% if LANGUAGE_CODE == 'fa' %}
-          تیم ما
-        {% else %}
-          Team
-        {% endif %}
-      </a>
-    </li>
-
-    <li>
-      <a href="{% url 'contact' %}">
-        {% if LANGUAGE_CODE == 'fa' %}
-          تماس با ما
-        {% else %}
-          Contact
-        {% endif %}
-      </a>
-    </li>
-
-  </ul>
-</nav>
+      </ul>
+    </nav>
 
 
+    <!-- CTA -->
     <div class="header-cta">
-  <a href="{% url 'price_inquiry' %}" class="quote-button">
 
-    {% if LANGUAGE_CODE == 'fa' %}
-      درخواست نرخ حمل
-    {% else %}
-      Get a Quote
-    {% endif %}
+      {% if CURRENT_LANGUAGE == 'fa' %}
 
-  </a>
-</div>
+        <a href="/fa/price-inquiry/" class="quote-button">
+          درخواست نرخ حمل
+        </a>
+
+      {% else %}
+
+        <a href="/price-inquiry/" class="quote-button">
+          Get a Quote
+        </a>
+
+      {% endif %}
+
+    </div>
 
 
     <!-- LANGUAGE SWITCHER -->
     <div class="language-switcher">
 
-      {% get_current_language as CURRENT_LANGUAGE %}
-
-      <form action="{% url 'set_language' %}" method="post">
+      <form action="/i18n/setlang/" method="post">
         {% csrf_token %}
 
         <input
