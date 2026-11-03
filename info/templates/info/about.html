@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-About Emertat Farabar | International Freight Forwarder in Iran
+{% if is_fa %}درباره امرتات فرابر | شرکت حمل‌ونقل بین‌المللی در ایران{% else %}About Emertat Farabar | International Freight Forwarder in Iran{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-Learn about Emertat Farabar, an international freight forwarding company established in Iran in 2009, providing road, rail, sea, multimodal transport and customs clearance services.
+{% if is_fa %}درباره امرتات فرابر؛ شرکت حمل‌ونقل بین‌المللی تأسیس‌شده در سال ۱۳۸۸ با خدمات جاده‌ای، ریلی، دریایی، چندوجهی و ترخیص گمرکی.{% else %}Learn about Emertat Farabar, an international freight forwarding company established in Iran in 2009, providing road, rail, sea, multimodal transport and customs clearance services.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -322,6 +322,97 @@ Established in 2009, Emertat Farabar provides international freight forwarding a
 </style>
 
 
+{% if is_fa %}
+<main class="about-page">
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-label">درباره امرتات فرابر</div>
+      <h1>لجستیک بین‌المللی بر پایه تجربه</h1>
+      <p>
+        امرتات فرابر یک شرکت حمل‌ونقل و فورواردینگ بین‌المللی است که
+        خدمات حمل جاده‌ای، ریلی، دریایی، چندوجهی و ترخیص گمرکی را
+        از ایران به بازارهای منطقه‌ای و بین‌المللی ارائه می‌دهد.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section story-section">
+    <div class="about-container">
+      <div class="about-label">شرکت ما</div>
+      <h2>تأسیس در سال ۱۳۸۸؛ با پشتوانه دهه‌ها تجربه لجستیکی</h2>
+      <div class="about-text">
+        <p>امرتات فرابر در سال ۱۳۸۸ توسط متخصصان باتجربه حمل‌ونقل بین‌المللی و فورواردینگ در ایران تأسیس شد.</p>
+        <p>تیم مدیریتی شرکت بیش از ۲۲ سال تجربه عملی در حمل مرزی، هماهنگی بار و لجستیک منطقه‌ای دارد.</p>
+        <p>امروز به واردکنندگان، صادرکنندگان، تولیدکنندگان، شرکت‌های بازرگانی و شرکای بین‌المللی لجستیک، راهکارهایی متناسب با نوع کالا، مسیر، زمان‌بندی و نیازهای عملیاتی ارائه می‌کنیم.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section experience-section">
+    <div class="about-container">
+      <div class="about-label">در یک نگاه</div>
+      <h2>تجربه عملی در حمل‌ونقل بین‌المللی</h2>
+      <div class="experience-grid">
+        <div class="experience-card"><strong>۱۳۸۸</strong><p>سال تأسیس امرتات فرابر در ایران.</p></div>
+        <div class="experience-card"><strong>بیش از ۲۲ سال</strong><p>تجربه صنعتی در تیم مدیریتی شرکت.</p></div>
+        <div class="experience-card"><strong>۵ خدمت اصلی</strong><p>حمل جاده‌ای، ریلی، دریایی، چندوجهی و ترخیص گمرکی.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section operations-section">
+    <div class="about-container">
+      <div class="about-label">شبکه ما</div>
+      <h2>حضور عملیاتی در نقاط استراتژیک ایران</h2>
+      <p class="about-text">شبکه عملیاتی ما به هماهنگی محموله‌ها در مراکز تجاری، بندری و مرزی مهم ایران کمک می‌کند.</p>
+      <div class="operations-grid">
+        <div class="operation-card"><h3>تهران</h3><p>دفتر مرکزی، هماهنگی تجاری و مدیریت محموله‌ها.</p></div>
+        <div class="operation-card"><h3>بندرعباس</h3><p>حمل دریایی، عملیات بندری و هماهنگی حمل زمینی.</p></div>
+        <div class="operation-card"><h3>بندرلنگه</h3><p>عملیات لجستیکی و دریایی منطقه‌ای در جنوب ایران.</p></div>
+        <div class="operation-card"><h3>مناطق مرزی</h3><p>نمایندگان در شهرهای مرزی برای حمل بین‌المللی و ترانزیت.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section services-section-about">
+    <div class="about-container">
+      <div class="about-label">خدمات ما</div>
+      <h2>خدمات یکپارچه حمل و لجستیک</h2>
+      <div class="services-about-grid">
+        <div class="service-about-card"><h3>حمل جاده‌ای</h3><p>حمل مرزی FTL و LTL.</p></div>
+        <div class="service-about-card"><h3>حمل دریایی</h3><p>حمل بین‌المللی FCL و LCL.</p></div>
+        <div class="service-about-card"><h3>حمل ریلی</h3><p>حمل ریلی در مسیرهای منطقه‌ای مناسب.</p></div>
+        <div class="service-about-card"><h3>حمل چندوجهی</h3><p>ترکیب جاده، ریل و دریا در یک راهکار لجستیکی.</p></div>
+        <div class="service-about-card"><h3>ترخیص گمرکی</h3><p>پشتیبانی امور گمرکی و اسناد حمل.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section approach-section">
+    <div class="about-container">
+      <div class="about-label">رویکرد ما</div>
+      <h2>راهکار لجستیکی متناسب با هر محموله</h2>
+      <div class="approach-grid">
+        <div class="approach-card"><h3>برنامه‌ریزی عملی مسیر</h3><p>نوع کالا، مبدأ، مقصد، مسیرهای موجود، زمان ترانزیت و هزینه را پیش از پیشنهاد راهکار بررسی می‌کنیم.</p></div>
+        <div class="approach-card"><h3>ارتباط شفاف</h3><p>در طول فرآیند حمل، اطلاعات عملیاتی و به‌روزرسانی‌های لازم را در اختیار مشتری قرار می‌دهیم.</p></div>
+        <div class="approach-card"><h3>همکاری بلندمدت</h3><p>هدف ما فقط جابه‌جایی یک محموله نیست؛ به دنبال ایجاد رابطه لجستیکی قابل اعتماد با مشتریان هستیم.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section about-cta">
+    <div class="about-cta-inner">
+      <div class="about-label">همکاری با امرتات فرابر</div>
+      <h2>به دنبال شریک لجستیکی در ایران هستید؟</h2>
+      <p>اطلاعات کالا، مبدأ و مقصد را برای ما ارسال کنید تا تیم ما نیازهای حمل را بررسی و راهکار مناسب را پیشنهاد کند.</p>
+      <div class="about-actions">
+        <a href="/fa/price-inquiry/" class="about-btn about-btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="about-btn about-btn-outline">تماس با تیم ما</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="about-page">
 
   <!-- HERO -->
@@ -623,5 +714,6 @@ Established in 2009, Emertat Farabar provides international freight forwarding a
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
