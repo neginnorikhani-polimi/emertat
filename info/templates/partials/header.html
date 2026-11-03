@@ -22,6 +22,7 @@
     <nav id="main-nav" class="main-nav" aria-label="Main navigation">
       <ul>
 
+        <!-- HOME -->
         <li>
           {% if CURRENT_LANGUAGE == 'fa' %}
             <a href="/fa/">صفحه اصلی</a>
@@ -31,11 +32,14 @@
         </li>
 
 
-        <!-- SERVICES DROPDOWN -->
+        <!-- SERVICES -->
         <li class="nav-dropdown">
 
-          <button class="dropdown-toggle" type="button">
-
+          <button
+            class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+          >
             {% if CURRENT_LANGUAGE == 'fa' %}
               خدمات
             {% else %}
@@ -98,38 +102,58 @@
         </li>
 
 
+        <!-- CARGO -->
         <li>
           {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/#cargo-solutions">کالا و صنایع</a>
+            <a href="/fa/#cargo-solutions">
+              کالا و صنایع
+            </a>
           {% else %}
-            <a href="/#cargo-solutions">Cargo & Industries</a>
+            <a href="/#cargo-solutions">
+              Cargo & Industries
+            </a>
           {% endif %}
         </li>
 
 
+        <!-- ABOUT -->
         <li>
           {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/about/">درباره ما</a>
+            <a href="/fa/about/">
+              درباره ما
+            </a>
           {% else %}
-            <a href="/about/">About</a>
+            <a href="/about/">
+              About
+            </a>
           {% endif %}
         </li>
 
 
+        <!-- TEAM -->
         <li>
           {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/team/">تیم ما</a>
+            <a href="/fa/team/">
+              تیم ما
+            </a>
           {% else %}
-            <a href="/team/">Team</a>
+            <a href="/team/">
+              Team
+            </a>
           {% endif %}
         </li>
 
 
+        <!-- CONTACT -->
         <li>
           {% if CURRENT_LANGUAGE == 'fa' %}
-            <a href="/fa/contact/">تماس با ما</a>
+            <a href="/fa/contact/">
+              تماس با ما
+            </a>
           {% else %}
-            <a href="/contact/">Contact</a>
+            <a href="/contact/">
+              Contact
+            </a>
           {% endif %}
         </li>
 
@@ -137,18 +161,24 @@
     </nav>
 
 
-    <!-- CTA -->
+    <!-- QUOTE BUTTON -->
     <div class="header-cta">
 
       {% if CURRENT_LANGUAGE == 'fa' %}
 
-        <a href="/fa/price-inquiry/" class="quote-button">
+        <a
+          href="/fa/price-inquiry/"
+          class="quote-button"
+        >
           درخواست نرخ حمل
         </a>
 
       {% else %}
 
-        <a href="/price-inquiry/" class="quote-button">
+        <a
+          href="/price-inquiry/"
+          class="quote-button"
+        >
           Get a Quote
         </a>
 
@@ -158,128 +188,152 @@
 
 
     <!-- LANGUAGE SWITCHER -->
-<div class="language-switcher">
+    <div class="language-switcher">
 
-  {% if CURRENT_LANGUAGE == 'fa' %}
+      {% if CURRENT_LANGUAGE == 'fa' %}
 
-    {% if request.path == '/fa/' %}
-      <a href="/" class="language-button">
-        EN
-      </a>
+        {% if request.path == '/fa/' %}
 
-    {% elif '/fa/about/' in request.path %}
-      <a href="/about/" class="language-button">
-        EN
-      </a>
+          <a href="/" class="language-button">
+            EN
+          </a>
 
-    {% elif '/fa/team/' in request.path %}
-      <a href="/team/" class="language-button">
-        EN
-      </a>
+        {% elif request.path == '/fa/about/' %}
 
-    {% elif '/fa/contact/' in request.path %}
-      <a href="/contact/" class="language-button">
-        EN
-      </a>
+          <a href="/about/" class="language-button">
+            EN
+          </a>
 
-    {% elif '/fa/price-inquiry/' in request.path %}
-      <a href="/price-inquiry/" class="language-button">
-        EN
-      </a>
+        {% elif request.path == '/fa/team/' %}
 
-    {% elif '/fa/services/road-freight/' in request.path %}
-      <a href="/services/road-freight/" class="language-button">
-        EN
-      </a>
+          <a href="/team/" class="language-button">
+            EN
+          </a>
 
-    {% elif '/fa/services/sea-freight/' in request.path %}
-      <a href="/services/sea-freight/" class="language-button">
-        EN
-      </a>
+        {% elif request.path == '/fa/contact/' %}
 
-    {% elif '/fa/services/rail-freight/' in request.path %}
-      <a href="/services/rail-freight/" class="language-button">
-        EN
-      </a>
+          <a href="/contact/" class="language-button">
+            EN
+          </a>
 
-    {% elif '/fa/services/multimodal-transport/' in request.path %}
-      <a href="/services/multimodal-transport/" class="language-button">
-        EN
-      </a>
+        {% elif request.path == '/fa/price-inquiry/' %}
 
-    {% elif '/fa/services/customs-clearance/' in request.path %}
-      <a href="/services/customs-clearance/" class="language-button">
-        EN
-      </a>
+          <a href="/price-inquiry/" class="language-button">
+            EN
+          </a>
 
-    {% else %}
-      <a href="/" class="language-button">
-        EN
-      </a>
-    {% endif %}
+        {% elif request.path == '/fa/services/road-freight/' %}
+
+          <a href="/services/road-freight/" class="language-button">
+            EN
+          </a>
+
+        {% elif request.path == '/fa/services/sea-freight/' %}
+
+          <a href="/services/sea-freight/" class="language-button">
+            EN
+          </a>
+
+        {% elif request.path == '/fa/services/rail-freight/' %}
+
+          <a href="/services/rail-freight/" class="language-button">
+            EN
+          </a>
+
+        {% elif request.path == '/fa/services/multimodal-transport/' %}
+
+          <a href="/services/multimodal-transport/" class="language-button">
+            EN
+          </a>
+
+        {% elif request.path == '/fa/services/customs-clearance/' %}
+
+          <a href="/services/customs-clearance/" class="language-button">
+            EN
+          </a>
+
+        {% else %}
+
+          <a href="/" class="language-button">
+            EN
+          </a>
+
+        {% endif %}
 
 
-  {% else %}
+      {% else %}
 
-    {% if request.path == '/' %}
-      <a href="/fa/" class="language-button">
-        FA
-      </a>
+        {% if request.path == '/' %}
 
-    {% elif request.path == '/about/' %}
-      <a href="/fa/about/" class="language-button">
-        FA
-      </a>
+          <a href="/fa/" class="language-button">
+            FA
+          </a>
 
-    {% elif request.path == '/team/' %}
-      <a href="/fa/team/" class="language-button">
-        FA
-      </a>
+        {% elif request.path == '/about/' %}
 
-    {% elif request.path == '/contact/' %}
-      <a href="/fa/contact/" class="language-button">
-        FA
-      </a>
+          <a href="/fa/about/" class="language-button">
+            FA
+          </a>
 
-    {% elif request.path == '/price-inquiry/' %}
-      <a href="/fa/price-inquiry/" class="language-button">
-        FA
-      </a>
+        {% elif request.path == '/team/' %}
 
-    {% elif request.path == '/services/road-freight/' %}
-      <a href="/fa/services/road-freight/" class="language-button">
-        FA
-      </a>
+          <a href="/fa/team/" class="language-button">
+            FA
+          </a>
 
-    {% elif request.path == '/services/sea-freight/' %}
-      <a href="/fa/services/sea-freight/" class="language-button">
-        FA
-      </a>
+        {% elif request.path == '/contact/' %}
 
-    {% elif request.path == '/services/rail-freight/' %}
-      <a href="/fa/services/rail-freight/" class="language-button">
-        FA
-      </a>
+          <a href="/fa/contact/" class="language-button">
+            FA
+          </a>
 
-    {% elif request.path == '/services/multimodal-transport/' %}
-      <a href="/fa/services/multimodal-transport/" class="language-button">
-        FA
-      </a>
+        {% elif request.path == '/price-inquiry/' %}
 
-    {% elif request.path == '/services/customs-clearance/' %}
-      <a href="/fa/services/customs-clearance/" class="language-button">
-        FA
-      </a>
+          <a href="/fa/price-inquiry/" class="language-button">
+            FA
+          </a>
 
-    {% else %}
-      <a href="/fa/" class="language-button">
-        FA
-      </a>
-    {% endif %}
+        {% elif request.path == '/services/road-freight/' %}
 
-  {% endif %}
+          <a href="/fa/services/road-freight/" class="language-button">
+            FA
+          </a>
 
-</div>
+        {% elif request.path == '/services/sea-freight/' %}
+
+          <a href="/fa/services/sea-freight/" class="language-button">
+            FA
+          </a>
+
+        {% elif request.path == '/services/rail-freight/' %}
+
+          <a href="/fa/services/rail-freight/" class="language-button">
+            FA
+          </a>
+
+        {% elif request.path == '/services/multimodal-transport/' %}
+
+          <a href="/fa/services/multimodal-transport/" class="language-button">
+            FA
+          </a>
+
+        {% elif request.path == '/services/customs-clearance/' %}
+
+          <a href="/fa/services/customs-clearance/" class="language-button">
+            FA
+          </a>
+
+        {% else %}
+
+          <a href="/fa/" class="language-button">
+            FA
+          </a>
+
+        {% endif %}
+
+      {% endif %}
+
+    </div>
 
 
     <!-- MOBILE BUTTON -->
@@ -305,18 +359,23 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
   }
+
 
   .header-inner {
     max-width: 1400px;
     margin: 0 auto;
+
     padding: 12px 5%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+
+    gap: 24px;
   }
+
 
   /* LOGO */
 
@@ -325,6 +384,7 @@
     align-items: center;
     flex-shrink: 0;
   }
+
 
   .brand img {
     width: auto;
@@ -339,9 +399,11 @@
     flex: 1;
   }
 
+
   .main-nav > ul {
     margin: 0;
     padding: 0;
+
     list-style: none;
 
     display: flex;
@@ -351,16 +413,21 @@
     gap: 4px;
   }
 
+
   .main-nav li {
     position: relative;
   }
 
+
   .main-nav a,
   .dropdown-toggle {
+
     display: block;
+
     padding: 12px 13px;
 
     color: #ffffff;
+
     text-decoration: none;
 
     font-family: Arial, sans-serif;
@@ -369,11 +436,14 @@
 
     background: none;
     border: none;
+
     cursor: pointer;
 
-    transition: color .2s ease,
-                background .2s ease;
+    transition:
+      color .2s ease,
+      background .2s ease;
   }
+
 
   .main-nav a:hover,
   .dropdown-toggle:hover {
@@ -389,11 +459,14 @@
     gap: 6px;
   }
 
+
   .dropdown-arrow {
     font-size: 13px;
   }
 
+
   .dropdown-menu {
+
     position: absolute;
 
     top: calc(100% + 8px);
@@ -408,19 +481,24 @@
     padding: 8px 0;
 
     box-shadow:
-      0 15px 40px rgba(0,0,0,.22);
+      0 15px 40px rgba(0, 0, 0, .22);
 
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(8px);
 
     transition:
       opacity .2s ease,
       transform .2s ease,
       visibility .2s ease;
+
+    z-index: 2000;
   }
 
+
   .dropdown-menu a {
+
     color: #071227;
 
     padding: 12px 18px;
@@ -428,15 +506,36 @@
     font-size: 14px;
   }
 
+
   .dropdown-menu a:hover {
+
     background: #f3f7fb;
+
     color: #1769aa;
+
+    text-decoration: none;
   }
 
+
   .nav-dropdown:hover .dropdown-menu {
+
     opacity: 1;
     visibility: visible;
+
     transform: translateY(0);
+  }
+
+
+  /* RTL DROPDOWN */
+
+  html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+
+
+  html[dir="rtl"] .main-nav > ul {
+    direction: rtl;
   }
 
 
@@ -446,7 +545,9 @@
     flex-shrink: 0;
   }
 
+
   .quote-button {
+
     display: inline-block;
 
     padding: 12px 19px;
@@ -461,36 +562,56 @@
     font-size: 14px;
     font-weight: 700;
 
-    transition: transform .2s ease,
-                background .2s ease;
+    white-space: nowrap;
+
+    transition:
+      transform .2s ease,
+      background .2s ease;
   }
 
+
   .quote-button:hover {
+
     background: #e8eef5;
+
     transform: translateY(-1px);
+
+    text-decoration: none;
   }
-    /* LANGUAGE SWITCHER */
+
+
+  /* LANGUAGE SWITCHER */
 
   .language-switcher {
     flex-shrink: 0;
   }
 
-  .language-switcher form {
-    margin: 0;
-  }
 
   .language-button {
+
+    display: inline-block;
+
+    padding: 10px 12px;
+
     background: transparent;
+
     color: #ffffff;
 
-    border: 1px solid rgba(255,255,255,.35);
+    border:
+      1px solid rgba(255, 255, 255, .35);
+
     border-radius: 6px;
 
-    padding: 9px 11px;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
 
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 1px;
+
+    line-height: 1;
 
     cursor: pointer;
 
@@ -499,29 +620,57 @@
       border-color .2s ease;
   }
 
+
   .language-button:hover {
-    background: rgba(255,255,255,.1);
-    border-color: rgba(255,255,255,.7);
+
+    background:
+      rgba(255, 255, 255, .1);
+
+    border-color:
+      rgba(255, 255, 255, .7);
+
+    color: #ffffff;
+
+    text-decoration: none;
   }
 
 
-  /* MOBILE MENU BUTTON */
+  /* PERSIAN FONT */
+
+  html[lang="fa"] .main-nav a,
+  html[lang="fa"] .dropdown-toggle,
+  html[lang="fa"] .quote-button {
+
+    font-family:
+      Tahoma,
+      Arial,
+      sans-serif;
+  }
+
+
+  /* MOBILE BUTTON */
 
   .hamburger-menu {
+
     display: none;
 
     width: 34px;
     height: 28px;
 
     background: none;
+
     border: none;
 
     padding: 0;
 
     cursor: pointer;
+
+    flex-shrink: 0;
   }
 
+
   .hamburger-menu span {
+
     width: 100%;
     height: 3px;
 
@@ -541,9 +690,12 @@
 
     .main-nav a,
     .dropdown-toggle {
+
       padding: 10px 8px;
+
       font-size: 14px;
     }
+
 
     .header-inner {
       gap: 12px;
@@ -556,39 +708,48 @@
 
   @media (max-width: 900px) {
 
-    .site-header {
-      position: sticky;
+    .header-inner {
+
+      padding: 10px 20px;
+
+      gap: 10px;
     }
 
-    .header-inner {
-      padding: 10px 20px;
-    }
 
     .brand img {
       height: 50px;
     }
 
-    .language-switcher {
-  margin-left: auto;
-}
-
-.hamburger-menu {
-  display: block;
-  margin-left: 10px;
-}
 
     .header-cta {
       display: none;
     }
 
+
+    .language-switcher {
+      margin-left: auto;
+    }
+
+
+    .hamburger-menu {
+
+      display: block;
+
+      margin-left: 8px;
+    }
+
+
     .main-nav {
+
       position: fixed;
 
       top: 70px;
       right: -100%;
 
       width: min(330px, 88vw);
-      height: calc(100vh - 70px);
+
+      height:
+        calc(100vh - 70px);
 
       background: #071227;
 
@@ -596,24 +757,33 @@
 
       overflow-y: auto;
 
-      transition: right .3s ease;
+      transition:
+        right .3s ease;
 
       box-shadow:
-        -15px 20px 40px rgba(0,0,0,.35);
+        -15px 20px 40px
+        rgba(0, 0, 0, .35);
     }
+
 
     .main-nav.active {
       right: 0;
     }
 
+
     .main-nav > ul {
+
       flex-direction: column;
+
       align-items: stretch;
+
       gap: 5px;
     }
 
+
     .main-nav a,
     .dropdown-toggle {
+
       width: 100%;
 
       box-sizing: border-box;
@@ -625,11 +795,16 @@
       font-size: 16px;
     }
 
+
     .dropdown-toggle {
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
     }
 
+
     .dropdown-menu {
+
       position: static;
 
       width: 100%;
@@ -644,47 +819,83 @@
 
       opacity: 1;
       visibility: visible;
+
       transform: none;
 
       margin-bottom: 5px;
     }
 
+
     .dropdown-menu.open {
       display: block;
     }
 
+
     .dropdown-menu a {
+
       color: #d8e4f2;
 
       padding-left: 25px;
     }
 
+
     .nav-dropdown:hover .dropdown-menu {
       display: none;
     }
 
+
     .nav-dropdown:hover .dropdown-menu.open {
       display: block;
     }
+
+
+    /* MOBILE RTL */
+
     html[dir="rtl"] .language-switcher {
-  margin-left: 0;
-  margin-right: auto;
-}
 
-html[dir="rtl"] .hamburger-menu {
-  margin-left: 0;
-  margin-right: 10px;
-}
+      margin-left: 0;
+      margin-right: auto;
+    }
 
-html[dir="rtl"] .main-nav a,
-html[dir="rtl"] .dropdown-toggle {
-  text-align: right;
-}
 
-html[dir="rtl"] .dropdown-menu a {
-  padding-left: 10px;
-  padding-right: 25px;
-}
+    html[dir="rtl"] .hamburger-menu {
+
+      margin-left: 0;
+      margin-right: 8px;
+    }
+
+
+    html[dir="rtl"] .main-nav {
+
+      right: auto;
+      left: -100%;
+
+      transition:
+        left .3s ease;
+
+      box-shadow:
+        15px 20px 40px
+        rgba(0, 0, 0, .35);
+    }
+
+
+    html[dir="rtl"] .main-nav.active {
+      left: 0;
+    }
+
+
+    html[dir="rtl"] .main-nav a,
+    html[dir="rtl"] .dropdown-toggle {
+
+      text-align: right;
+    }
+
+
+    html[dir="rtl"] .dropdown-menu a {
+
+      padding-left: 10px;
+      padding-right: 25px;
+    }
 
   }
 
@@ -693,74 +904,130 @@ html[dir="rtl"] .dropdown-menu a {
 
 <script>
 
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener(
+    'DOMContentLoaded',
+    function () {
 
-    const hamburger =
-      document.querySelector('.hamburger-menu');
+      const hamburger =
+        document.querySelector(
+          '.hamburger-menu'
+        );
 
-    const nav =
-      document.querySelector('#main-nav');
+      const nav =
+        document.querySelector(
+          '#main-nav'
+        );
 
-    const dropdownToggle =
-      document.querySelector('.dropdown-toggle');
+      const dropdownToggle =
+        document.querySelector(
+          '.dropdown-toggle'
+        );
 
-    const dropdownMenu =
-      document.querySelector('.dropdown-menu');
-
-
-    /* MOBILE MENU */
-
-    hamburger.addEventListener('click', function () {
-
-      nav.classList.toggle('active');
-
-      const isOpen =
-        nav.classList.contains('active');
-
-      hamburger.setAttribute(
-        'aria-expanded',
-        isOpen
-      );
-
-    });
+      const dropdownMenu =
+        document.querySelector(
+          '.dropdown-menu'
+        );
 
 
-    /* MOBILE SERVICES DROPDOWN */
+      /* MOBILE MENU */
 
-    dropdownToggle.addEventListener(
-      'click',
-      function () {
+      if (hamburger && nav) {
 
-        if (window.innerWidth <= 900) {
-          dropdownMenu.classList.toggle('open');
-        }
-
-      }
-    );
-
-
-    /* CLOSE MENU AFTER CLICK */
-
-    document
-      .querySelectorAll('.main-nav a')
-      .forEach(function(link) {
-
-        link.addEventListener(
+        hamburger.addEventListener(
           'click',
           function () {
 
-            nav.classList.remove('active');
+            nav.classList.toggle(
+              'active'
+            );
+
+            const isOpen =
+              nav.classList.contains(
+                'active'
+              );
 
             hamburger.setAttribute(
               'aria-expanded',
-              'false'
+              isOpen
             );
 
           }
         );
 
-      });
+      }
 
-  });
+
+      /* MOBILE SERVICES */
+
+      if (
+        dropdownToggle &&
+        dropdownMenu
+      ) {
+
+        dropdownToggle.addEventListener(
+          'click',
+          function () {
+
+            if (
+              window.innerWidth <= 900
+            ) {
+
+              dropdownMenu.classList.toggle(
+                'open'
+              );
+
+              dropdownToggle.setAttribute(
+                'aria-expanded',
+                dropdownMenu.classList.contains(
+                  'open'
+                )
+              );
+
+            }
+
+          }
+        );
+
+      }
+
+
+      /* CLOSE MOBILE MENU */
+
+      document
+        .querySelectorAll(
+          '.main-nav a'
+        )
+        .forEach(
+          function (link) {
+
+            link.addEventListener(
+              'click',
+              function () {
+
+                if (nav) {
+
+                  nav.classList.remove(
+                    'active'
+                  );
+
+                }
+
+                if (hamburger) {
+
+                  hamburger.setAttribute(
+                    'aria-expanded',
+                    'false'
+                  );
+
+                }
+
+              }
+            );
+
+          }
+        );
+
+    }
+  );
 
 </script>
