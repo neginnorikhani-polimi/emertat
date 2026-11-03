@@ -13,14 +13,6 @@ from pathlib import Path
 from decouple import config
 import os
 import sys
-LANGUAGE_CODE = 'en'
-
-LANGUAGES = [
-    ('en', 'English'),
-    ('fa', 'فارسی'),
-]
-
-USE_I18N = True
 if 'collectstatic' in sys.argv:
     SECRET_KEY = config(
         'SECRET_KEY',
@@ -59,7 +51,6 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
