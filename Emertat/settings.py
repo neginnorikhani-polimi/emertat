@@ -69,6 +69,7 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "info.context_processors.language_context",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
@@ -158,9 +159,6 @@ EMAIL_HOST_PASSWORD = config(
     'EMAIL_HOST_PASSWORD',
     default=''
 )
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',
-]
 
 # 3. The default "from" address for outgoing emails
 DEFAULT_FROM_EMAIL = 'Emertat Farabar <social.emertatfarabar@gmail.com>'
