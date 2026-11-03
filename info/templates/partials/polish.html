@@ -1,0 +1,384 @@
+<style id="site-visual-polish">
+  :root {
+    --navy-950: #050A30;
+    --navy-900: #071227;
+    --navy-800: #0c1b39;
+    --blue-600: #1769aa;
+    --blue-500: #2374b8;
+    --blue-400: #5bb6ff;
+    --surface: #ffffff;
+    --surface-soft: #f6f8fb;
+    --border-soft: #e2e8f0;
+    --text-main: #071227;
+    --text-muted: #667085;
+    --shadow-soft: 0 10px 30px rgba(7, 18, 39, .07);
+    --shadow-card: 0 16px 40px rgba(7, 18, 39, .09);
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+  }
+
+  body,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: Inter, Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html[lang="fa"] body,
+  html[lang="fa"] button,
+  html[lang="fa"] input,
+  html[lang="fa"] textarea,
+  html[lang="fa"] select,
+  html[lang="fa"] .main-nav a,
+  html[lang="fa"] .dropdown-toggle,
+  html[lang="fa"] .quote-button,
+  html[lang="fa"] .language-button {
+    font-family: Vazirmatn, Tahoma, Arial, sans-serif !important;
+  }
+
+  html[lang="fa"] body {
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  html[lang="fa"] h1,
+  html[lang="fa"] h2,
+  html[lang="fa"] h3,
+  html[lang="fa"] h4,
+  html[lang="fa"] strong {
+    font-weight: 700;
+  }
+
+  html[lang="fa"] p,
+  html[lang="fa"] li {
+    line-height: 1.95;
+  }
+
+  .site-header {
+    background: rgba(5, 10, 48, .96) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 rgba(255,255,255,.06);
+  }
+
+  .header-inner {
+    min-height: 78px;
+  }
+
+  .brand img {
+    height: 54px !important;
+  }
+
+  .main-nav a,
+  .dropdown-toggle {
+    border-radius: 8px;
+    font-weight: 600 !important;
+  }
+
+  .main-nav a:hover,
+  .dropdown-toggle:hover {
+    background: rgba(255,255,255,.06) !important;
+  }
+
+  .dropdown-menu {
+    border: 1px solid rgba(7,18,39,.08);
+    border-radius: 12px !important;
+    box-shadow: 0 18px 45px rgba(7,18,39,.16) !important;
+  }
+
+  .quote-button {
+    border-radius: 9px !important;
+    padding: 12px 18px !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  }
+
+  .language-button {
+    border-radius: 9px !important;
+    min-width: 42px;
+    text-align: center;
+  }
+
+  .hero,
+  .service-hero,
+  .about-hero,
+  .team-hero,
+  .contact-hero,
+  .quote-hero,
+  .why-hero {
+    isolation: isolate;
+  }
+
+  .hero h1,
+  .service-hero h1,
+  .about-hero h1,
+  .team-hero h1,
+  .contact-hero h1,
+  .quote-hero h1,
+  .why-hero h1 {
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  html[lang="fa"] .hero h1,
+  html[lang="fa"] .service-hero h1,
+  html[lang="fa"] .about-hero h1,
+  html[lang="fa"] .team-hero h1,
+  html[lang="fa"] .contact-hero h1,
+  html[lang="fa"] .quote-hero h1,
+  html[lang="fa"] .why-hero h1 {
+    letter-spacing: 0;
+    line-height: 1.35 !important;
+  }
+
+  .section-header h2,
+  .service-section h2,
+  .about-section h2,
+  .team-section h2,
+  .contact-section h2,
+  .quote-intro h2,
+  .why-section h2 {
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  html[lang="fa"] .section-header h2,
+  html[lang="fa"] .service-section h2,
+  html[lang="fa"] .about-section h2,
+  html[lang="fa"] .team-section h2,
+  html[lang="fa"] .contact-section h2,
+  html[lang="fa"] .quote-intro h2,
+  html[lang="fa"] .why-section h2 {
+    letter-spacing: 0;
+    line-height: 1.5 !important;
+  }
+
+  .section-label,
+  .about-label,
+  .team-label,
+  .contact-label,
+  .quote-label,
+  .service-label,
+  .why-label,
+  .hero-eyebrow {
+    font-weight: 800 !important;
+  }
+
+  html[lang="fa"] .section-label,
+  html[lang="fa"] .about-label,
+  html[lang="fa"] .team-label,
+  html[lang="fa"] .contact-label,
+  html[lang="fa"] .quote-label,
+  html[lang="fa"] .service-label,
+  html[lang="fa"] .why-label,
+  html[lang="fa"] .hero-eyebrow {
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+  }
+
+  .service-card,
+  .why-card,
+  .network-card,
+  .cargo-card,
+  .client-card,
+  .freight-option-card,
+  .experience-card,
+  .operation-card,
+  .service-about-card,
+  .approach-card,
+  .team-card,
+  .leadership-card,
+  .contact-card,
+  .social-card,
+  .support-card,
+  .benefit-card,
+  .integration-card,
+  .mode-card,
+  .port-card,
+  .process-step,
+  .trade-lane-group {
+    border-radius: var(--radius-md) !important;
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+
+  .service-card:hover,
+  .network-card:hover,
+  .cargo-card:hover,
+  .client-card:hover,
+  .freight-option-card:hover,
+  .experience-card:hover,
+  .service-about-card:hover,
+  .approach-card:hover,
+  .team-card:hover,
+  .leadership-card:hover,
+  .contact-card:hover,
+  .social-card:hover,
+  .support-card:hover,
+  .benefit-card:hover,
+  .mode-card:hover,
+  .port-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .service-card,
+  .cargo-card,
+  .client-card,
+  .freight-option-card,
+  .experience-card,
+  .service-about-card,
+  .approach-card,
+  .team-card,
+  .leadership-card,
+  .contact-card,
+  .social-card,
+  .support-card,
+  .benefit-card,
+  .mode-card,
+  .port-card,
+  .process-step {
+    border-color: var(--border-soft) !important;
+  }
+
+  .btn,
+  .service-btn,
+  .about-btn,
+  .team-btn,
+  .contact-btn,
+  .why-btn,
+  .submit-btn {
+    border-radius: 9px !important;
+    font-weight: 700 !important;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease !important;
+  }
+
+  .btn:hover,
+  .service-btn:hover,
+  .about-btn:hover,
+  .team-btn:hover,
+  .contact-btn:hover,
+  .why-btn:hover,
+  .submit-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary,
+  .service-btn-primary,
+  .about-btn-primary,
+  .team-btn-primary,
+  .contact-btn-primary,
+  .why-btn-primary {
+    box-shadow: 0 8px 22px rgba(0,0,0,.10);
+  }
+
+  .quote-form {
+    border-radius: 18px !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border-radius: 9px !important;
+    min-height: 48px;
+    transition: border-color .18s ease, box-shadow .18s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    box-shadow: 0 0 0 4px rgba(35,116,184,.10);
+  }
+
+  .site-footer {
+    background:
+      radial-gradient(circle at 15% 0%, rgba(35,116,184,.15), transparent 32%),
+      #050A30 !important;
+  }
+
+  .footer-column h3 {
+    font-size: 15px !important;
+    letter-spacing: .02em;
+  }
+
+  html[lang="fa"] .footer-column h3 {
+    letter-spacing: 0;
+  }
+
+  .footer-column a {
+    transition: color .18s ease, transform .18s ease;
+  }
+
+  .footer-column a:hover {
+    transform: translateX(2px);
+  }
+
+  html[dir="rtl"] .footer-column a:hover {
+    transform: translateX(-2px);
+  }
+
+  @media (max-width: 900px) {
+    .header-inner {
+      min-height: 70px;
+    }
+
+    .brand img {
+      height: 46px !important;
+    }
+
+    .main-nav {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .service-card:hover,
+    .network-card:hover,
+    .cargo-card:hover,
+    .client-card:hover,
+    .freight-option-card:hover,
+    .experience-card:hover,
+    .service-about-card:hover,
+    .approach-card:hover,
+    .team-card:hover,
+    .leadership-card:hover,
+    .contact-card:hover,
+    .social-card:hover,
+    .support-card:hover,
+    .benefit-card:hover,
+    .mode-card:hover,
+    .port-card:hover {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    html[lang="fa"] .hero h1,
+    html[lang="fa"] .service-hero h1,
+    html[lang="fa"] .about-hero h1,
+    html[lang="fa"] .team-hero h1,
+    html[lang="fa"] .contact-hero h1,
+    html[lang="fa"] .quote-hero h1,
+    html[lang="fa"] .why-hero h1 {
+      font-size: 34px !important;
+      line-height: 1.45 !important;
+    }
+
+    .hero,
+    .service-hero,
+    .about-hero,
+    .team-hero,
+    .contact-hero,
+    .quote-hero,
+    .why-hero {
+      padding-top: 52px !important;
+      padding-bottom: 54px !important;
+    }
+
+    .footer-brand p {
+      line-height: 1.85;
+    }
+  }
+</style>
