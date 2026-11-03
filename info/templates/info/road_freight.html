@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-International Road Freight in Iran | FTL & LTL Transport | Emertat Farabar
+{% if is_fa %}حمل‌ونقل جاده‌ای بین‌المللی در ایران | امرتات فرابر{% else %}International Road Freight in Iran | FTL & LTL Transport | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-International road freight services in Iran for FTL, LTL, import, export and transit cargo. Emertat Farabar connects Iran with the Middle East, Asia and regional markets.
+{% if is_fa %}خدمات حمل جاده‌ای بین‌المللی FTL و LTL برای واردات، صادرات و ترانزیت از طریق ایران.{% else %}International road freight services in Iran for FTL, LTL, import, export and transit cargo. Emertat Farabar connects Iran with the Middle East, Asia and regional markets.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -300,6 +300,69 @@ Reliable FTL and LTL cross-border road freight solutions for import, export and 
 </style>
 
 
+{% if is_fa %}
+<main class="service-page">
+  <section class="service-hero">
+    <div class="service-hero-inner">
+      <div class="service-label">حمل‌ونقل جاده‌ای</div>
+      <h1>حمل‌ونقل جاده‌ای بین‌المللی در ایران</h1>
+      <p>راهکارهای FTL و LTL برای واردات، صادرات و ترانزیت، با هماهنگی مسیرهای مرزی و عملیات حمل بین‌المللی.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل جاده‌ای</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با تیم لجستیک</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="service-container">
+      <div class="service-label">حمل مرزی</div>
+      <h2>راهکارهای جاده‌ای متناسب با محموله شما</h2>
+      <p class="service-intro">تیم ما نوع کالا، مبدأ، مقصد، مسیر مرزی، زمان ترانزیت و حجم محموله را بررسی می‌کند تا گزینه مناسب حمل جاده‌ای انتخاب شود.</p>
+    </div>
+  </section>
+
+  <section class="service-section benefits-section">
+    <div class="service-container">
+      <div class="service-label">قابلیت‌ها</div>
+      <h2>FTL، LTL و حمل ترانزیتی</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card"><h3>FTL</h3><p>کامیون کامل برای محموله‌هایی که به ظرفیت اختصاصی نیاز دارند.</p></div>
+        <div class="benefit-card"><h3>LTL</h3><p>راهکار اقتصادی‌تر برای محموله‌های کوچک‌تر و خرده‌بار.</p></div>
+        <div class="benefit-card"><h3>واردات و صادرات</h3><p>هماهنگی حمل جاده‌ای برای ورود و خروج کالا از ایران.</p></div>
+        <div class="benefit-card"><h3>ترانزیت</h3><p>پشتیبانی از محموله‌های عبوری در مسیرهای منطقه‌ای.</p></div>
+        <div class="benefit-card"><h3>هماهنگی مرزی</h3><p>پشتیبانی عملیاتی در مناطق مرزی و نقاط عبور بین‌المللی.</p></div>
+        <div class="benefit-card"><h3>اسناد و گمرک</h3><p>هماهنگی اسناد حمل و امور گمرکی در کنار عملیات جاده‌ای.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section process-section">
+    <div class="service-container">
+      <div class="service-label">فرآیند کار</div>
+      <h2>از بررسی محموله تا تحویل</h2>
+      <div class="process-grid">
+        <div class="process-step"><span class="step-number">1</span><h3>بررسی اطلاعات</h3><p>نوع کالا، حجم، مبدأ، مقصد و زمان‌بندی بررسی می‌شود.</p></div>
+        <div class="process-step"><span class="step-number">2</span><h3>انتخاب مسیر</h3><p>مسیر مناسب و گزینه FTL یا LTL تعیین می‌شود.</p></div>
+        <div class="process-step"><span class="step-number">3</span><h3>هماهنگی حمل</h3><p>عملیات، اسناد و هماهنگی‌های مرزی انجام می‌شود.</p></div>
+        <div class="process-step"><span class="step-number">4</span><h3>تحویل</h3><p>محموله طبق مسیر برنامه‌ریزی‌شده به مقصد ادامه می‌دهد.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section road-cta">
+    <div class="service-container">
+      <div class="service-label">شروع حمل</div>
+      <h2>برای حمل جاده‌ای بین‌المللی آماده‌اید؟</h2>
+      <p>جزئیات کالا، مبدأ و مقصد را ارسال کنید تا تیم ما مسیر و گزینه حمل مناسب را بررسی کند.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با ما</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="service-page">
 
   <section class="service-hero">
@@ -590,5 +653,6 @@ Reliable FTL and LTL cross-border road freight solutions for import, export and 
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
