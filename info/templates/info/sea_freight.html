@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-Sea Freight Services in Iran | FCL & LCL Shipping | Emertat Farabar
+{% if is_fa %}حمل‌ونقل دریایی بین‌المللی در ایران | امرتات فرابر{% else %}Sea Freight Services in Iran | FCL & LCL Shipping | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-International sea freight services in Iran for FCL and LCL shipments through Bandar Abbas and Bandar Lengeh. Emertat Farabar supports import, export, customs and port logistics.
+{% if is_fa %}خدمات حمل دریایی FCL و LCL برای واردات و صادرات با پشتیبانی عملیاتی در بنادر جنوبی ایران.{% else %}International sea freight services in Iran for FCL and LCL shipments through Bandar Abbas and Bandar Lengeh. Emertat Farabar supports import, export, customs and port logistics.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -299,6 +299,67 @@ FCL and LCL sea freight solutions through Iran’s southern ports with customs c
 </style>
 
 
+{% if is_fa %}
+<main class="service-page">
+  <section class="service-hero">
+    <div class="service-hero-inner">
+      <div class="service-label">حمل‌ونقل دریایی</div>
+      <h1>حمل‌ونقل دریایی بین‌المللی در ایران</h1>
+      <p>راهکارهای FCL و LCL برای محموله‌های وارداتی و صادراتی با پشتیبانی عملیاتی در بنادر جنوبی ایران.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل دریایی</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با تیم لجستیک</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="service-container">
+      <div class="service-label">حمل دریایی</div>
+      <h2>راهکارهای کانتینری برای تجارت بین‌المللی</h2>
+      <p class="service-intro">بر اساس حجم کالا، بندر مبدأ و مقصد، زمان موردنظر و شرایط محموله، بین گزینه‌های FCL و LCL راهکار مناسب انتخاب می‌شود.</p>
+    </div>
+  </section>
+
+  <section class="service-section benefits-section">
+    <div class="service-container">
+      <div class="service-label">گزینه‌های حمل</div>
+      <h2>FCL و LCL برای حجم‌های مختلف بار</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card"><h3>FCL</h3><p>کانتینر کامل برای محموله‌هایی که به ظرفیت اختصاصی نیاز دارند.</p></div>
+        <div class="benefit-card"><h3>LCL</h3><p>خرده‌بار کانتینری برای حجم‌هایی که نیاز به کانتینر کامل ندارند.</p></div>
+        <div class="benefit-card"><h3>واردات</h3><p>هماهنگی محموله‌های دریایی ورودی به ایران.</p></div>
+        <div class="benefit-card"><h3>صادرات</h3><p>راهکارهای دریایی برای کالاهای خروجی از ایران.</p></div>
+        <div class="benefit-card"><h3>عملیات بندری</h3><p>پشتیبانی عملیاتی در بندرعباس و بندرلنگه.</p></div>
+        <div class="benefit-card"><h3>حمل ادامه مسیر</h3><p>امکان اتصال حمل دریایی به جاده یا ریل در مسیرهای چندوجهی.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section ports-section">
+    <div class="service-container">
+      <div class="service-label">حضور عملیاتی</div>
+      <h2>پشتیبانی در بنادر جنوبی ایران</h2>
+      <div class="ports-grid">
+        <div class="port-card"><h3>بندرعباس</h3><p>هماهنگی حمل دریایی، عملیات بندری و حمل زمینی ادامه مسیر.</p></div>
+        <div class="port-card"><h3>بندرلنگه</h3><p>پشتیبانی عملیات دریایی و لجستیک منطقه‌ای در جنوب ایران.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section sea-cta">
+    <div class="service-container">
+      <div class="service-label">شروع حمل</div>
+      <h2>برای محموله دریایی خود نرخ می‌خواهید؟</h2>
+      <p>اطلاعات کالا، حجم، مبدأ و مقصد را ارسال کنید تا تیم ما گزینه FCL یا LCL مناسب را بررسی کند.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با ما</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="service-page">
 
   <section class="service-hero">
@@ -579,5 +640,6 @@ FCL and LCL sea freight solutions through Iran’s southern ports with customs c
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
