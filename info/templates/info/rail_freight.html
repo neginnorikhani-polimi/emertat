@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block title %}
-Rail Freight Services in Iran | International Rail Transport | Emertat Farabar
+{% if is_fa %}حمل‌ونقل ریلی بین‌المللی در ایران | امرتات فرابر{% else %}Rail Freight Services in Iran | International Rail Transport | Emertat Farabar{% endif %}
 {% endblock %}
 
 {% block meta_description %}
-International rail freight services in Iran for import, export and regional cargo movements. Emertat Farabar provides rail and multimodal logistics solutions across Iran and Asia.
+{% if is_fa %}خدمات حمل ریلی برای کریدورهای منطقه‌ای و بین‌المللی منتخب، مستقل یا در ترکیب با حمل چندوجهی.{% else %}International rail freight services in Iran for import, export and regional cargo movements. Emertat Farabar provides rail and multimodal logistics solutions across Iran and Asia.{% endif %}
 {% endblock %}
 
 {% block og_title %}
@@ -270,6 +270,56 @@ Rail freight and multimodal transportation solutions connecting Iran with region
 </style>
 
 
+{% if is_fa %}
+<main class="service-page">
+  <section class="service-hero">
+    <div class="service-hero-inner">
+      <div class="service-label">حمل‌ونقل ریلی</div>
+      <h1>حمل‌ونقل ریلی بین‌المللی در ایران</h1>
+      <p>راهکارهای حمل ریلی برای کریدورهای مناسب منطقه‌ای و بین‌المللی، به‌صورت مستقل یا بخشی از حمل چندوجهی.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل ریلی</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با تیم لجستیک</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="service-container">
+      <div class="service-label">حمل ریلی</div>
+      <h2>یک گزینه عملی برای مسیرهای مناسب منطقه‌ای</h2>
+      <p class="service-intro">در مسیرهایی که زیرساخت و شرایط تجاری مناسب باشد، حمل ریلی می‌تواند گزینه‌ای قابل اتکا برای اتصال ایران به بازارهای منطقه‌ای باشد.</p>
+    </div>
+  </section>
+
+  <section class="service-section benefits-section">
+    <div class="service-container">
+      <div class="service-label">مزایا</div>
+      <h2>برنامه‌ریزی حمل بر اساس مسیر و محموله</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card"><h3>کریدورهای منطقه‌ای</h3><p>قابل استفاده در مسیرهای منتخب با دسترسی ریلی مناسب.</p></div>
+        <div class="benefit-card"><h3>محموله‌های صنعتی</h3><p>گزینه‌ای مناسب برای برخی تجهیزات، ماشین‌آلات و کالاهای تجاری.</p></div>
+        <div class="benefit-card"><h3>اتصال چندوجهی</h3><p>امکان ترکیب با جاده یا دریا برای تکمیل مسیر.</p></div>
+        <div class="benefit-card"><h3>هماهنگی اسناد</h3><p>پشتیبانی اسناد حمل و هماهنگی‌های مرتبط با مسیر.</p></div>
+        <div class="benefit-card"><h3>بررسی زمان ترانزیت</h3><p>انتخاب مسیر بر اساس دسترسی و زمان موردنیاز.</p></div>
+        <div class="benefit-card"><h3>بررسی هزینه</h3><p>مقایسه گزینه ریلی با سایر روش‌ها بر اساس نیاز محموله.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section rail-cta">
+    <div class="service-container">
+      <div class="service-label">بررسی مسیر</div>
+      <h2>آیا حمل ریلی برای محموله شما مناسب است؟</h2>
+      <p>جزئیات محموله، مبدأ و مقصد را ارسال کنید تا تیم ما امکان استفاده از مسیر ریلی را بررسی کند.</p>
+      <div class="service-actions">
+        <a href="/fa/price-inquiry/" class="service-btn service-btn-primary">درخواست نرخ حمل</a>
+        <a href="/fa/contact/" class="service-btn service-btn-outline">تماس با ما</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% else %}
 <main class="service-page">
 
   <section class="service-hero">
@@ -561,5 +611,6 @@ Rail freight and multimodal transportation solutions connecting Iran with region
   </section>
 
 </main>
+{% endif %}
 
 {% endblock content %}
