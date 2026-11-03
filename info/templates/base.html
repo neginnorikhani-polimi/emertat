@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-{% if request.path|slice:":4" == "/fa/" %}
+{% if is_fa %}
 <html lang="fa" dir="rtl">
 {% else %}
 <html lang="en" dir="ltr">
@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'info/css/main_style.css' %}?v=3">
+  <link rel="stylesheet" href="{% static 'info/css/main_style.css' %}?v=4">
  <title>
   {% block title %}
   Emertat Farabar | International Freight Forwarding in Iran
@@ -22,6 +22,15 @@
 
 <link rel="canonical"
       href="https://www.emertatfarabar.com{{ request.path }}">
+
+{% if is_fa %}
+<link rel="alternate" hreflang="fa" href="https://www.emertatfarabar.com{{ request.path }}">
+<link rel="alternate" hreflang="en" href="https://www.emertatfarabar.com{{ language_switch_url }}">
+{% else %}
+<link rel="alternate" hreflang="en" href="https://www.emertatfarabar.com{{ request.path }}">
+<link rel="alternate" hreflang="fa" href="https://www.emertatfarabar.com{{ language_switch_url }}">
+{% endif %}
+<link rel="alternate" hreflang="x-default" href="https://www.emertatfarabar.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
