@@ -59,7 +59,7 @@ footer p {
 }
 
 body {
-    font-family: Inter, Arial, sans-serif;
+    font-family: Calibri, Carlito, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -176,14 +176,14 @@ html[dir="rtl"] .footer-bottom {
 
 /* Persian font */
 html[lang="fa"] body {
-    font-family: 'Noto Naskh Arabic', Tahoma, serif;
+    font-family: Calibri, Carlito, Tahoma, Arial, sans-serif;
 }
 
 html[lang="fa"] .main-nav a,
 html[lang="fa"] .dropdown-toggle,
 html[lang="fa"] .quote-button,
 html[lang="fa"] .language-button {
-    font-family: 'Noto Naskh Arabic', Tahoma, serif;
+    font-family: Calibri, Carlito, Tahoma, Arial, sans-serif;
 }
 
 
